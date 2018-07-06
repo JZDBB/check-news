@@ -9,7 +9,7 @@ from datetime import datetime, timedelta
 import time
 import logging
 import re
-from CrawlWebSite import auto_abstract, lr_text, saveData
+from CrawlWebSite import auto_abstract, lr_text, saveData, EventInfo_extract
 import urllib.request
 
 import DataSend
@@ -195,49 +195,51 @@ class Crawl_NEWS():
                         NewInfo["imgurl"]=body["imgUrl"]
             #result =object.test(NewInfo["content"])
 			#print NewInfo["content"]
-            result = lr_text.text_classify([NewInfo["content"]])
-            #print result
-            NewInfo["result"]=result
-            summary=auto_abstract.abstract(body["content"])
-            #print "summary========="
-            #print summary
-            if summary!=None:
-                NewInfo["summary"]=summary
-                EventInfo=None
-            '''
-            进一步获取时间信息
-            '''
-            #EventInfo=EventInfo_extract.EventInfo_extraction(body["content"])
+                    result = lr_text.text_classify([NewInfo["content"]])
+                    #print result
+                    NewInfo["result"]=result
+                    summary=auto_abstract.abstract(body["content"])
+                    #print "summary========="
+                    #print summary
+                    if summary!=None:
+                        NewInfo["summary"]=summary
+                        EventInfo=None
+                    '''
+                    进一步获取时间信息
+                    '''
+                    EventInfo=EventInfo_extract.EventInfo_extraction(body["content"])
 
-            if EventInfo!=None:
-                NewInfo["Event_time"]=EventInfo["Event_time"]
-                print(EventInfo["Event_time"].decode("utf-8"))
-                NewInfo["Event_address"]=EventInfo['Event_address']
-                NewInfo["Event_type"]=EventInfo['Event_type']
-                NewInfo["Event_total"]=EventInfo['Event_total']
-                NewInfo["Event_gname"]=EventInfo["Event_gname"]
-                NewInfo["Event_nwound"]=EventInfo['Event_nwound']
-                NewInfo["Event_nkill"]=EventInfo['Event_nkill']
+                    if EventInfo!=None:
+                        NewInfo["Event_time"]=EventInfo["Event_time"]
+                        print(EventInfo["Event_time"].decode("utf-8"))
+                        NewInfo["Event_address"]=EventInfo['Event_address']
+                        NewInfo["Event_type"]=EventInfo['Event_type']
+                        NewInfo["Event_total"]=EventInfo['Event_total']
+                        NewInfo["Event_gname"]=EventInfo["Event_gname"]
+                        NewInfo["Event_nwound"]=EventInfo['Event_nwound']
+                        NewInfo["Event_nkill"]=EventInfo['Event_nkill']
 
-                #将返回消息通过列表形式返回上一层统一进行入库处理。
-            else:
-                NewInfo["Event_time"]='unknown'
-                NewInfo["Event_address"]='unknown'
-                NewInfo["Event_type"]='unknown'
-                NewInfo["Event_total"]='unknown'
-                NewInfo["Event_gname"]='unknown'
-                NewInfo["Event_nwound"]='unknown'
-                NewInfo["Event_nkill"]='unknown'
-            if len(NewInfo)>0:
-                #print "aaaaaaaaaaaaaaaaaa"
-                saveData.saveData(NewInfo["url"],NewInfo)
-                DataSend.sendata("localhost",50001,NewInfo)
+                        #将返回消息通过列表形式返回上一层统一进行入库处理。
+                    else:
+                        NewInfo["Event_time"]='unknown'
+                        NewInfo["Event_address"]='unknown'
+                        NewInfo["Event_type"]='unknown'
+                        NewInfo["Event_total"]='unknown'
+                        NewInfo["Event_gname"]='unknown'
+                        NewInfo["Event_nwound"]='unknown'
+                        NewInfo["Event_nkill"]='unknown'
+                    if len(NewInfo)>0:
+                        #print "aaaaaaaaaaaaaaaaaa"
+                        saveData.saveData(NewInfo["url"],NewInfo)
+                        DataSend.sendata("localhost",50001,NewInfo)
 
-                #CrawlData.append(NewInfo)
-                index += 1
-                if stopFlag ==True:
-                    break
+                        #CrawlData.append(NewInfo)
+                        index += 1
+                        if stopFlag ==True:
+                            break
+        print(CrawlData22zzS)
         return CrawlData
+
     def getUrl_multiTry(self, url, headers):
         import random
         time.sleep(1)

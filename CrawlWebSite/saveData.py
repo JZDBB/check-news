@@ -15,7 +15,7 @@ def saveData(fileName,data):
 	for key in message.keys():
 		if message[key]==None:
 			continue
-		message[key]=base64.b64encode(message[key])
+		message[key]=message[key]
 	try:
 		fileName = get_md5_value(fileName)
 		filePath =os.path.join(os.getcwd(),"resultData")

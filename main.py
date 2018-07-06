@@ -19,18 +19,24 @@ class CheckNews(wx.Frame):
 		sizer = wx.GridBagSizer(7, 7)
 
 		str_time = self.today[0] + '年' + self.today[1] + '月' + self.today[2] + '日'
-		self.Texttime = wx.StaticText(self.panel, label=str_time)
+		self.Texttime = wx.StaticText(self.panel, label=str_time, style=wx.ST_NO_AUTORESIZE)
 		self.Texttime.SetFont(self.font)
 		sizer.Add(self.Texttime, pos=(0, 0), flag=wx.TOP | wx.LEFT | wx.BOTTOM, border=15)
-		self.Textbefore1 = wx.StaticText(self.panel, label='爬取前')
+		self.Textbefore1 = wx.StaticText(self.panel, label='爬取前', style=wx.ST_NO_AUTORESIZE)
 		self.Textbefore1.SetFont(self.font)
-		sizer.Add(self.Textbefore1, pos=(0, 1), flag=wx.TOP | wx.EXPAND, border=15)
-		self.Daybefore = wx.TextCtrl(self.panel, value=str(self.before), size=(25, 20))
+		sizer.Add(self.Textbefore1, pos=(0, 1), flag=wx.TOP, border=15)
+		self.Daybefore = wx.TextCtrl(self.panel, value=str(self.before), size=(25, 20), style=wx.ST_NO_AUTORESIZE)
 		self.Daybefore.SetFont(self.font)
 		sizer.Add(self.Daybefore, pos=(0, 2), flag=wx.TOP, border=15)
-		self.Textbefore2 = wx.StaticText(self.panel, label='天')
+		self.Textbefore2 = wx.StaticText(self.panel, label='天', style=wx.ST_NO_AUTORESIZE)
 		self.Textbefore2.SetFont(self.font)
 		sizer.Add(self.Textbefore2, pos=(0, 3), flag=wx.TOP | wx.EXPAND, border=15)
+		self.CrawlBotton = wx.Button(self.panel, label='新闻爬取', size=(80, 20), style=wx.ST_NO_AUTORESIZE)
+		self.CrawlBotton.SetFont(self.font)
+		sizer.Add(self.CrawlBotton, pos=(0, 4), flag=wx.TOP, border=15)
+
+		self.TextNews = wx.TextCtrl(self.panel, )
+
 
 
 		self.panel.SetSizer(sizer)

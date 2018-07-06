@@ -236,10 +236,10 @@ class Crawl_NEWS():
         maxTryNum = 10
         for tries in range(maxTryNum):
             randddom_header = random.choice(headers)#使用随机一个头部,伪装成随机浏览器
-            req = urllib2.Request(url)
+            req = urllib.request.Request(url)
             req.add_header("User-Agent", randddom_header)
             req.add_header("GET", url)#以get方式访问网页
-            html = urllib2.urlopen(req).read().decode(encoding="utf8", errors='ignore')#utf-8编码返回网页
+            html = urllib.request.urlopen(req).read().decode(encoding="utf8", errors='ignore')#utf-8编码返回网页
             return html
 
 #获取新闻的标题和链接
