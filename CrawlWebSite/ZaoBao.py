@@ -228,17 +228,19 @@ class Crawl_NEWS():
                         NewInfo["Event_gname"]='unknown'
                         NewInfo["Event_nwound"]='unknown'
                         NewInfo["Event_nkill"]='unknown'
-                    if len(NewInfo)>0:
-                        #print "aaaaaaaaaaaaaaaaaa"
-                        saveData.saveData(NewInfo["url"],NewInfo)
-                        DataSend.sendata("localhost",50001,NewInfo)
+
+                    print(NewInfo)
+                    # if len(NewInfo)>0:
+                    #     #print "aaaaaaaaaaaaaaaaaa"
+                        # saveData.saveData(NewInfo["url"],NewInfo)
+                        # DataSend.sendata("localhost",50001,NewInfo)
 
                         #CrawlData.append(NewInfo)
-                        index += 1
-                        if stopFlag ==True:
-                            break
-        print(CrawlData22zzS)
-        return CrawlData
+                    index += 1
+                    if stopFlag ==True:
+                        break
+        # print(CrawlData)
+        # return CrawlData
 
     def getUrl_multiTry(self, url, headers):
         import random
@@ -262,7 +264,7 @@ class Crawl_NEWS():
 
 # 获取新闻的标题和链接
 if __name__=="__main__":
-    zaobaoCrawl = Crawl_NEWS(timeFrame=10, saveFile=True)
+    zaobaoCrawl = Crawl_NEWS(timeFrame=1000)
     zaobaoCrawl.start_crawl()
     # db_connect.close()
     

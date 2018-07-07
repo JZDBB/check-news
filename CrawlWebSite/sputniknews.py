@@ -227,11 +227,13 @@ class Crawl_NEWS():
                         NewInfo["Event_nkill"]=''
                          
                     if len(NewInfo)>0:
-                        saveData.saveData(NewInfo["url"],NewInfo)
-                        DataSend.sendata("localhost",50001,NewInfo)
+                        # saveData.saveData(NewInfo["url"],NewInfo)
+                        # DataSend.sendata("localhost",50001,NewInfo)
+                        print(NewInfo)
                         index += 1
-            if stopFlag ==True:
-                break
+                        if stopFlag ==True:
+                            break
+
     def getUrl_multiTry(self, url, headers):
         time.sleep(1)
         maxTryNum = 10

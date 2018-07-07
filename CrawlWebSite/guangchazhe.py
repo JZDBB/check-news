@@ -3,7 +3,7 @@
 # from urllib import urlretrieve
 from bs4 import BeautifulSoup
 import random
-
+import re
 from datetime import datetime, timedelta
 #import db_connect
 import time
@@ -46,9 +46,12 @@ class Crawl_NEWS():
         soup = BeautifulSoup(html, 'html.parser', from_encoding='utf-8') 
         # 从解析文件中通过select选择器定位指定的元素，返回一个列表
         result_count = soup.select("dt")
-        result_count = result_count[0].encode('gbk')
-        result_count = filter(str.isdigit, result_count)
-        resultCount = int(result_count)
+        # result_count = result_count[0].encode('gbk')
+        result_count = str(result_count)
+        result_count = list(filter(str.isdigit, result_count))
+        resultCount = 0
+        for i in range(len(result_count)):
+            resultCount = resultCount*10 + int(result_count[i])
         if resultCount%20==0:
             page_count = resultCount/20
         else:
@@ -246,9 +249,9 @@ class Crawl_NEWS():
                             NewInfo["Event_nwound"]=''
                             NewInfo["Event_nkill"]=''
                             #CrawlData.append(NewInfo)
-                        saveData.saveData(NewInfo["url"],NewInfo)
-                        DataSend.sendata("localhost",50001,NewInfo)
-                            
+                        # saveData.saveData(NewInfo["url"],NewInfo)
+                        # DataSend.sendata("localhost",50001,NewInfo)
+                        print(NewInfo)
                 index+=1
                 if stopFlag ==True:
                     break
@@ -283,7 +286,7 @@ class Crawl_NEWS():
 #获取新闻的标题和链接
 if __name__=="__main__":
     #print "hello world"
-    xinhuaCrawl = Crawl_NEWS(timeFrame=300,saveFile=True)
+    xinhuaCrawl = Crawl_NEWS(timeFrame=1000)
     xinhuaCrawl.start_crawl()
     
     

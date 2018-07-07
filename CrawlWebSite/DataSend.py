@@ -26,7 +26,7 @@ def sendata(HOST,PORT,message):
      for key in message.keys():
         if message[key]==None:
             continue
-        message[key]=base64.b64encode(message[key])
+        message[key]=message[key]
      #print message
      jmsg1 = json.dumps([message])
      #print type(jmsg1)

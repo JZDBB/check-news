@@ -53,8 +53,8 @@ class Crawl_NEWS():
         soup = BeautifulSoup(html,"html.parser")
         soup_string = str(soup.select('.result')[0])
         count_string = soup_string[soup_string.find("<b>")+3:soup_string.find("</b>")]
-        resultCount = long(count_string.replace(',','').strip()) #返回结果总条数
-        pacgeCount=1+resultCount/15 #返回页数
+        resultCount = int(count_string.replace(',','').strip()) #返回结果总条数
+        pacgeCount=int(1+resultCount/15) #返回页数
         return pacgeCount,resultCount
     def index_info(self,url,headers):
         '''
@@ -154,7 +154,7 @@ class Crawl_NEWS():
                 new_text += text[i]
             else:
                 new_text += "_"
-        return new_text;
+        return new_text
     def start_crawl(self):
         '''
         这个函数开始爬取数据
@@ -202,10 +202,9 @@ class Crawl_NEWS():
                     result = lr_text.text_classify([NewInfo["content"]])
                     #print result
                     NewInfo["result"]=result
-                    if self.extract:
-                        EventInfo=EventInfo_extract.EventInfo_extraction(body["content"])
-                    else:
-                        EventInfo=None
+
+                    EventInfo=EventInfo_extract.EventInfo_extraction(body["content"])
+
                     if EventInfo!=None:
                         NewInfo["Event_time"]=EventInfo["Event_time"]
                         NewInfo["Event_address"]=EventInfo['Event_address']
@@ -222,9 +221,10 @@ class Crawl_NEWS():
                         NewInfo["Event_gname"]=''
                         NewInfo["Event_nwound"]=''
                         NewInfo["Event_nkill"]=''
-                    saveData.saveData(NewInfo["url"],NewInfo)
-                    DataSend.sendata("localhost",50001,NewInfo)
+                    # saveData.saveData(NewInfo["url"],NewInfo)
+                    # DataSend.sendata("localhost",50001,NewInfo)
                     #CrawlData.append(NewInfo)
+                    print(NewInfo)
                     index+=1
                     
                 #恢复为原来的段落
@@ -239,7 +239,11 @@ class Crawl_NEWS():
             req = urllib.request.Request(url)
             req.add_header("User-Agent", randddom_header)
             req.add_header("GET", url)#以get方式访问网页
-            html = urllib.request.urlopen(req).read().decode(encoding="utf8", errors='ignore')#utf-8编码返回网页
+            try:
+                html = urllib.request.urlopen(req).read().decode(encoding="utf8", errors='ignore')#utf-8编码返回网页
+            except:
+                print(url)
+                break
             return html
 
 #获取新闻的标题和链接

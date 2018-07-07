@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55e4db8a-d6b0-4ca7-a1f9-f94c6a253b49" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/check news.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CrawlWebSite/DataSend.py" beforeDir="false" afterPath="$PROJECT_DIR$/CrawlWebSite/DataSend.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CrawlWebSite/Haiwainet.py" beforeDir="false" afterPath="$PROJECT_DIR$/CrawlWebSite/Haiwainet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CrawlWebSite/ZaoBao.py" beforeDir="false" afterPath="$PROJECT_DIR$/CrawlWebSite/ZaoBao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CrawlWebSite/guangchazhe.py" beforeDir="false" afterPath="$PROJECT_DIR$/CrawlWebSite/guangchazhe.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CrawlWebSite/myapp.log" beforeDir="false" afterPath="$PROJECT_DIR$/CrawlWebSite/myapp.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CrawlWebSite/saveData.py" beforeDir="false" afterPath="$PROJECT_DIR$/CrawlWebSite/saveData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CrawlWebSite/sputniknews.py" beforeDir="false" afterPath="$PROJECT_DIR$/CrawlWebSite/sputniknews.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,7 +21,7 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
+            <state relative-caret-position="25">
               <caret line="37" column="48" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
@@ -34,60 +30,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ZaoBao.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/CrawlWebSite/ZaoBao.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="239" column="28" selection-start-line="239" selection-start-column="28" selection-end-line="239" selection-end-column="28" />
-              <folding>
-                <element signature="e#115#144#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sputniknews.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CrawlWebSite/sputniknews.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="197" column="38" selection-start-line="197" selection-start-column="33" selection-end-line="197" selection-end-column="38" />
-              <folding>
-                <element signature="e#79#108#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="guangchazhe.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CrawlWebSite/guangchazhe.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-225">
-              <folding>
-                <element signature="e#58#87#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Haiwainet.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Haiwainet.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CrawlWebSite/Haiwainet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2450">
-              <caret line="55" column="67" selection-start-line="55" selection-start-column="67" selection-end-line="55" selection-end-column="67" />
+            <state relative-caret-position="359">
+              <caret line="226" column="33" selection-start-line="226" selection-start-column="33" selection-end-line="226" selection-end-column="33" />
               <folding>
                 <element signature="e#440#476#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CrawlManager.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CrawlWebSite/CrawlManager.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-100">
-              <caret line="5" column="12" lean-forward="true" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-              <folding>
-                <element signature="e#135#151#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -105,6 +54,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>conten</find>
+      <find>getUrl_multiTry</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -114,12 +64,14 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/CrawlWebSite/CrawlManager.py" />
-        <option value="$PROJECT_DIR$/CrawlWebSite/sputniknews.py" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/CrawlWebSite/Haiwainet.py" />
         <option value="$PROJECT_DIR$/CrawlWebSite/saveData.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/CrawlWebSite/DataSend.py" />
         <option value="$PROJECT_DIR$/CrawlWebSite/ZaoBao.py" />
+        <option value="$PROJECT_DIR$/CrawlWebSite/guangchazhe.py" />
+        <option value="$PROJECT_DIR$/CrawlWebSite/sputniknews.py" />
+        <option value="$PROJECT_DIR$/CrawlWebSite/Haiwainet.py" />
       </list>
     </option>
   </component>
@@ -135,6 +87,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -151,12 +104,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../CrawlNew" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -176,7 +128,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.ZaoBao">
+  <component name="RunManager" selected="Python.Haiwainet">
     <configuration name="CrawlManager" type="PythonConfigurationType" factoryName="Python">
       <module name="check news" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -195,6 +147,24 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="Haiwainet" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="check news" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/CrawlWebSite" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CrawlWebSite/Haiwainet.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="ZaoBao" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="check news" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -208,6 +178,24 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CrawlWebSite/ZaoBao.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="guangchazhe" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="check news" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/CrawlWebSite" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CrawlWebSite/guangchazhe.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -272,11 +260,15 @@
       <item itemvalue="Python.CrawlManager" />
       <item itemvalue="Python.ZaoBao" />
       <item itemvalue="Python.sputniknews" />
+      <item itemvalue="Python.guangchazhe" />
+      <item itemvalue="Python.Haiwainet" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.ZaoBao" />
+        <item itemvalue="Python.Haiwainet" />
         <item itemvalue="Python.sputniknews" />
+        <item itemvalue="Python.guangchazhe" />
+        <item itemvalue="Python.ZaoBao" />
       </list>
     </recent_temporary>
   </component>
@@ -295,18 +287,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24277908" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5003903" side_tool="true" weight="0.43100512" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39693356" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31516185" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49960968" weight="0.4003407" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49960968" weight="0.42589438" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -332,11 +323,80 @@
           <line>230</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url />
+          <line>269</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url />
+          <line>205</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="16" />
+      <option name="time" value="29" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="37" column="48" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CrawlWebSite/sputniknews.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4625">
+          <caret line="197" column="38" selection-start-line="197" selection-start-column="33" selection-end-line="197" selection-end-column="38" />
+          <folding>
+            <element signature="e#79#108#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CrawlWebSite/guangchazhe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#58#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CrawlWebSite/Haiwainet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1150">
+          <caret line="55" column="67" selection-start-line="55" selection-start-column="67" selection-end-line="55" selection-end-column="67" />
+          <folding>
+            <element signature="e#440#476#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CrawlWebSite/CrawlManager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="12" lean-forward="true" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+          <folding>
+            <element signature="e#135#151#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CrawlWebSite/ZaoBao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5975">
+          <caret line="239" column="28" selection-start-line="239" selection-start-column="28" selection-end-line="239" selection-end-column="28" />
+          <folding>
+            <element signature="e#115#144#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -406,26 +466,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CrawlWebSite/DataSend.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-100">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#48#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CrawlWebSite/CrawlManager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-100">
-          <caret line="5" column="12" lean-forward="true" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding>
-            <element signature="e#135#151#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/base64.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -440,9 +480,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CrawlWebSite/DataSend.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+          <folding>
+            <element signature="e#48#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CrawlWebSite/ZaoBao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="197" column="13" selection-start-line="197" selection-start-column="13" selection-end-line="197" selection-end-column="13" />
+          <folding>
+            <element signature="e#115#144#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CrawlWebSite/guangchazhe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="280" column="45" selection-start-line="280" selection-start-column="42" selection-end-line="280" selection-end-column="45" />
+          <folding>
+            <element signature="e#58#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CrawlWebSite/CrawlManager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+          <folding>
+            <element signature="e#135#151#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CrawlWebSite/sputniknews.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="43" column="162" lean-forward="true" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="162" />
+          <folding>
+            <element signature="e#79#108#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
+        <state relative-caret-position="25">
           <caret line="37" column="48" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
@@ -452,39 +542,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CrawlWebSite/Haiwainet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2450">
-          <caret line="55" column="67" selection-start-line="55" selection-start-column="67" selection-end-line="55" selection-end-column="67" />
+        <state relative-caret-position="359">
+          <caret line="226" column="33" selection-start-line="226" selection-start-column="33" selection-end-line="226" selection-end-column="33" />
           <folding>
             <element signature="e#440#476#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CrawlWebSite/guangchazhe.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-225">
-          <folding>
-            <element signature="e#58#87#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CrawlWebSite/sputniknews.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="197" column="38" selection-start-line="197" selection-start-column="33" selection-end-line="197" selection-end-column="38" />
-          <folding>
-            <element signature="e#79#108#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CrawlWebSite/ZaoBao.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="239" column="28" selection-start-line="239" selection-start-column="28" selection-end-line="239" selection-end-column="28" />
-          <folding>
-            <element signature="e#115#144#0" expanded="true" />
           </folding>
         </state>
       </provider>
