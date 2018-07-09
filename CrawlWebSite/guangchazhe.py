@@ -283,11 +283,11 @@ class Crawl_NEWS():
             return html
 
 
-#获取新闻的标题和链接
-if __name__=="__main__":
-    #print "hello world"
-    xinhuaCrawl = Crawl_NEWS(timeFrame=1000)
-    xinhuaCrawl.start_crawl()
+# #获取新闻的标题和链接
+# if __name__=="__main__":
+#     #print "hello world"
+#     xinhuaCrawl = Crawl_NEWS(timeFrame=1000)
+#     xinhuaCrawl.start_crawl()
     
     
     

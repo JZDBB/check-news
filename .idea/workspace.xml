@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55e4db8a-d6b0-4ca7-a1f9-f94c6a253b49" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CrawlWebSite/Haiwainet.py" beforeDir="false" afterPath="$PROJECT_DIR$/CrawlWebSite/Haiwainet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CrawlWebSite/ZaoBao.py" beforeDir="false" afterPath="$PROJECT_DIR$/CrawlWebSite/ZaoBao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CrawlWebSite/guangchazhe.py" beforeDir="false" afterPath="$PROJECT_DIR$/CrawlWebSite/guangchazhe.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CrawlWebSite/sputniknews.py" beforeDir="false" afterPath="$PROJECT_DIR$/CrawlWebSite/sputniknews.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,34 +18,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="changeTab.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/changeTab.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="33" column="70" lean-forward="true" selection-start-line="33" selection-start-column="70" selection-end-line="33" selection-end-column="70" />
+            <state relative-caret-position="56">
+              <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sputniknews.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CrawlWebSite/sputniknews.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="213" column="73" selection-start-line="213" selection-start-column="60" selection-end-line="213" selection-end-column="73" />
-              <folding>
-                <element signature="e#79#108#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -71,12 +55,12 @@
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/CrawlWebSite/saveData.py" />
         <option value="$PROJECT_DIR$/CrawlWebSite/DataSend.py" />
-        <option value="$PROJECT_DIR$/CrawlWebSite/ZaoBao.py" />
-        <option value="$PROJECT_DIR$/CrawlWebSite/guangchazhe.py" />
-        <option value="$PROJECT_DIR$/CrawlWebSite/sputniknews.py" />
-        <option value="$PROJECT_DIR$/CrawlWebSite/Haiwainet.py" />
         <option value="$PROJECT_DIR$/changeTab.py" />
         <option value="$PROJECT_DIR$/qy.py" />
+        <option value="$PROJECT_DIR$/CrawlWebSite/sputniknews.py" />
+        <option value="$PROJECT_DIR$/CrawlWebSite/guangchazhe.py" />
+        <option value="$PROJECT_DIR$/CrawlWebSite/ZaoBao.py" />
+        <option value="$PROJECT_DIR$/CrawlWebSite/Haiwainet.py" />
         <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
@@ -315,12 +299,12 @@
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18188915" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18188915" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5003903" side_tool="true" weight="0.43100512" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26064736" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26064736" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -359,16 +343,6 @@
           <url />
           <line>205</line>
           <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url />
-          <line>7</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url />
-          <line>10</line>
-          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="31" />
@@ -521,26 +495,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CrawlWebSite/ZaoBao.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="197" column="13" selection-start-line="197" selection-start-column="13" selection-end-line="197" selection-end-column="13" />
-          <folding>
-            <element signature="e#115#144#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CrawlWebSite/guangchazhe.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="280" column="45" selection-start-line="280" selection-start-column="42" selection-end-line="280" selection-end-column="45" />
-          <folding>
-            <element signature="e#58#87#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CrawlWebSite/CrawlManager.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -551,15 +505,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CrawlWebSite/Haiwainet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1766">
-          <caret line="39" column="79" selection-start-line="39" selection-start-column="75" selection-end-line="39" selection-end-column="79" />
-          <folding>
-            <element signature="e#440#476#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/changeTab.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -568,23 +515,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/CrawlWebSite/sputniknews.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="213" column="73" selection-start-line="213" selection-start-column="60" selection-end-line="213" selection-end-column="73" />
+        <state relative-caret-position="92">
+          <caret line="250" column="10" selection-start-line="250" selection-start-column="10" selection-end-line="250" selection-end-column="10" />
           <folding>
             <element signature="e#79#108#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CrawlWebSite/guangchazhe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="285" selection-start-line="285" selection-start-column="2" selection-end-line="289" selection-end-column="31" />
+          <folding>
+            <element signature="e#58#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CrawlWebSite/ZaoBao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="265" selection-start-line="265" selection-start-column="2" selection-end-line="268" selection-end-column="26" />
+          <folding>
+            <element signature="e#115#144#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CrawlWebSite/Haiwainet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="249" column="26" lean-forward="true" selection-start-line="249" selection-start-column="26" selection-end-line="249" selection-end-column="26" />
+          <folding>
+            <element signature="e#440#476#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="33" column="70" lean-forward="true" selection-start-line="33" selection-start-column="70" selection-end-line="33" selection-end-column="70" />
+        <state relative-caret-position="56">
+          <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

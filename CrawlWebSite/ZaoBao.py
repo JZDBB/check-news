@@ -263,9 +263,9 @@ class Crawl_NEWS():
             #         break
 
 # 获取新闻的标题和链接
-if __name__=="__main__":
-    zaobaoCrawl = Crawl_NEWS(timeFrame=1000)
-    zaobaoCrawl.start_crawl()
-    # db_connect.close()
+# if __name__=="__main__":
+#     zaobaoCrawl = Crawl_NEWS(timeFrame=1000)
+#     zaobaoCrawl.start_crawl()
+#     # db_connect.close()
     
     

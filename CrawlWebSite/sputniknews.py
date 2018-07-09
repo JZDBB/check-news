@@ -253,9 +253,9 @@ class Crawl_NEWS():
                     logging.error("Has tried %d times to access url %s, all failed!", maxTryNum, url)
                     break
 # 获取新闻的标题和链接
-if __name__=="__main__":
-    zaobaoCrawl = Crawl_NEWS(timeFrame=10, saveFile=True)
-    zaobaoCrawl.start_crawl()
-    # db_connect.close()
+# if __name__=="__main__":
+#     zaobaoCrawl = Crawl_NEWS(timeFrame=10, saveFile=True)
+#     zaobaoCrawl.start_crawl()
+#     # db_connect.close()
     
     

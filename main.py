@@ -3,6 +3,36 @@ import time
 
 # from CrawlWebSite import ZaoBao, guangchazhe, sputniknews, Haiwainet
 
+class CrawlTotal(wx.Dialog):
+    def __init__(self, num):
+        wx.Dialog.__init__(self, None, -1, 'finish', size=(300, 90))
+        static1 = wx.StaticText(self, -1, label='新闻爬取完成', pos=(15, 10))
+        str_total = '总计爬取新闻' + str(num) + '条'
+        static2 = wx.StaticText(self, -1, label=str_total, pos=(15, 30))
+        okButton = wx.Button(self, label='实体抽取', pos=(30, 50))
+        okButton.SetDefault()
+        quitButton = wx.Button(self, wx.ID_CANCEL, label='取消', pos=(150, 50))
+
+        okButton.Bind(wx.EVT_BUTTON, self.OnClickStract)
+
+    def OnClickStract(self, e):
+        pass
+
+
+class StractFinish(wx.Dialog):
+    def __init__(self):
+        wx.Dialog.__init__(self, None, -1, 'Stract', size=(300, 90))
+        static1 = wx.StaticText(self, -1, label='实体抽取完成', pos=(15, 10))
+        okButton = wx.Button(self, label='显示', pos=(30, 50))
+        okButton.SetDefault()
+        quitButton = wx.Button(self, wx.ID_CANCEL, label='取消', pos=(150, 50))
+
+        okButton.Bind(wx.EVT_BUTTON, self.OnClickShow)
+
+    def OnClickShow(self, e):
+        pass
+
+
 class CheckNews(wx.Frame):
     def __init__(self):
         wx.Frame.__init__(self, None, size=(650, 360))
@@ -19,7 +49,7 @@ class CheckNews(wx.Frame):
         str_time = self.today[0] + '年' + self.today[1] + '月' + self.today[2] + '日'
         self.Texttime = wx.StaticText(self.panel, label=str_time, style=wx.ST_NO_AUTORESIZE)
         self.Texttime.SetFont(self.font)
-        sizer.Add(self.Texttime, pos=(0, 0), flag=wx.TOP | wx.LEFT | wx.BOTTOM, border=5)
+        sizer.Add(self.Texttime, pos=(0, 0), flag=wx.TOP | wx.LEFT, border=10)
         self.Textbefore1 = wx.StaticText(self.panel, label='爬取前', style=wx.ST_NO_AUTORESIZE)
         self.Textbefore1.SetFont(self.font)
         sizer.Add(self.Textbefore1, pos=(0, 4), flag=wx.TOP | wx.LEFT, border=10)

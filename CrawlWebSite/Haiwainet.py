@@ -247,6 +247,6 @@ class Crawl_NEWS():
             return html
 
 #获取新闻的标题和链接
-if __name__=="__main__":
-    haiwainetCrawl = Crawl_NEWS(timeFrame=500,saveFile=True)
-    haiwainetCrawl.start_crawl()
+# if __name__=="__main__":
+#     haiwainetCrawl = Crawl_NEWS(timeFrame=500,saveFile=True)
+#     haiwainetCrawl.start_crawl()
