@@ -33,6 +33,30 @@ class StractFinish(wx.Dialog):
         pass
 
 
+class CheckSame(wx.Dialog):
+    def __init__(self, mesg1, mesg2):
+        wx.Dialog.__init__(self, None, -1, 'Check', size=(300, 90))
+        static1 = wx.StaticText(self, -1, label=str(mesg1), pos=(15, 10))
+        static2 = wx.StaticText(self, -1, label=str(mesg2), pos=(30, 10))
+        Button1 = wx.Button(self, label='全部保存', pos=(45, 50))
+        Button1.SetDefault()
+        Button2 = wx.Button(self, label='保存第一条', pos=(60, 50))
+        Button3 = wx.Button(self, label='保存第二条', pos=(75, 50))
+
+        Button1.Bind(wx.EVT_BUTTON, self.OnClickSaveall)
+        Button2.Bind(wx.EVT_BUTTON, self.OnClickSave1)
+        Button3.Bind(wx.EVT_BUTTON, self.OnClickSave2)
+
+    def OnClickSaveall(self, e):
+        pass
+
+    def OnClickSave1(self, e):
+        pass
+
+    def OnClickSave2(self, e):
+        pass
+
+
 class CheckNews(wx.Frame):
     def __init__(self):
         wx.Frame.__init__(self, None, size=(650, 360))
