@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="55e4db8a-d6b0-4ca7-a1f9-f94c6a253b49" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataSend.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataSend.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/changeTab.py" beforeDir="false" afterPath="$PROJECT_DIR$/changeTab.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,10 +26,22 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+            <state relative-caret-position="-175">
+              <caret line="38" column="106" selection-start-line="38" selection-start-column="106" selection-end-line="38" selection-end-column="106" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sputniknews.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CrawlWebSite/sputniknews.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="213" column="73" selection-start-line="213" selection-start-column="60" selection-end-line="213" selection-end-column="73" />
+              <folding>
+                <element signature="e#79#108#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -92,6 +102,11 @@
               <item name="check news" type="b2602c69:ProjectViewProjectNode" />
               <item name="check news" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="check news" type="b2602c69:ProjectViewProjectNode" />
+              <item name="check news" type="462c0819:PsiDirectoryNode" />
+              <item name="CrawlWebSite" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -120,7 +135,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.changeTab">
+  <component name="RunManager" selected="Python.main">
     <configuration name="CrawlManager" type="PythonConfigurationType" factoryName="Python">
       <module name="check news" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -301,12 +316,12 @@
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24277908" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18188915" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5003903" side_tool="true" weight="0.43100512" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.31516185" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26064736" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -537,16 +552,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CrawlWebSite/sputniknews.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="43" column="162" lean-forward="true" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="162" />
-          <folding>
-            <element signature="e#79#108#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CrawlWebSite/Haiwainet.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1766">
@@ -567,10 +572,20 @@
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/CrawlWebSite/sputniknews.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="213" column="73" selection-start-line="213" selection-start-column="60" selection-end-line="213" selection-end-column="73" />
+          <folding>
+            <element signature="e#79#108#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+        <state relative-caret-position="-175">
+          <caret line="38" column="106" selection-start-line="38" selection-start-column="106" selection-end-line="38" selection-end-column="106" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
