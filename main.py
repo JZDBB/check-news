@@ -5,7 +5,7 @@ import time
 
 class CheckNews(wx.Frame):
     def __init__(self):
-        wx.Frame.__init__(self, None, size=(700, 350))
+        wx.Frame.__init__(self, None, size=(650, 360))
         self.panel = wx.Panel(self, -1)
         self.today = [time.strftime("%Y"), time.strftime("%m"), time.strftime("%d")]
         self.before = 1
@@ -22,14 +22,14 @@ class CheckNews(wx.Frame):
         sizer.Add(self.Texttime, pos=(0, 0), flag=wx.TOP | wx.LEFT | wx.BOTTOM, border=5)
         self.Textbefore1 = wx.StaticText(self.panel, label='爬取前', style=wx.ST_NO_AUTORESIZE)
         self.Textbefore1.SetFont(self.font)
-        sizer.Add(self.Textbefore1, pos=(0, 4), flag=wx.TOP, border=5)
-        self.Daybefore = wx.TextCtrl(self.panel, value=str(self.before), size=(25, 20), style=wx.ST_NO_AUTORESIZE)
+        sizer.Add(self.Textbefore1, pos=(0, 4), flag=wx.TOP | wx.LEFT, border=10)
+        self.Daybefore = wx.TextCtrl(self.panel, value=str(self.before), size=(25, 25), style=wx.ST_NO_AUTORESIZE)
         self.Daybefore.SetFont(self.font)
-        sizer.Add(self.Daybefore, pos=(0, 5), flag=wx.TOP, border=5)
+        sizer.Add(self.Daybefore, pos=(0, 5), flag=wx.TOP|wx.LEFT, border=5)
         self.Textbefore2 = wx.StaticText(self.panel, label='天', style=wx.ST_NO_AUTORESIZE)
         self.Textbefore2.SetFont(self.font)
-        sizer.Add(self.Textbefore2, pos=(0, 6), flag=wx.TOP | wx.EXPAND, border=5)
-        self.CrawlBotton = wx.Button(self.panel, label='新闻爬取', size=(80, 20), style=wx.ST_NO_AUTORESIZE)
+        sizer.Add(self.Textbefore2, pos=(0, 6), flag=wx.TOP | wx.EXPAND, border=10)
+        self.CrawlBotton = wx.Button(self.panel, label='新闻爬取', size=(80, 25), style=wx.ST_NO_AUTORESIZE)
         self.CrawlBotton.SetFont(self.font)
         sizer.Add(self.CrawlBotton, pos=(0, 7), flag=wx.TOP, border=5)
 
@@ -84,7 +84,19 @@ class CheckNews(wx.Frame):
         self.nkill.SetFont(self.font)
         sizer.Add(self.nkill, pos=(8, 5), span=(1, 3), flag=wx.LEFT, border=0)
 
+        line2 = wx.StaticLine(self.panel)
+        sizer.Add(line2, pos=(9, 0), span=(1, 15), flag=wx.EXPAND | wx.TOP, border=10)
 
+        self.upbotton = wx.Button(self.panel, label='上一条', size=(80, 25), style=wx.ST_NO_AUTORESIZE)
+        self.upbotton.SetFont(self.font)
+        sizer.Add(self.upbotton, pos=(10, 3), span=(1, 2), flag=wx.TOP, border=0)
+        self.okbotton = wx.Button(self.panel, label='确定', size=(80, 25), style=wx.ST_NO_AUTORESIZE)
+        self.okbotton.SetFont(self.font)
+        self.okbotton.SetDefault()
+        sizer.Add(self.okbotton, pos=(10, 5), span=(1, 2), flag=wx.TOP, border=0)
+        self.savebotton = wx.Button(self.panel, label='保存', size=(80, 25), style=wx.ST_NO_AUTORESIZE)
+        self.savebotton.SetFont(self.font)
+        sizer.Add(self.savebotton, pos=(10, 7), span=(1, 2), flag=wx.TOP, border=0)
 
         self.panel.SetSizer(sizer)
 
