@@ -154,10 +154,23 @@ class CheckNews(wx.Frame):
 
         self.panel.SetSizer(sizer)
 
-
     def boundBotton(self):
+        self.CrawlBotton.Bind(wx.EVT_BUTTON, self.OnClickCraw)
+        self.upbotton.Bind(wx.EVT_BUTTON, self.OnClickUp)
+        self.okbotton.Bind(wx.EVT_BUTTON, self.OnClickOk)
+        self.savebotton.Bind(wx.EVT_BUTTON, self.OnClickSave)
+
+    def OnClickCraw(self, e):
         pass
 
+    def OnClickUp(self, e):
+        pass
+
+    def OnClickOk(self, e):
+        pass
+
+    def OnClickSave(self, e):
+        pass
 
 
 if __name__ == '__main__':
