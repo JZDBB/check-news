@@ -22,8 +22,9 @@ logging.basicConfig(level=logging.DEBUG,
 
 
 class Crawl_NEWS():
-    def __init__(self,timeFrame=0,saveFile=True):
+    def __init__(self, timeFrame=0,saveFile=True, crawtime=0):
         self.saveFile = saveFile
+        self.crawTime = crawtime
         self.deadlineTime = 0
         self.index=0
         self.titles=[]
@@ -229,18 +230,18 @@ class Crawl_NEWS():
                         NewInfo["Event_nwound"]='unknown'
                         NewInfo["Event_nkill"]='unknown'
 
-                    print(NewInfo)
-                    # if len(NewInfo)>0:
+                    # print(NewInfo)
+                    if len(NewInfo)>0:
+                        index += 1
+                        CrawlData.append(NewInfo)
                     #     #print "aaaaaaaaaaaaaaaaaa"
                         # saveData.saveData(NewInfo["url"],NewInfo)
                         # DataSend.sendata("localhost",50001,NewInfo)
 
                         #CrawlData.append(NewInfo)
-                    index += 1
                     if stopFlag ==True:
                         break
-        # print(CrawlData)
-        # return CrawlData
+        return CrawlData, index
 
     def getUrl_multiTry(self, url, headers):
         import random
@@ -252,7 +253,7 @@ class Crawl_NEWS():
             req = urllib.request.Request(url)
             req.add_header("User-Agent", randddom_header)
             req.add_header("GET", url)
-            html = urllib.request.urlopen(req).read().decode(encoding="utf8", errors='ignore')
+            html = urllib.request.urlopen(req).read()#.decode(encoding="utf8", errors='ignore')
             return html
 
             # except:
@@ -264,8 +265,8 @@ class Crawl_NEWS():
 
 # 获取新闻的标题和链接
 # if __name__=="__main__":
-#     zaobaoCrawl = Crawl_NEWS(timeFrame=1000)
-#     zaobaoCrawl.start_crawl()
-#     # db_connect.close()
-    
-    
+#     zaobaoCrawl = Crawl_NEWS(timeFrame=20)
+#     craw, index = zaobaoCrawl.start_crawl()
+#     print(craw, index)
+    # db_connect.close()
+

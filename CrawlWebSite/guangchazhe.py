@@ -251,10 +251,13 @@ class Crawl_NEWS():
                             #CrawlData.append(NewInfo)
                         # saveData.saveData(NewInfo["url"],NewInfo)
                         # DataSend.sendata("localhost",50001,NewInfo)
-                        print(NewInfo)
-                index+=1
-                if stopFlag ==True:
-                    break
+                        if len(NewInfo) > 0:
+                            CrawlData.append(NewInfo)
+                            index += 1
+                        if stopFlag == True:
+                            break
+
+        return CrawlData, index
         
     def get_content(self,html):
         # 内容分割的标签
@@ -286,8 +289,9 @@ class Crawl_NEWS():
 # #获取新闻的标题和链接
 # if __name__=="__main__":
 #     #print "hello world"
-#     xinhuaCrawl = Crawl_NEWS(timeFrame=1000)
-#     xinhuaCrawl.start_crawl()
+#     xinhuaCrawl = Crawl_NEWS(timeFrame=100)
+#     craw, index = xinhuaCrawl.start_crawl()
+#     print(craw, index)
     
     
     

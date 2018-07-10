@@ -66,7 +66,8 @@ class Crawl_NEWS():
         #爬虫获取url结果
 
         html=self.getUrl_multiTry(url,headers)
-        soup = BeautifulSoup(html, "html.parser")
+        # print(html)
+        soup = BeautifulSoup(html, 'html.parser', from_encoding='utf-8')
         list_mtitle = soup.find_all(class_="mtitle")#find the title and url by class name
         list_link_ri = soup.find_all(class_="link_ri")#find the report time bye class name
         list_title = [i.text for i in list_mtitle ]#title
@@ -224,12 +225,14 @@ class Crawl_NEWS():
                     # saveData.saveData(NewInfo["url"],NewInfo)
                     # DataSend.sendata("localhost",50001,NewInfo)
                     #CrawlData.append(NewInfo)
-                    print(NewInfo)
-                    index+=1
-                    
-                #恢复为原来的段落
-            if stopFlag ==True:
-                break
+                    if len(NewInfo) > 0:
+                        print(NewInfo)
+                        CrawlData.append(NewInfo)
+                        index += 1
+                    if stopFlag == True:
+                        break
+
+        return CrawlData, index
 
     def getUrl_multiTry(self,url,headers):
         time.sleep(1)
@@ -247,6 +250,7 @@ class Crawl_NEWS():
             return html
 
 #获取新闻的标题和链接
-# if __name__=="__main__":
-#     haiwainetCrawl = Crawl_NEWS(timeFrame=500,saveFile=True)
-#     haiwainetCrawl.start_crawl()
+if __name__=="__main__":
+    haiwainetCrawl = Crawl_NEWS(timeFrame=2)
+    craw, index = haiwainetCrawl.start_crawl()
+    print(craw, index)

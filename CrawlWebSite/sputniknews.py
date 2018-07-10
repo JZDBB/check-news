@@ -115,13 +115,12 @@ class Crawl_NEWS():
         result = {}
         # 使用循环处理有分页的新闻
         html = self.getUrl_multiTry(url, headers)
+        if html is None:
+            return None
         soup = BeautifulSoup(html, 'html.parser', from_encoding='utf-8')
         if soup is None:
             return None
         # 提取新闻正文
-            
-
-        
         texts = soup.find_all('p')
         content_text = ""
         for index in range(len(texts)):
@@ -227,12 +226,13 @@ class Crawl_NEWS():
                         NewInfo["Event_nkill"]=''
                          
                     if len(NewInfo)>0:
-                        # saveData.saveData(NewInfo["url"],NewInfo)
-                        # DataSend.sendata("localhost",50001,NewInfo)
                         print(NewInfo)
+                        CrawlData.append(NewInfo)
                         index += 1
-                        if stopFlag ==True:
-                            break
+                    if stopFlag ==True:
+                        break
+
+        return CrawlData, index
 
     def getUrl_multiTry(self, url, headers):
         time.sleep(1)
@@ -243,8 +243,11 @@ class Crawl_NEWS():
                 req = urllib.request.Request(url)
                 req.add_header("User-Agent", randddom_header)
                 req.add_header("GET", url)
-                html = urllib.request.urlopen(req).read().decode(encoding="utf8", errors='ignore')
-                #html = urllib2.urlopen(url)
+                try:
+                    html = urllib.request.urlopen(req).read().decode(encoding="utf8", errors='ignore')
+                except:
+                    print(url)
+                    break
                 return html
             except:
                 if tries < (maxTryNum - 1):
@@ -253,9 +256,10 @@ class Crawl_NEWS():
                     logging.error("Has tried %d times to access url %s, all failed!", maxTryNum, url)
                     break
 # 获取新闻的标题和链接
-# if __name__=="__main__":
-#     zaobaoCrawl = Crawl_NEWS(timeFrame=10, saveFile=True)
-#     zaobaoCrawl.start_crawl()
-#     # db_connect.close()
+if __name__=="__main__":
+    zaobaoCrawl = Crawl_NEWS(timeFrame=3)
+    data, index = zaobaoCrawl.start_crawl()
+    print(data, index)
+    # db_connect.close()
     
     

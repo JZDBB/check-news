@@ -1,7 +1,7 @@
 import wx
 import time
 
-# from CrawlWebSite import ZaoBao, guangchazhe, sputniknews, Haiwainet
+from CrawlWebSite import ZaoBao
 
 class CrawlTotal(wx.Dialog):
     def __init__(self, num):
@@ -83,7 +83,7 @@ class CheckNews(wx.Frame):
         self.Textbefore2 = wx.StaticText(self.panel, label='天', style=wx.ST_NO_AUTORESIZE)
         self.Textbefore2.SetFont(self.font)
         sizer.Add(self.Textbefore2, pos=(0, 6), flag=wx.TOP | wx.EXPAND, border=10)
-        self.CrawlBotton = wx.Button(self.panel, label='新闻爬取', size=(80, 25), style=wx.ST_NO_AUTORESIZE)
+        self.CrawlBotton = wx.Button(self.panel, label='新闻提取', size=(80, 25), style=wx.ST_NO_AUTORESIZE)
         self.CrawlBotton.SetFont(self.font)
         sizer.Add(self.CrawlBotton, pos=(0, 7), flag=wx.TOP, border=5)
 
@@ -161,7 +161,11 @@ class CheckNews(wx.Frame):
         self.savebotton.Bind(wx.EVT_BUTTON, self.OnClickSave)
 
     def OnClickCraw(self, e):
-        pass
+        self.before = self.Daybefore.GetValue()
+        self.zaobao = ZaoBao.Crawl_NEWS(timeFrame=self.before)
+        self.news, self.index = self.zaobao.start_crawl()
+        
+
 
     def OnClickUp(self, e):
         pass
