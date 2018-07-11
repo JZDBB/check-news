@@ -104,7 +104,7 @@ class Crawl_NEWS():
         soup=BeautifulSoup(html, 'html.parser', from_encoding='utf-8') 
         return soup
     
-    def page_url(self,url, page_num):#生成带页面的URL
+    def page_url(self, url, page_num):#生成带页面的URL
         '''
         获取页面的url
         '''
@@ -169,8 +169,6 @@ class Crawl_NEWS():
         fields = ["reporttime","reporter","title","sitename","keyword","content","imgUrl"]
         #根据是否需要记录文件来进行
         index = 0
-
-
         # 缩进调整！！！
 
         #遍历所有的新闻页
@@ -229,8 +227,8 @@ class Crawl_NEWS():
                         print(NewInfo)
                         CrawlData.append(NewInfo)
                         index += 1
-                    if stopFlag == True:
-                        break
+            if stopFlag == True:
+                break
 
         return CrawlData, index
 
@@ -251,6 +249,6 @@ class Crawl_NEWS():
 
 #获取新闻的标题和链接
 if __name__=="__main__":
-    haiwainetCrawl = Crawl_NEWS(timeFrame=2)
+    haiwainetCrawl = Crawl_NEWS(timeFrame=10)
     craw, index = haiwainetCrawl.start_crawl()
     print(craw, index)

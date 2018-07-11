@@ -7,31 +7,10 @@ class CrawlTotal(wx.Dialog):
     def __init__(self, num):
         wx.Dialog.__init__(self, None, -1, 'finish', size=(300, 90))
         static1 = wx.StaticText(self, -1, label='新闻爬取完成', pos=(15, 10))
-        str_total = '总计爬取新闻' + str(num) + '条'
+        str_total = '总计抽取新闻' + str(num) + '条'
         static2 = wx.StaticText(self, -1, label=str_total, pos=(15, 30))
-        okButton = wx.Button(self, label='实体抽取', pos=(30, 50))
+        okButton = wx.Button(self, wx.ID_CANCEL, label='确定', pos=(30, 50))
         okButton.SetDefault()
-        quitButton = wx.Button(self, wx.ID_CANCEL, label='取消', pos=(150, 50))
-
-        okButton.Bind(wx.EVT_BUTTON, self.OnClickStract)
-
-    def OnClickStract(self, e):
-        pass
-
-
-class StractFinish(wx.Dialog):
-    def __init__(self):
-        wx.Dialog.__init__(self, None, -1, 'Stract', size=(300, 90))
-        static1 = wx.StaticText(self, -1, label='实体抽取完成', pos=(15, 10))
-        okButton = wx.Button(self, label='显示', pos=(30, 50))
-        okButton.SetDefault()
-        quitButton = wx.Button(self, wx.ID_CANCEL, label='取消', pos=(150, 50))
-
-        okButton.Bind(wx.EVT_BUTTON, self.OnClickShow)
-
-    def OnClickShow(self, e):
-        pass
-
 
 class CheckSame(wx.Dialog):
     def __init__(self, mesg1, mesg2):
@@ -66,6 +45,7 @@ class CheckNews(wx.Frame):
         self.initUI()
         self.boundBotton()
 
+
     def initUI(self):
         self.font = wx.SystemSettings.GetFont(wx.SYS_SYSTEM_FONT)
         sizer = wx.GridBagSizer(9, 15)
@@ -77,7 +57,7 @@ class CheckNews(wx.Frame):
         self.Textbefore1 = wx.StaticText(self.panel, label='爬取前', style=wx.ST_NO_AUTORESIZE)
         self.Textbefore1.SetFont(self.font)
         sizer.Add(self.Textbefore1, pos=(0, 4), flag=wx.TOP | wx.LEFT, border=10)
-        self.Daybefore = wx.TextCtrl(self.panel, value=str(self.before), size=(25, 25), style=wx.ST_NO_AUTORESIZE)
+        self.Daybefore = wx.TextCtrl(self.panel, value=str(self.before), size=(25, 30), style=wx.ST_NO_AUTORESIZE)
         self.Daybefore.SetFont(self.font)
         sizer.Add(self.Daybefore, pos=(0, 5), flag=wx.TOP|wx.LEFT, border=5)
         self.Textbefore2 = wx.StaticText(self.panel, label='天', style=wx.ST_NO_AUTORESIZE)
@@ -162,9 +142,9 @@ class CheckNews(wx.Frame):
 
     def OnClickCraw(self, e):
         self.before = self.Daybefore.GetValue()
-        self.zaobao = ZaoBao.Crawl_NEWS(timeFrame=self.before)
+        self.zaobao = ZaoBao.Crawl_NEWS(timeFrame=int(self.before))
         self.news, self.index = self.zaobao.start_crawl()
-        
+        print(self.index)
 
 
     def OnClickUp(self, e):
