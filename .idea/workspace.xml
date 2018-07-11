@@ -19,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-194">
-              <caret line="79" column="33" selection-start-line="79" selection-start-column="33" selection-end-line="79" selection-end-column="33" />
+            <state relative-caret-position="75">
+              <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
                 <element signature="e#7812#7981#0" />
@@ -35,24 +35,10 @@
       <file leaf-file-name="sputniknews.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CrawlWebSite/sputniknews.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
+            <state relative-caret-position="1325">
               <caret line="53" selection-start-line="53" selection-end-line="53" />
               <folding>
                 <element signature="e#79#108#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Haiwainet.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/CrawlWebSite/Haiwainet.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="251" column="44" selection-start-line="251" selection-start-column="44" selection-end-line="251" selection-end-column="44" />
-              <folding>
-                <element signature="n#!!doc" />
-                <element signature="e#39#96#1" />
-                <element signature="e#98#162#0" />
               </folding>
             </state>
           </provider>
@@ -94,8 +80,8 @@
         <option value="$PROJECT_DIR$/CrawlWebSite/ZaoBao.py" />
         <option value="$PROJECT_DIR$/CrawlWebSite/guangchazhe.py" />
         <option value="$PROJECT_DIR$/CrawlWebSite/sputniknews.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/CrawlWebSite/Haiwainet.py" />
+        <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
@@ -570,33 +556,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-194">
-          <caret line="79" column="33" selection-start-line="79" selection-start-column="33" selection-end-line="79" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#7812#7981#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CrawlWebSite/ZaoBao.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
           <caret line="33" column="70" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="70" />
           <folding>
             <element signature="e#115#144#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CrawlWebSite/sputniknews.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
-          <folding>
-            <element signature="e#79#108#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -609,6 +574,27 @@
             <element signature="n#!!doc" />
             <element signature="e#39#96#1" />
             <element signature="e#98#162#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CrawlWebSite/sputniknews.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1325">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="e#79#108#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#7812#7981#0" />
           </folding>
         </state>
       </provider>
