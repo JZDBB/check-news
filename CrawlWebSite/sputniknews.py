@@ -13,7 +13,7 @@ from datetime import datetime, timedelta
 import time
 import logging
 import re
-from CrawlWebSite import auto_abstract, saveData, lr_text, EventInfo_extract
+from CrawlWebSite import auto_abstract, lr_text, EventInfo_extract
 import DataSend
 from CrawlWebSite.data.cnews_loader import *
 # 日志信息
@@ -42,6 +42,7 @@ class Crawl_NEWS():
                 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/537.75.14", 
                 "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Win64; x64; Trident/6.0)"  ] 
         self.starturl = "http://sputniknews.cn/services/search/getmore/?search_area=all&query%5B%5D=%E6%81%90%E6%80%96&limit=50&offset=0&sort=date&interval=period"
+
 
 
     def get_page_count(self, url, headers):
@@ -190,6 +191,9 @@ class Crawl_NEWS():
             if len(infodexs) > 0:
                 for infodex in infodexs:
                     NewInfo={}
+                    if self.deadlineTime!=0 and infodex["reporttime"][0:10].strip()<self.deadlineTime: #终止爬取
+                        stopFlag=True
+                        break
                     body = self.get_news_body(infodex["url"], self.my_headers)
                     if body!=None:
                         NewInfo["reporter"]=u"俄罗斯卫星通讯社"
@@ -229,8 +233,8 @@ class Crawl_NEWS():
                         print(NewInfo)
                         CrawlData.append(NewInfo)
                         index += 1
-                    if stopFlag ==True:
-                        break
+                if stopFlag ==True:
+                    break
 
         return CrawlData, index
 
