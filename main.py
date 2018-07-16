@@ -9,11 +9,11 @@ from CrawlWebSite import ZaoBao, guangchazhe
 
 class CrawlTotalDialog(wx.Dialog):
     def __init__(self, num):
-        wx.Dialog.__init__(self, None, -1, 'finish', size=(300, 90))
-        static1 = wx.StaticText(self, -1, label='新闻爬取完成', pos=(15, 10))
+        wx.Dialog.__init__(self, None, -1, 'finish', size=(180, 150))
+        static1 = wx.StaticText(self, -1, label='新闻爬取完成', pos=(35, 15))
         str_total = '总计抽取新闻' + str(num) + '条'
-        static2 = wx.StaticText(self, -1, label=str_total, pos=(15, 30))
-        okButton = wx.Button(self, wx.ID_CANCEL, label='确定', pos=(30, 50))
+        static2 = wx.StaticText(self, -1, label=str_total, pos=(35, 40))
+        okButton = wx.Button(self, wx.ID_CANCEL, label='确定', pos=(40, 70))
         okButton.SetDefault()
 
 class CheckSameDialog(wx.Dialog):
