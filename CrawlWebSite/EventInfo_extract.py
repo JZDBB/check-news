@@ -43,7 +43,7 @@ def EventInfo_extraction(inputtxt):
             EventExtractMd.release_module()
     except:
         EventInfo=None
-        EventExtractMd.release_module()
+        # EventExtractMd.release_module()
     return EventInfo
         
 

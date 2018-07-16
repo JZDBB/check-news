@@ -15,7 +15,11 @@ clf = joblib.load("model.m")
 def text_classify(text):
     ## TextClassify
     TextClassifier = TextClassify.TextClassify()
-    pred = TextClassifier.text_classify(text, BOW, clf)
+    try:
+        pred = TextClassifier.text_classify(text, BOW, clf)
+    except:
+        result = '未知'
+        return result
     if pred[0] == 'terrorism':
         result = '暴恐'
     elif pred[0] == 'Not_terrorism':

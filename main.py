@@ -5,9 +5,9 @@
 import wx
 import time
 
-from CrawlWebSite import ZaoBao
+from CrawlWebSite import ZaoBao, guangchazhe
 
-class CrawlTotal(wx.Dialog):
+class CrawlTotalDialog(wx.Dialog):
     def __init__(self, num):
         wx.Dialog.__init__(self, None, -1, 'finish', size=(300, 90))
         static1 = wx.StaticText(self, -1, label='新闻爬取完成', pos=(15, 10))
@@ -16,7 +16,7 @@ class CrawlTotal(wx.Dialog):
         okButton = wx.Button(self, wx.ID_CANCEL, label='确定', pos=(30, 50))
         okButton.SetDefault()
 
-class CheckSame(wx.Dialog):
+class CheckSameDialog(wx.Dialog):
     def __init__(self, mesg1, mesg2):
         wx.Dialog.__init__(self, None, -1, 'Check', size=(300, 90))
         static1 = wx.StaticText(self, -1, label=str(mesg1), pos=(15, 10))
@@ -48,7 +48,6 @@ class CheckNews(wx.Frame):
         self.before = 1
         self.initUI()
         self.boundBotton()
-
 
     def initUI(self):
         self.font = wx.SystemSettings.GetFont(wx.SYS_SYSTEM_FONT)
@@ -147,9 +146,16 @@ class CheckNews(wx.Frame):
     def OnClickCraw(self, e):
         self.before = self.Daybefore.GetValue()
         self.zaobao = ZaoBao.Crawl_NEWS(timeFrame=int(self.before))
-        self.news, self.index = self.zaobao.start_crawl()
-        print(self.index)
+        self.guancha = guangchazhe.Crawl_NEWS(timeFrame=int(self.before))
+        news1, index1 = self.zaobao.start_crawl()
+        news2, index2 = self.guancha.start_crawl()
 
+        self.news = news1 + news2
+        self.index = index1 + index2
+        print(self.index)
+        modal = CrawlTotalDialog(self.index)
+        modal.ShowModal()
+        modal.Destroy()
 
     def OnClickUp(self, e):
         pass
