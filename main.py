@@ -156,6 +156,8 @@ class CheckNews(wx.Frame):
         modal = CrawlTotalDialog(self.index)
         modal.ShowModal()
         modal.Destroy()
+        self.fillValue(0)
+
 
     def OnClickUp(self, e):
         pass
@@ -166,6 +168,28 @@ class CheckNews(wx.Frame):
     def OnClickSave(self, e):
         pass
 
+
+    def fillValue(self, id):
+        curr_news = self.news[id]
+        self.TextNews.SetValue(curr_news['content'])
+        self.Time.SetValue(curr_news['Event_time'])
+        self.Address.SetValue(curr_news['Event_address'])
+        self.gname.SetValue(curr_news['Event_gname'])
+        self.type.SetValue(curr_news['Event_type'])
+        self.total.SetValue(curr_news['Event_total'])
+        self.nkill.SetValue(curr_news['Event_nkill'])
+        self.nwound.SetValue(curr_news['Event_nwound'])
+
+    def saveValue(self, id):
+        curr_news = self.news[id]
+        curr_news['content'] = self.TextNews.GetValue()
+        curr_news['Event_time'] = self.Time.GetValue()
+        curr_news['Event_address'] = self.Address.GetValue()
+        curr_news['Event_gname'] = self.gname.GetValue()
+        curr_news['Event_type'] = self.type.GetValue()
+        curr_news['Event_total'] = self.total.GetValue()
+        curr_news['Event_nkill'] = self.nkill.GetValue()
+        curr_news['Event_nwound'] = self.nwound.GetValue()
 
 if __name__ == '__main__':
     app = wx.App()

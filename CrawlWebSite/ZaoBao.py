@@ -214,7 +214,7 @@ class Crawl_NEWS():
                         NewInfo["Event_time"]=EventInfo["Event_time"]
                         print(EventInfo["Event_time"].decode("utf-8"))
                         NewInfo["Event_address"]=EventInfo['Event_address']
-                        NewInfo["Event_type"]=EventInfo['Event_type']
+                        # NewInfo["Event_type"]=EventInfo['Event_type']
                         NewInfo["Event_total"]=EventInfo['Event_total']
                         NewInfo["Event_gname"]=EventInfo["Event_gname"]
                         NewInfo["Event_nwound"]=EventInfo['Event_nwound']
