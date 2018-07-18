@@ -19,6 +19,7 @@ class CrawlTotalDialog(wx.Dialog):
 class CheckSameDialog(wx.Dialog):
     def __init__(self, mesg1, mesg2):
         wx.Dialog.__init__(self, None, -1, 'Check', size=(300, 90))
+        self.list_result = []
         static1 = wx.StaticText(self, -1, label=str(mesg1), pos=(15, 10))
         static2 = wx.StaticText(self, -1, label=str(mesg2), pos=(30, 10))
         Button1 = wx.Button(self, label='全部保存', pos=(45, 50))
@@ -38,6 +39,9 @@ class CheckSameDialog(wx.Dialog):
 
     def OnClickSave2(self, e):
         pass
+
+    def returemesg(self):
+        return self.list_result
 
 
 class CheckNews(wx.Frame):
@@ -193,8 +197,8 @@ class CheckNews(wx.Frame):
         for new in self.news:
             if new['Event_type'] == '暴恐':
                 list_news.append(new)
-
-        stream_news = self.change_list(self.news)
+        compare_result = self.compareNews(list_news)
+        stream_news = self.change_list(compare_result)
         str_path = self.today[0] + '-' + self.today[1] + '-' + self.today[2] + '-' + '.csv'
         DataManager.write_csv(str_path, stream_news)
 
@@ -220,8 +224,20 @@ class CheckNews(wx.Frame):
         curr_news['Event_nkill'] = self.nkill.GetValue()
         curr_news['Event_nwound'] = self.nwound.GetValue()
 
+    def compareNews(self, list):
+        result = []
+        for i in range(len(list) - 1):
+            for j in range(len(list)-1):
+                if list[i]['Event_time'] == list[j]['Event_time'] and i != j:
+                    modal = CheckSameDialog(list[i], list[j])
+                    result = result + modal.returemesg()
+                    modal.ShowModal()
+                    modal.Destroy()
+        return result
+
     def change_list(self, list):
         pass
+
 
 if __name__ == '__main__':
     app = wx.App()
