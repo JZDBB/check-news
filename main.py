@@ -5,7 +5,7 @@
 import wx
 import time
 
-from CrawlWebSite import ZaoBao, guangchazhe
+from CrawlWebSite import ZaoBao, guangchazhe, DataManager
 
 class CrawlTotalDialog(wx.Dialog):
     def __init__(self, num):
@@ -46,6 +46,20 @@ class CheckNews(wx.Frame):
         self.panel = wx.Panel(self, -1)
         self.today = [time.strftime("%Y"), time.strftime("%m"), time.strftime("%d")]
         self.before = 1
+        self.strTitle = ['eventid', 'eventname', 'iyear', 'imonth', 'iday', 'time', 'approxdate',
+                         'country_txt', 'provstate', 'city', 'latitude', 'longitude', 'location',
+                         'summary', 'alternative_txt', 'multiple', 'suicide', 'attacktype1',
+                         'attacktype1_txt', 'attacktype2', 'attacktype2_txt', 'attacktype3',
+                         'attacktype3_txt', 'targtype1_txt', 'targsubtype1_txt', 'corp1', 'target1',
+                         'natlty1_txt', 'targtype2_txt', 'targsubtype2_txt', 'corp2', 'target2',
+                         'natlty2_txt', 'targtype3_txt', 'targsubtype3_txt', 'corp3', 'target3',
+                         'natlty3_txt', 'gname', 'motive', 'nperps', 'nperpcap', 'weaptype1_txt',
+                         'weapsubtype1_txt', 'weaptype2_txt', 'weapsubtype2_txt', 'weaptype3_txt',
+                         'weapsubtype3_txt', 'weaptype4_txt', 'weapsubtype4_txt', 'weapdetail', 'nkill',
+                         'nkillter', 'nwound', 'nwoundte', 'property', 'propvalue', 'propcomment',
+                         'ishostkid', 'nhostkid', 'nhours', 'divert', 'ransom', 'ransomamt', 'ransompaid',
+                         'ransomnote', 'hostkidoutcome_txt', 'nreleased', 'addnotes', 'scite1', 'scite2',
+                         'scite3', 'related']
         self.initUI()
         self.boundBotton()
 
@@ -156,18 +170,33 @@ class CheckNews(wx.Frame):
         modal = CrawlTotalDialog(self.index)
         modal.ShowModal()
         modal.Destroy()
-        self.fillValue(0)
+        self.id = 0
+        self.fillValue(self.id)
 
 
     def OnClickUp(self, e):
-        pass
+        self.saveValue(self.id)
+        self.id -= 1
+        if self.id < 0:
+            self.id = self.index - 1
+        self.fillValue(self.id)
 
     def OnClickOk(self, e):
-        pass
+        self.saveValue(self.id)
+        self.id += 1
+        if self.id >= self.index:
+            self.id = 0
+        self.fillValue(self.id)
 
     def OnClickSave(self, e):
-        pass
+        list_news = []
+        for new in self.news:
+            if new['Event_type'] == '暴恐':
+                list_news.append(new)
 
+        stream_news = self.change_list(self.news)
+        str_path = self.today[0] + '-' + self.today[1] + '-' + self.today[2] + '-' + '.csv'
+        DataManager.write_csv(str_path, stream_news)
 
     def fillValue(self, id):
         curr_news = self.news[id]
@@ -190,6 +219,9 @@ class CheckNews(wx.Frame):
         curr_news['Event_total'] = self.total.GetValue()
         curr_news['Event_nkill'] = self.nkill.GetValue()
         curr_news['Event_nwound'] = self.nwound.GetValue()
+
+    def change_list(self, list):
+        pass
 
 if __name__ == '__main__':
     app = wx.App()
