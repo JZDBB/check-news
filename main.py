@@ -1,6 +1,7 @@
 """
 1、需要注意有些提取的时候因为错误原文没有提取出来，因此要判断content是否为空
-2、
+2、对比序列的时候，出现重复对比的解决，compareNews需要再考虑
+3、抽取的实体都是unknown，需要确定一下
 """
 import wx
 import time
@@ -20,24 +21,22 @@ class CheckSameDialog(wx.Dialog):
     def __init__(self, mesg1, mesg2):
         wx.Dialog.__init__(self, None, -1, 'Check', size=(300, 90))
         self.list_result = []
-        static1 = wx.StaticText(self, -1, label=str(mesg1), pos=(15, 10))
-        static2 = wx.StaticText(self, -1, label=str(mesg2), pos=(30, 10))
+        self.mesg1 = mesg1
+        self.mesg2 = mesg2
+        static1 = wx.StaticText(self, -1, label=str(mesg1['content']), pos=(15, 10))
+        static2 = wx.StaticText(self, -1, label=str(mesg2['content']), pos=(30, 10))
         Button1 = wx.Button(self, label='全部保存', pos=(45, 50))
         Button1.SetDefault()
-        Button2 = wx.Button(self, label='保存第一条', pos=(60, 50))
-        Button3 = wx.Button(self, label='保存第二条', pos=(75, 50))
+        Button2 = wx.Button(self, label='修改', pos=(60, 50))
 
         Button1.Bind(wx.EVT_BUTTON, self.OnClickSaveall)
-        Button2.Bind(wx.EVT_BUTTON, self.OnClickSave1)
-        Button3.Bind(wx.EVT_BUTTON, self.OnClickSave2)
+        Button2.Bind(wx.EVT_BUTTON, self.OnClickCheck)
 
     def OnClickSaveall(self, e):
-        pass
+        self.list_result.append(self.mesg1)
+        self.list_result.append(self.mesg2)
 
-    def OnClickSave1(self, e):
-        pass
-
-    def OnClickSave2(self, e):
+    def OnClickCheck(self, e):
         pass
 
     def returemesg(self):
@@ -230,9 +229,13 @@ class CheckNews(wx.Frame):
             for j in range(len(list)-1):
                 if list[i]['Event_time'] == list[j]['Event_time'] and i != j:
                     modal = CheckSameDialog(list[i], list[j])
-                    result = result + modal.returemesg()
                     modal.ShowModal()
+                    temp_result = modal.returemesg()
+                    if len(temp_result) > 1:
+                        pass
                     modal.Destroy()
+                    del list[j]
+            del list[i]
         return result
 
     def change_list(self, list):

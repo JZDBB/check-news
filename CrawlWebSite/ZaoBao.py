@@ -253,7 +253,7 @@ class Crawl_NEWS():
             req = urllib.request.Request(url)
             req.add_header("User-Agent", randddom_header)
             req.add_header("GET", url)
-            html = urllib.request.urlopen(req).read()#.decode(encoding="utf8", errors='ignore')
+            html = urllib.request.urlopen(req).read().decode(encoding="utf8", errors='ignore')
             return html
 
             # except:
