@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="55e4db8a-d6b0-4ca7-a1f9-f94c6a253b49" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,13 +16,15 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="410" column="39" lean-forward="true" selection-start-line="410" selection-start-column="39" selection-end-line="410" selection-end-column="39" />
+            <state relative-caret-position="50">
+              <caret line="2" column="23" lean-forward="true" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
               <folding>
                 <element signature="e#54#63#0" expanded="true" />
                 <element signature="e#233#786#0" />
                 <element signature="e#797#832#0" />
                 <element signature="e#979#11300#0" />
+                <element signature="e#11175#22316#0" />
+                <element signature="e#1658#2978#0" />
                 <element signature="e#1701#7169#0" />
                 <element signature="e#7206#7438#0" />
                 <element signature="e#7478#7979#0" />
@@ -31,7 +32,9 @@
                 <element signature="e#8060#8064#0" />
                 <element signature="e#8406#8621#0" />
                 <element signature="e#8148#8606#0" />
+                <element signature="e#8934#9478#0" />
                 <element signature="e#20946#21917#0" />
+                <element signature="e#22145#22316#0" />
               </folding>
             </state>
           </provider>
@@ -183,7 +186,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.main">
     <configuration name="CrawlManager" type="PythonConfigurationType" factoryName="Python">
       <module name="check news" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -361,7 +364,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1459797" />
@@ -410,27 +413,27 @@
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/CrawlWebSite/Haiwainet.py</url>
+          <url />
           <line>183</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/CrawlWebSite/sputniknews.py</url>
+          <url />
           <line>184</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/CrawlWebSite/sputniknews.py</url>
+          <url />
           <line>235</line>
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/CrawlWebSite/sputniknews.py</url>
+          <url />
           <line>205</line>
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/CrawlWebSite/sputniknews.py</url>
+          <url />
           <line>243</line>
           <option name="timeStamp" value="51" />
         </line-breakpoint>
@@ -460,6 +463,8 @@
             <element signature="e#233#786#0" />
             <element signature="e#797#832#0" />
             <element signature="e#979#11300#0" />
+            <element signature="e#11175#22316#0" />
+            <element signature="e#1658#2978#0" />
             <element signature="e#1701#7169#0" />
             <element signature="e#7206#7438#0" />
             <element signature="e#7478#7979#0" />
@@ -467,7 +472,9 @@
             <element signature="e#8060#8064#0" />
             <element signature="e#8406#8621#0" />
             <element signature="e#8148#8606#0" />
+            <element signature="e#8934#9478#0" />
             <element signature="e#20946#21917#0" />
+            <element signature="e#22145#22316#0" />
           </folding>
         </state>
       </provider>
@@ -529,6 +536,8 @@
             <element signature="e#233#786#0" />
             <element signature="e#797#832#0" />
             <element signature="e#979#11300#0" />
+            <element signature="e#11175#22316#0" />
+            <element signature="e#1658#2978#0" />
             <element signature="e#1701#7169#0" />
             <element signature="e#7206#7438#0" />
             <element signature="e#7478#7979#0" />
@@ -536,7 +545,9 @@
             <element signature="e#8060#8064#0" />
             <element signature="e#8406#8621#0" />
             <element signature="e#8148#8606#0" />
+            <element signature="e#8934#9478#0" />
             <element signature="e#20946#21917#0" />
+            <element signature="e#22145#22316#0" />
           </folding>
         </state>
       </provider>
@@ -570,6 +581,8 @@
             <element signature="e#233#786#0" />
             <element signature="e#797#832#0" />
             <element signature="e#979#11300#0" />
+            <element signature="e#11175#22316#0" />
+            <element signature="e#1658#2978#0" />
             <element signature="e#1701#7169#0" />
             <element signature="e#7206#7438#0" />
             <element signature="e#7478#7979#0" />
@@ -577,7 +590,9 @@
             <element signature="e#8060#8064#0" />
             <element signature="e#8406#8621#0" />
             <element signature="e#8148#8606#0" />
+            <element signature="e#8934#9478#0" />
             <element signature="e#20946#21917#0" />
+            <element signature="e#22145#22316#0" />
           </folding>
         </state>
       </provider>
@@ -828,13 +843,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="410" column="39" lean-forward="true" selection-start-line="410" selection-start-column="39" selection-end-line="410" selection-end-column="39" />
+        <state relative-caret-position="50">
+          <caret line="2" column="23" lean-forward="true" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
           <folding>
             <element signature="e#54#63#0" expanded="true" />
             <element signature="e#233#786#0" />
             <element signature="e#797#832#0" />
             <element signature="e#979#11300#0" />
+            <element signature="e#11175#22316#0" />
+            <element signature="e#1658#2978#0" />
             <element signature="e#1701#7169#0" />
             <element signature="e#7206#7438#0" />
             <element signature="e#7478#7979#0" />
@@ -842,7 +859,9 @@
             <element signature="e#8060#8064#0" />
             <element signature="e#8406#8621#0" />
             <element signature="e#8148#8606#0" />
+            <element signature="e#8934#9478#0" />
             <element signature="e#20946#21917#0" />
+            <element signature="e#22145#22316#0" />
           </folding>
         </state>
       </provider>

@@ -1,7 +1,6 @@
 """
 1、需要注意有些提取的时候因为错误原文没有提取出来，因此要判断content是否为空
-2、对比序列的时候，出现重复对比的解决，compareNews需要再考虑
-3、抽取的实体都是unknown，需要确定一下
+2、抽取的实体都是unknown，需要确定一下
 """
 import wx
 import time
