@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="55e4db8a-d6b0-4ca7-a1f9-f94c6a253b49" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myapp.log" beforeDir="false" afterPath="$PROJECT_DIR$/myapp.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,8 +16,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="395" column="22" selection-start-line="395" selection-start-column="22" selection-end-line="395" selection-end-column="22" />
+            <state relative-caret-position="505">
+              <caret line="405" column="28" lean-forward="true" selection-start-line="405" selection-start-column="28" selection-end-line="405" selection-end-column="28" />
               <folding>
                 <element signature="e#54#63#0" expanded="true" />
                 <element signature="e#233#786#0" />
@@ -32,6 +30,7 @@
                 <element signature="e#8044#8178#0" />
                 <element signature="e#8060#8064#0" />
                 <element signature="e#8148#8606#0" />
+                <element signature="e#20946#21917#0" />
               </folding>
             </state>
           </provider>
@@ -455,6 +454,7 @@
             <element signature="e#8044#8178#0" />
             <element signature="e#8060#8064#0" />
             <element signature="e#8148#8606#0" />
+            <element signature="e#20946#21917#0" />
           </folding>
         </state>
       </provider>
@@ -523,6 +523,7 @@
             <element signature="e#8044#8178#0" />
             <element signature="e#8060#8064#0" />
             <element signature="e#8148#8606#0" />
+            <element signature="e#20946#21917#0" />
           </folding>
         </state>
       </provider>
@@ -563,6 +564,7 @@
             <element signature="e#8044#8178#0" />
             <element signature="e#8060#8064#0" />
             <element signature="e#8148#8606#0" />
+            <element signature="e#20946#21917#0" />
           </folding>
         </state>
       </provider>
@@ -813,8 +815,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="395" column="22" selection-start-line="395" selection-start-column="22" selection-end-line="395" selection-end-column="22" />
+        <state relative-caret-position="505">
+          <caret line="405" column="28" lean-forward="true" selection-start-line="405" selection-start-column="28" selection-end-line="405" selection-end-column="28" />
           <folding>
             <element signature="e#54#63#0" expanded="true" />
             <element signature="e#233#786#0" />
@@ -827,6 +829,7 @@
             <element signature="e#8044#8178#0" />
             <element signature="e#8060#8064#0" />
             <element signature="e#8148#8606#0" />
+            <element signature="e#20946#21917#0" />
           </folding>
         </state>
       </provider>

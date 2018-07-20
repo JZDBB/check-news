@@ -379,25 +379,28 @@ class CheckNews(wx.Frame):
             mesg1 = list[0]
             del list[0]
             event_num = 0
-            event_id = mesg1['Event_time'].split('.')[0] + mesg1['Event_time'].split('.')[1] + mesg1['Event_time'].split('.')[2]
-            for mesg2 in list:
+            event_id = mesg1['Event_time'].split('.')[0] + mesg1['Event_time'].split('.')[1] + mesg1['Event_time'].split('.')[2] + '0000'
+            delete_id = []
+            for i in range(len(list)):
+                mesg2 = list(i)
                 if mesg2['Event_time'] == mesg1['Event_time']:
                     modal = CheckDialog(mesg1, mesg2)
                     modal.ShowModal()
                     return_mesg= modal.returemesg()
                     modal.Destroy()
                     if len(return_mesg) > 1:
-                        return_mesg[1]['Event_id'] = str(int(event_id) + event_num)
                         event_num += 1
+                        return_mesg[1]['Event_id'] = str(int(event_id) + event_num)
                         result.append(return_mesg[1])
+                        delete_id.append(i)
                     else:
                         mesg1 = return_mesg[0]
 
+                event_num += 1
                 mesg1['Event_id'] = str(int(event_id) + event_num)
                 result.append(mesg1)
-
-
-
+                for id in delete_id:
+                    del list[id]
         return result
 
     def change_list(self, list):
