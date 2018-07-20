@@ -160,5 +160,5 @@ if __name__ == '__main__':
     # app.MainLoop()
 
     a = '2018.01.01'
-    b = a.split('.')[0] + a.split('.')[1] + a.split('.')[2]
+    b = a.split('.')[0] + a.split('.')[1] + a.split('.')[2] + '0000'
     print(b)

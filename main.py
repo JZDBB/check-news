@@ -403,8 +403,34 @@ class CheckNews(wx.Frame):
                     del list[id]
         return result
 
-    def change_list(self, list):
-        pass
+    def change_list(self, lists):
+        streams = []
+        streams.append(self.strTitle)
+        for list in lists:
+            stream = []
+            for title in self.strTitle:
+                if title == 'eventid':
+                    stream.append(list['Event_id'])
+                elif title == 'iyear':
+                    stream.append(list['Event_time'].split('.')[0])
+                elif title == 'imonth':
+                    stream.append(list['Event_time'].split('.')[1])
+                elif title == 'iday':
+                    stream.append(list['Event_time'].split('.')[2])
+                elif title == 'time':
+                    stream.append(list['Event_time'])
+                elif title == 'city':
+                    stream.append(list['Event_address'])
+                elif title == 'gname':
+                    stream.append(list['Event_gname'])
+                elif title == 'nkill':
+                    stream.append(list['Event_nkill'])
+                elif title == 'nwound':
+                    stream.append(list['Event_nwound'])
+                else:
+                    stream.append('')
+            streams.append(stream)
+        return streams
 
 if __name__ == '__main__':
     app = wx.App()

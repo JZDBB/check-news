@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="55e4db8a-d6b0-4ca7-a1f9-f94c6a253b49" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,21 +17,33 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="505">
-              <caret line="405" column="28" lean-forward="true" selection-start-line="405" selection-start-column="28" selection-end-line="405" selection-end-column="28" />
+            <state relative-caret-position="128">
+              <caret line="410" column="39" lean-forward="true" selection-start-line="410" selection-start-column="39" selection-end-line="410" selection-end-column="39" />
               <folding>
                 <element signature="e#54#63#0" expanded="true" />
                 <element signature="e#233#786#0" />
                 <element signature="e#797#832#0" />
-                <element signature="e#1438#3027#0" />
-                <element signature="e#1658#2978#0" />
+                <element signature="e#979#11300#0" />
                 <element signature="e#1701#7169#0" />
                 <element signature="e#7206#7438#0" />
                 <element signature="e#7478#7979#0" />
                 <element signature="e#8044#8178#0" />
                 <element signature="e#8060#8064#0" />
+                <element signature="e#8406#8621#0" />
                 <element signature="e#8148#8606#0" />
                 <element signature="e#20946#21917#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataManager.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CrawlWebSite/DataManager.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="5" column="29" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -39,8 +52,8 @@
       <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="163" column="12" lean-forward="true" selection-start-line="163" selection-start-column="12" selection-end-line="163" selection-end-column="12" />
+            <state relative-caret-position="278">
+              <caret line="162" column="68" lean-forward="true" selection-start-line="162" selection-start-column="68" selection-end-line="162" selection-end-column="68" />
               <folding>
                 <element signature="e#48#8895#0" />
               </folding>
@@ -351,12 +364,12 @@
     <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1459797" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1459797" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5003903" side_tool="true" weight="0.43100512" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30834752" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30834752" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -446,13 +459,13 @@
             <element signature="e#54#63#0" expanded="true" />
             <element signature="e#233#786#0" />
             <element signature="e#797#832#0" />
-            <element signature="e#1438#3027#0" />
-            <element signature="e#1658#2978#0" />
+            <element signature="e#979#11300#0" />
             <element signature="e#1701#7169#0" />
             <element signature="e#7206#7438#0" />
             <element signature="e#7478#7979#0" />
             <element signature="e#8044#8178#0" />
             <element signature="e#8060#8064#0" />
+            <element signature="e#8406#8621#0" />
             <element signature="e#8148#8606#0" />
             <element signature="e#20946#21917#0" />
           </folding>
@@ -515,13 +528,13 @@
             <element signature="e#54#63#0" expanded="true" />
             <element signature="e#233#786#0" />
             <element signature="e#797#832#0" />
-            <element signature="e#1438#3027#0" />
-            <element signature="e#1658#2978#0" />
+            <element signature="e#979#11300#0" />
             <element signature="e#1701#7169#0" />
             <element signature="e#7206#7438#0" />
             <element signature="e#7478#7979#0" />
             <element signature="e#8044#8178#0" />
             <element signature="e#8060#8064#0" />
+            <element signature="e#8406#8621#0" />
             <element signature="e#8148#8606#0" />
             <element signature="e#20946#21917#0" />
           </folding>
@@ -556,13 +569,13 @@
             <element signature="e#54#63#0" expanded="true" />
             <element signature="e#233#786#0" />
             <element signature="e#797#832#0" />
-            <element signature="e#1438#3027#0" />
-            <element signature="e#1658#2978#0" />
+            <element signature="e#979#11300#0" />
             <element signature="e#1701#7169#0" />
             <element signature="e#7206#7438#0" />
             <element signature="e#7478#7979#0" />
             <element signature="e#8044#8178#0" />
             <element signature="e#8060#8064#0" />
+            <element signature="e#8406#8621#0" />
             <element signature="e#8148#8606#0" />
             <element signature="e#20946#21917#0" />
           </folding>
@@ -745,16 +758,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CrawlWebSite/DataManager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CrawlWebSite/TextClassify/BagOfWords.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
@@ -805,29 +808,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="163" column="12" lean-forward="true" selection-start-line="163" selection-start-column="12" selection-end-line="163" selection-end-column="12" />
+        <state relative-caret-position="278">
+          <caret line="162" column="68" lean-forward="true" selection-start-line="162" selection-start-column="68" selection-end-line="162" selection-end-column="68" />
           <folding>
             <element signature="e#48#8895#0" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CrawlWebSite/DataManager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="29" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="405" column="28" lean-forward="true" selection-start-line="405" selection-start-column="28" selection-end-line="405" selection-end-column="28" />
+        <state relative-caret-position="128">
+          <caret line="410" column="39" lean-forward="true" selection-start-line="410" selection-start-column="39" selection-end-line="410" selection-end-column="39" />
           <folding>
             <element signature="e#54#63#0" expanded="true" />
             <element signature="e#233#786#0" />
             <element signature="e#797#832#0" />
-            <element signature="e#1438#3027#0" />
-            <element signature="e#1658#2978#0" />
+            <element signature="e#979#11300#0" />
             <element signature="e#1701#7169#0" />
             <element signature="e#7206#7438#0" />
             <element signature="e#7478#7979#0" />
             <element signature="e#8044#8178#0" />
             <element signature="e#8060#8064#0" />
+            <element signature="e#8406#8621#0" />
             <element signature="e#8148#8606#0" />
             <element signature="e#20946#21917#0" />
           </folding>
