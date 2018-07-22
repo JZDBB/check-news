@@ -1,4 +1,4 @@
 eventid,eventname,iyear,imonth,iday,time,approxdate,country_txt,provstate,city,latitude,longitude,location,summary,alternative_txt,multiple,suicide,attacktype1,attacktype1_txt,attacktype2,attacktype2_txt,attacktype3,attacktype3_txt,targtype1_txt,targsubtype1_txt,corp1,target1,natlty1_txt,targtype2_txt,targsubtype2_txt,corp2,target2,natlty2_txt,targtype3_txt,targsubtype3_txt,corp3,target3,natlty3_txt,gname,motive,nperps,nperpcap,weaptype1_txt,weapsubtype1_txt,weaptype2_txt,weapsubtype2_txt,weaptype3_txt,weapsubtype3_txt,weaptype4_txt,weapsubtype4_txt,weapdetail,nkill,nkillter,nwound,nwoundte,property,propvalue,propcomment,ishostkid,nhostkid,nhours,divert,ransom,ransomamt,ransompaid,ransomnote,hostkidoutcome_txt,nreleased,addnotes,scite1,scite2,scite3,related
-201801020001,,2018,01,02,2018.01.02,,,, ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, ,,,,,,,,,,,,,,,,,,,
-201801010001,,2018,01,01,2018.01.01,,,, ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, ,,,,,,,,,,,,,,,,,,,
-201801010002,,2018,01,01,2018.01.01,,,, ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, ,,,,,,,,,,,,,,,,,,,
+201801010001,,2018,01,01,2018.01.01,,,,unknown,,,,,,,,,,,,,,,,,,,,,,,,,,,,,unknown,,,,,,,,,,,,,unknown,,unknown,,,,,,,,,,,,,,,,,,,
+201801020001,,2018,01,02,2018.01.02,,,,unknown,,,,,,,,,,,,,,,,,,,,,,,,,,,,,unknown,,,,,,,,,,,,,unknown,,unknown,,,,,,,,,,,,,,,,,,,
+201901030001,,2019,01,03,2019.01.03,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

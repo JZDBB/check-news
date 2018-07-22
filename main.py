@@ -1,9 +1,7 @@
-# coding=gbk  
+# coding=gbk
 
 """
-1、需要注意有些提取的时候因为错误原文没有提取出来，因此要判断content是否为空
 2、抽取的实体都是unknown，需要确定一下
-3、标清楚核对到第几条了！
 4、表里面没有总人数
 5、content 放在表中哪里？
 """
@@ -233,7 +231,7 @@ class CheckNews(wx.Frame):
         self.Textbefore1 = wx.StaticText(self.panel, label='爬取前', style=wx.ST_NO_AUTORESIZE)
         self.Textbefore1.SetFont(self.font)
         sizer.Add(self.Textbefore1, pos=(0, 4), flag=wx.TOP | wx.LEFT, border=10)
-        self.Daybefore = wx.TextCtrl(self.panel, value=str(self.before), size=(25, 30), style=wx.ST_NO_AUTORESIZE)
+        self.Daybefore = wx.TextCtrl(self.panel, value=str(self.before), size=(25, 25), style=wx.ST_NO_AUTORESIZE)
         self.Daybefore.SetFont(self.font)
         sizer.Add(self.Daybefore, pos=(0, 5), flag=wx.TOP|wx.LEFT, border=5)
         self.Textbefore2 = wx.StaticText(self.panel, label='天', style=wx.ST_NO_AUTORESIZE)
@@ -297,6 +295,10 @@ class CheckNews(wx.Frame):
         line2 = wx.StaticLine(self.panel)
         sizer.Add(line2, pos=(9, 0), span=(1, 15), flag=wx.EXPAND | wx.TOP, border=10)
 
+        self.TextTip = wx.StaticText(self.panel, label=' 0 / 0 ',style=wx.ST_NO_AUTORESIZE)
+        self.TextTip.SetFont(self.font)
+        sizer.Add(self.TextTip, pos=(10, 0), span=(1, 1), flag=wx.LEFT, border=30)
+
         self.upbotton = wx.Button(self.panel, label='上一条', size=(80, 25), style=wx.ST_NO_AUTORESIZE)
         self.upbotton.SetFont(self.font)
         sizer.Add(self.upbotton, pos=(10, 3), span=(1, 2), flag=wx.TOP, border=0)
@@ -317,55 +319,55 @@ class CheckNews(wx.Frame):
         self.savebotton.Bind(wx.EVT_BUTTON, self.OnClickSave)
 
     def OnClickCraw(self, e):
-        # self.before = self.Daybefore.GetValue()
-        # self.zaobao = ZaoBao.Crawl_NEWS(timeFrame=int(self.before))
-        # self.guancha = guangchazhe.Crawl_NEWS(timeFrame=int(self.before))
-        # news1, index1 = self.zaobao.start_crawl()
-        # news2, index2 = self.guancha.start_crawl()
-        #
-        # self.news = news1 + news2
-        # self.index = index1 + index2
-        # print(self.index)
-        # modal = CrawlTotalDialog(self.index)
-        # modal.ShowModal()
-        # modal.Destroy()
-        self.index = 4
-        news1 = {"content":"卡收到啦开始的断代史六块腹肌暗红色的防守打法哈里斯的看法还是得分离的合法楼上的发哈东风浩荡发生的合法阿萨德雷锋号拉婚纱店对方拉黑谁的浪费空间暗红色的枫林华府阿萨德发挥打死都会发生的；大水电费离开的说法东方会计师电话费电话费拉开多久发货的给客户绿卡的复合弓发过哈人派人和人配合领导看见过很多非公开发的卡号是的开发好的都会发两块闪电发货大是大非拉克丝得分机会大街上的法律框架爱的说法",
-                 "Event_time":"2018.01.02",
-                 "Event_address":" ",
-                 "Event_gname":"",
-                 "Event_type":"暴恐",
-                 "Event_total":" ",
-                 "Event_nkill":"",
-                 "Event_nwound":" "}
-        news2 = {
-            "content": "卡收到啦开始发就是打发点上了飞机快递师傅噢诶与人文人未还收代理费会计师电话费阿里看到回复啦可是对方好落实到付款就好说的福利卡决定是否拉宽带缴费号类似的看法好里的疯狂就啊哈到了发卡机的福利卡交电话费埃里克的舒服就好里的咖啡好的发快递金凤凰爱看的房价还是里的咖啡好的福利卡的护肤拉宽带缴费hiUR全业务如以前我饿人哟诶UR要求欧伟复活点时空房间爱好的的断代史六块腹肌暗红色的防守打法哈里斯的看法还是得分离的合法楼上的发哈东风浩荡发生的合法阿萨德雷锋号拉婚纱店对方拉黑谁的浪费空间暗红色的枫林华府阿萨德发挥打死都会发生的；大水电费离开的说法东方会计师电话费电话费拉开多久发货的给客户绿卡的复合弓发过哈人派人和人配合领导看见过很多非公开发的卡号是的开发好的都会发两块闪电发货大是大非拉克丝得分机会大街上的法律框架爱的说法",
-            "Event_time": "2018.01.01",
-            "Event_address": " ",
-            "Event_gname": "",
-            "Event_type": "暴恐",
-            "Event_total": " ",
-            "Event_nkill": "",
-            "Event_nwound": " "}
-        news3 = {
-            "content": "2、卡收到啦开始的断代史六块腹肌暗红色的防守打法哈里斯的看法还是得分离的合法楼上的发哈东风浩荡发生的合法阿萨德雷锋号拉婚纱店对方拉黑谁的浪费空间暗红色的枫林华府阿萨德发挥打死都会发生的；大水电费离开的说法东方会计师电话费电话费拉开多久发货的给客户绿卡的复合弓发过哈人派人和人配合领导看见过很多非公开发的卡号是的开发好的都会发两块闪电发货大是大非拉克丝得分机会大街上的法律框架爱的说法",
-            "Event_time": "2018.01.01",
-            "Event_address": " ",
-            "Event_gname": "",
-            "Event_type": "暴恐",
-            "Event_total": " ",
-            "Event_nkill": "",
-            "Event_nwound": " "}
-        news4 = {
-            "content": "3、卡收到啦开始的断代史六块腹肌暗红色的防守打法哈里斯的看法还是得分离的合法楼上的发哈东风浩荡发生的合法阿萨德雷锋号拉婚纱店对方拉黑谁的浪费空间暗红色的枫林华府阿萨德发挥打死都会发生的；大水电费离开的说法东方会计师电话费电话费拉开多久发货的给客户绿卡的复合弓发过哈人派人和人配合领导看见过很多非公开发的卡号是的开发好的都会发两块闪电发货大是大非拉克丝得分机会大街上的法律框架爱的说法",
-            "Event_time": "2018.01.01",
-            "Event_address": " ",
-            "Event_gname": "",
-            "Event_type": "暴恐",
-            "Event_total": " ",
-            "Event_nkill": "",
-            "Event_nwound": " "}
-        self.news = [news1, news2, news3, news4]
+        self.before = self.Daybefore.GetValue()
+        self.zaobao = ZaoBao.Crawl_NEWS(timeFrame=int(self.before))
+        self.guancha = guangchazhe.Crawl_NEWS(timeFrame=int(self.before))
+        news1, index1 = self.zaobao.start_crawl()
+        news2, index2 = self.guancha.start_crawl()
+
+        self.news = news1 + news2
+        self.index = index1 + index2
+        print(self.index)
+        modal = CrawlTotalDialog(self.index)
+        modal.ShowModal()
+        modal.Destroy()
+        # self.index = 4
+        # news1 = {"content":"卡收到啦开始的断代史六块腹肌暗红色的防守打法哈里斯的看法还是得分离的合法楼上的发哈东风浩荡发生的合法阿萨德雷锋号拉婚纱店对方拉黑谁的浪费空间暗红色的枫林华府阿萨德发挥打死都会发生的；大水电费离开的说法东方会计师电话费电话费拉开多久发货的给客户绿卡的复合弓发过哈人派人和人配合领导看见过很多非公开发的卡号是的开发好的都会发两块闪电发货大是大非拉克丝得分机会大街上的法律框架爱的说法",
+        #          "Event_time":"2018.01.02",
+        #          "Event_address":" ",
+        #          "Event_gname":"",
+        #          "Event_type":"暴恐",
+        #          "Event_total":" ",
+        #          "Event_nkill":"",
+        #          "Event_nwound":" "}
+        # news2 = {
+        #     "content": "卡收到啦开始发就是打发点上了飞机快递师傅噢诶与人文人未还收代理费会计师电话费阿里看到回复啦可是对方好落实到付款就好说的福利卡决定是否拉宽带缴费号类似的看法好里的疯狂就啊哈到了发卡机的福利卡交电话费埃里克的舒服就好里的咖啡好的发快递金凤凰爱看的房价还是里的咖啡好的福利卡的护肤拉宽带缴费hiUR全业务如以前我饿人哟诶UR要求欧伟复活点时空房间爱好的的断代史六块腹肌暗红色的防守打法哈里斯的看法还是得分离的合法楼上的发哈东风浩荡发生的合法阿萨德雷锋号拉婚纱店对方拉黑谁的浪费空间暗红色的枫林华府阿萨德发挥打死都会发生的；大水电费离开的说法东方会计师电话费电话费拉开多久发货的给客户绿卡的复合弓发过哈人派人和人配合领导看见过很多非公开发的卡号是的开发好的都会发两块闪电发货大是大非拉克丝得分机会大街上的法律框架爱的说法",
+        #     "Event_time": "2018.01.01",
+        #     "Event_address": " ",
+        #     "Event_gname": "",
+        #     "Event_type": "暴恐",
+        #     "Event_total": " ",
+        #     "Event_nkill": "",
+        #     "Event_nwound": " "}
+        # news3 = {
+        #     "content": "2、卡收到啦开始的断代史六块腹肌暗红色的防守打法哈里斯的看法还是得分离的合法楼上的发哈东风浩荡发生的合法阿萨德雷锋号拉婚纱店对方拉黑谁的浪费空间暗红色的枫林华府阿萨德发挥打死都会发生的；大水电费离开的说法东方会计师电话费电话费拉开多久发货的给客户绿卡的复合弓发过哈人派人和人配合领导看见过很多非公开发的卡号是的开发好的都会发两块闪电发货大是大非拉克丝得分机会大街上的法律框架爱的说法",
+        #     "Event_time": "2018.01.01",
+        #     "Event_address": " ",
+        #     "Event_gname": "",
+        #     "Event_type": "暴恐",
+        #     "Event_total": " ",
+        #     "Event_nkill": "",
+        #     "Event_nwound": " "}
+        # news4 = {
+        #     "content": "3、卡收到啦开始的断代史六块腹肌暗红色的防守打法哈里斯的看法还是得分离的合法楼上的发哈东风浩荡发生的合法阿萨德雷锋号拉婚纱店对方拉黑谁的浪费空间暗红色的枫林华府阿萨德发挥打死都会发生的；大水电费离开的说法东方会计师电话费电话费拉开多久发货的给客户绿卡的复合弓发过哈人派人和人配合领导看见过很多非公开发的卡号是的开发好的都会发两块闪电发货大是大非拉克丝得分机会大街上的法律框架爱的说法",
+        #     "Event_time": "2018.01.01",
+        #     "Event_address": " ",
+        #     "Event_gname": "",
+        #     "Event_type": "暴恐",
+        #     "Event_total": " ",
+        #     "Event_nkill": "",
+        #     "Event_nwound": " "}
+        # self.news = [news1, news2, news3, news4]
 
         self.id = 0
         self.fillValue(self.id)
@@ -405,6 +407,8 @@ class CheckNews(wx.Frame):
         self.total.SetValue(curr_news['Event_total'])
         self.nkill.SetValue(curr_news['Event_nkill'])
         self.nwound.SetValue(curr_news['Event_nwound'])
+        str_tip = " " + str(self.id + 1) + " / " + str(self.index) + " "
+        self.TextTip.SetLabel(str_tip)
 
     def saveValue(self, id):
         curr_news = self.news[id]
@@ -416,6 +420,8 @@ class CheckNews(wx.Frame):
         curr_news['Event_total'] = self.total.GetValue()
         curr_news['Event_nkill'] = self.nkill.GetValue()
         curr_news['Event_nwound'] = self.nwound.GetValue()
+        str_tip = " " + str(self.id + 1) + " / " + str(self.index) + " "
+        self.TextTip.SetLabel(str_tip)
 
     def compareNews(self, list):
         result = []

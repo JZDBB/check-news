@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55e4db8a-d6b0-4ca7-a1f9-f94c6a253b49" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018-07-22-.csv" beforeDir="false" afterPath="$PROJECT_DIR$/2018-07-22-.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myapp.log" beforeDir="false" afterPath="$PROJECT_DIR$/myapp.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,21 +19,19 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
+            <state relative-caret-position="-2725">
+              <caret line="235" column="74" lean-forward="true" selection-start-line="235" selection-start-column="74" selection-end-line="235" selection-end-column="75" />
               <folding>
                 <element signature="e#54#63#0" expanded="true" />
                 <element signature="e#233#786#0" />
                 <element signature="e#797#832#0" />
+                <element signature="e#979#11300#0" />
                 <element signature="e#1021#9830#0" />
                 <element signature="e#1658#2978#0" />
-                <element signature="e#1701#7169#0" />
                 <element signature="e#7206#7438#0" />
-                <element signature="e#20028#20467#0" />
-                <element signature="e#20484#20923#0" />
+                <element signature="e#19114#19130#0" />
                 <element signature="e#8044#8178#0" />
                 <element signature="e#8060#8064#0" />
-                <element signature="e#8934#9478#0" />
                 <element signature="e#22145#22316#0" />
               </folding>
             </state>
@@ -349,7 +350,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1459797" />
@@ -398,42 +399,37 @@
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url />
+          <url>file://$PROJECT_DIR$/CrawlWebSite/Haiwainet.py</url>
           <line>183</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url />
+          <url>file://$PROJECT_DIR$/CrawlWebSite/sputniknews.py</url>
           <line>184</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url />
+          <url>file://$PROJECT_DIR$/CrawlWebSite/sputniknews.py</url>
           <line>235</line>
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url />
+          <url>file://$PROJECT_DIR$/CrawlWebSite/sputniknews.py</url>
           <line>205</line>
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url />
+          <url>file://$PROJECT_DIR$/CrawlWebSite/sputniknews.py</url>
           <line>243</line>
           <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url />
-          <line>395</line>
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url />
+          <url>file://$PROJECT_DIR$/test.py</url>
           <line>168</line>
           <option name="timeStamp" value="82" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url />
+          <url>file://$PROJECT_DIR$/CrawlWebSite/DataManager.py</url>
           <line>5</line>
           <option name="timeStamp" value="83" />
         </line-breakpoint>
@@ -462,15 +458,13 @@
             <element signature="e#54#63#0" expanded="true" />
             <element signature="e#233#786#0" />
             <element signature="e#797#832#0" />
+            <element signature="e#979#11300#0" />
             <element signature="e#1021#9830#0" />
             <element signature="e#1658#2978#0" />
-            <element signature="e#1701#7169#0" />
             <element signature="e#7206#7438#0" />
-            <element signature="e#20028#20467#0" />
-            <element signature="e#20484#20923#0" />
+            <element signature="e#19114#19130#0" />
             <element signature="e#8044#8178#0" />
             <element signature="e#8060#8064#0" />
-            <element signature="e#8934#9478#0" />
             <element signature="e#22145#22316#0" />
           </folding>
         </state>
@@ -532,15 +526,13 @@
             <element signature="e#54#63#0" expanded="true" />
             <element signature="e#233#786#0" />
             <element signature="e#797#832#0" />
+            <element signature="e#979#11300#0" />
             <element signature="e#1021#9830#0" />
             <element signature="e#1658#2978#0" />
-            <element signature="e#1701#7169#0" />
             <element signature="e#7206#7438#0" />
-            <element signature="e#20028#20467#0" />
-            <element signature="e#20484#20923#0" />
+            <element signature="e#19114#19130#0" />
             <element signature="e#8044#8178#0" />
             <element signature="e#8060#8064#0" />
-            <element signature="e#8934#9478#0" />
             <element signature="e#22145#22316#0" />
           </folding>
         </state>
@@ -574,15 +566,13 @@
             <element signature="e#54#63#0" expanded="true" />
             <element signature="e#233#786#0" />
             <element signature="e#797#832#0" />
+            <element signature="e#979#11300#0" />
             <element signature="e#1021#9830#0" />
             <element signature="e#1658#2978#0" />
-            <element signature="e#1701#7169#0" />
             <element signature="e#7206#7438#0" />
-            <element signature="e#20028#20467#0" />
-            <element signature="e#20484#20923#0" />
+            <element signature="e#19114#19130#0" />
             <element signature="e#8044#8178#0" />
             <element signature="e#8060#8064#0" />
-            <element signature="e#8934#9478#0" />
             <element signature="e#22145#22316#0" />
           </folding>
         </state>
@@ -848,21 +838,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
+        <state relative-caret-position="-2725">
+          <caret line="235" column="74" lean-forward="true" selection-start-line="235" selection-start-column="74" selection-end-line="235" selection-end-column="75" />
           <folding>
             <element signature="e#54#63#0" expanded="true" />
             <element signature="e#233#786#0" />
             <element signature="e#797#832#0" />
+            <element signature="e#979#11300#0" />
             <element signature="e#1021#9830#0" />
             <element signature="e#1658#2978#0" />
-            <element signature="e#1701#7169#0" />
             <element signature="e#7206#7438#0" />
-            <element signature="e#20028#20467#0" />
-            <element signature="e#20484#20923#0" />
+            <element signature="e#19114#19130#0" />
             <element signature="e#8044#8178#0" />
             <element signature="e#8060#8064#0" />
-            <element signature="e#8934#9478#0" />
             <element signature="e#22145#22316#0" />
           </folding>
         </state>
