@@ -159,6 +159,14 @@ if __name__ == '__main__':
     # frame.Show()
     # app.MainLoop()
 
-    a = '2018.01.01'
-    b = a.split('.')[0] + a.split('.')[1] + a.split('.')[2] + '0000'
-    print(b)
+    # a = '2018.01.01'
+    # b = a.split('.')[0] + a.split('.')[1] + a.split('.')[2] + '0000'
+    # print(b)
+
+    list = [1, 2, 3, 4, 5, 6, 8, 9, 10]
+    delete_id = [2, 4, 7]
+    num = 0
+    for id in delete_id:
+        del list[id - num]
+        num += 1
+    print(list)

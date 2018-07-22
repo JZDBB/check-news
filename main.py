@@ -1,6 +1,9 @@
 """
 1、需要注意有些提取的时候因为错误原文没有提取出来，因此要判断content是否为空
 2、抽取的实体都是unknown，需要确定一下
+3、标清楚核对到第几条了！
+4、表里面没有总人数
+5、content 放在表中哪里？
 """
 import wx
 import time
@@ -9,7 +12,7 @@ from CrawlWebSite import ZaoBao, guangchazhe, DataManager
 
 class CrawlTotalDialog(wx.Dialog):
     def __init__(self, num):
-        wx.Dialog.__init__(self, None, -1, 'finish', size=(180, 150))
+        wx.Dialog.__init__(self, None, -1, 'finish', size=(200, 150))
         self.font = wx.SystemSettings.GetFont(wx.SYS_SYSTEM_FONT)
         static1 = wx.StaticText(self, -1, label='新闻爬取完成', pos=(35, 15))
         str_total = '总计抽取新闻' + str(num) + '条'
@@ -27,7 +30,6 @@ class CrawlTotalDialog(wx.Dialog):
 class CheckDialog(wx.Dialog):
     def __init__(self, mesg1, mesg2):
         wx.Dialog.__init__(self, None, -1, 'Check', size=(700, 520))
-        self.list_result = []
         self.mesg1 = mesg1
         self.mesg2 = mesg2
 
@@ -162,10 +164,12 @@ class CheckDialog(wx.Dialog):
         self.panel.SetSizer(sizer)
 
     def OnClickSaveall(self, e):
+        self.list_result = []
         self.list_result.append(self.mesg1)
         self.list_result.append(self.mesg2)
 
     def OnClickSave1(self, e):
+        self.list_result = []
         curr_news = {}
         curr_news['content'] = self.content1.GetValue()
         curr_news['Event_time'] = self.Time1.GetValue()
@@ -178,6 +182,7 @@ class CheckDialog(wx.Dialog):
         self.list_result.append(curr_news)
 
     def OnClickSave2(self, e):
+        self.list_result = []
         curr_news = {}
         curr_news['content'] = self.content2.GetValue()
         curr_news['Event_time'] = self.Time2.GetValue()
@@ -310,18 +315,56 @@ class CheckNews(wx.Frame):
         self.savebotton.Bind(wx.EVT_BUTTON, self.OnClickSave)
 
     def OnClickCraw(self, e):
-        self.before = self.Daybefore.GetValue()
-        self.zaobao = ZaoBao.Crawl_NEWS(timeFrame=int(self.before))
-        self.guancha = guangchazhe.Crawl_NEWS(timeFrame=int(self.before))
-        news1, index1 = self.zaobao.start_crawl()
-        news2, index2 = self.guancha.start_crawl()
+        # self.before = self.Daybefore.GetValue()
+        # self.zaobao = ZaoBao.Crawl_NEWS(timeFrame=int(self.before))
+        # self.guancha = guangchazhe.Crawl_NEWS(timeFrame=int(self.before))
+        # news1, index1 = self.zaobao.start_crawl()
+        # news2, index2 = self.guancha.start_crawl()
+        #
+        # self.news = news1 + news2
+        # self.index = index1 + index2
+        # print(self.index)
+        # modal = CrawlTotalDialog(self.index)
+        # modal.ShowModal()
+        # modal.Destroy()
+        self.index = 4
+        news1 = {"content":"卡收到啦开始的断代史六块腹肌暗红色的防守打法哈里斯的看法还是得分离的合法楼上的发哈东风浩荡发生的合法阿萨德雷锋号拉婚纱店对方拉黑谁的浪费空间暗红色的枫林华府阿萨德发挥打死都会发生的；大水电费离开的说法东方会计师电话费电话费拉开多久发货的给客户绿卡的复合弓发过哈人派人和人配合领导看见过很多非公开发的卡号是的开发好的都会发两块闪电发货大是大非拉克丝得分机会大街上的法律框架爱的说法",
+                 "Event_time":"2018.01.02",
+                 "Event_address":" ",
+                 "Event_gname":"",
+                 "Event_type":"暴恐",
+                 "Event_total":" ",
+                 "Event_nkill":"",
+                 "Event_nwound":" "}
+        news2 = {
+            "content": "1、卡收到啦开始sasdfasdf ；发就是打发点上了飞机快递师傅噢诶与人文人未还收代理费会计师电话费阿里看到回复啦可是对方好落实到付款就好说的福利卡决定是否拉宽带缴费号类似的看法好里的疯狂就啊哈到了发卡机的福利卡交电话费埃里克的舒服就好里的咖啡好的发快递金凤凰爱看的房价还是里的咖啡好的福利卡的护肤拉宽带缴费hiUR全业务如以前我饿人哟诶UR要求欧伟复活点时空房间爱好的的断代史六块腹肌暗红色的防守打法哈里斯的看法还是得分离的合法楼上的发哈东风浩荡发生的合法阿萨德雷锋号拉婚纱店对方拉黑谁的浪费空间暗红色的枫林华府阿萨德发挥打死都会发生的；大水电费离开的说法东方会计师电话费电话费拉开多久发货的给客户绿卡的复合弓发过哈人派人和人配合领导看见过很多非公开发的卡号是的开发好的都会发两块闪电发货大是大非拉克丝得分机会大街上的法律框架爱的说法",
+            "Event_time": "2018.01.01",
+            "Event_address": " ",
+            "Event_gname": "",
+            "Event_type": "暴恐",
+            "Event_total": " ",
+            "Event_nkill": "",
+            "Event_nwound": " "}
+        news3 = {
+            "content": "2、卡收到啦开始的断代史六块腹肌暗红色的防守打法哈里斯的看法还是得分离的合法楼上的发哈东风浩荡发生的合法阿萨德雷锋号拉婚纱店对方拉黑谁的浪费空间暗红色的枫林华府阿萨德发挥打死都会发生的；大水电费离开的说法东方会计师电话费电话费拉开多久发货的给客户绿卡的复合弓发过哈人派人和人配合领导看见过很多非公开发的卡号是的开发好的都会发两块闪电发货大是大非拉克丝得分机会大街上的法律框架爱的说法",
+            "Event_time": "2018.01.01",
+            "Event_address": " ",
+            "Event_gname": "",
+            "Event_type": "暴恐",
+            "Event_total": " ",
+            "Event_nkill": "",
+            "Event_nwound": " "}
+        news4 = {
+            "content": "3、卡收到啦开始的断代史六块腹肌暗红色的防守打法哈里斯的看法还是得分离的合法楼上的发哈东风浩荡发生的合法阿萨德雷锋号拉婚纱店对方拉黑谁的浪费空间暗红色的枫林华府阿萨德发挥打死都会发生的；大水电费离开的说法东方会计师电话费电话费拉开多久发货的给客户绿卡的复合弓发过哈人派人和人配合领导看见过很多非公开发的卡号是的开发好的都会发两块闪电发货大是大非拉克丝得分机会大街上的法律框架爱的说法",
+            "Event_time": "2018.01.01",
+            "Event_address": " ",
+            "Event_gname": "",
+            "Event_type": "暴恐",
+            "Event_total": " ",
+            "Event_nkill": "",
+            "Event_nwound": " "}
+        self.news = [news1, news2, news3, news4]
 
-        self.news = news1 + news2
-        self.index = index1 + index2
-        print(self.index)
-        modal = CrawlTotalDialog(self.index)
-        modal.ShowModal()
-        modal.Destroy()
         self.id = 0
         self.fillValue(self.id)
 
@@ -381,7 +424,7 @@ class CheckNews(wx.Frame):
             event_id = mesg1['Event_time'].split('.')[0] + mesg1['Event_time'].split('.')[1] + mesg1['Event_time'].split('.')[2] + '0000'
             delete_id = []
             for i in range(len(list)):
-                mesg2 = list(i)
+                mesg2 = list[i]
                 if mesg2['Event_time'] == mesg1['Event_time']:
                     modal = CheckDialog(mesg1, mesg2)
                     modal.ShowModal()
@@ -391,15 +434,19 @@ class CheckNews(wx.Frame):
                         event_num += 1
                         return_mesg[1]['Event_id'] = str(int(event_id) + event_num)
                         result.append(return_mesg[1])
-                        delete_id.append(i)
+
                     else:
                         mesg1 = return_mesg[0]
 
-                event_num += 1
-                mesg1['Event_id'] = str(int(event_id) + event_num)
-                result.append(mesg1)
-                for id in delete_id:
-                    del list[id]
+                    delete_id.append(i)
+
+            event_num += 1
+            mesg1['Event_id'] = str(int(event_id) + event_num)
+            result.append(mesg1)
+            num = 0
+            for id in delete_id:
+                del list[id - num]
+                num += 1
         return result
 
     def change_list(self, lists):
