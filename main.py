@@ -1,9 +1,11 @@
+# coding=gbk  
+
 """
-1ã€éœ€è¦æ³¨æ„æœ‰äº›æå–çš„æ—¶å€™å› ä¸ºé”™è¯¯åŸæ–‡æ²¡æœ‰æå–å‡ºæ¥ï¼Œå› æ­¤è¦åˆ¤æ–­contentæ˜¯å¦ä¸ºç©º
-2ã€æŠ½å–çš„å®ä½“éƒ½æ˜¯unknownï¼Œéœ€è¦ç¡®å®šä¸€ä¸‹
-3ã€æ ‡æ¸…æ¥šæ ¸å¯¹åˆ°ç¬¬å‡ æ¡äº†ï¼
-4ã€è¡¨é‡Œé¢æ²¡æœ‰æ€»äººæ•°
-5ã€content æ”¾åœ¨è¡¨ä¸­å“ªé‡Œï¼Ÿ
+1¡¢ĞèÒª×¢ÒâÓĞĞ©ÌáÈ¡µÄÊ±ºòÒòÎª´íÎóÔ­ÎÄÃ»ÓĞÌáÈ¡³öÀ´£¬Òò´ËÒªÅĞ¶ÏcontentÊÇ·ñÎª¿Õ
+2¡¢³éÈ¡µÄÊµÌå¶¼ÊÇunknown£¬ĞèÒªÈ·¶¨Ò»ÏÂ
+3¡¢±êÇå³şºË¶Ôµ½µÚ¼¸ÌõÁË£¡
+4¡¢±íÀïÃæÃ»ÓĞ×ÜÈËÊı
+5¡¢content ·ÅÔÚ±íÖĞÄÄÀï£¿
 """
 import wx
 import time
@@ -14,10 +16,10 @@ class CrawlTotalDialog(wx.Dialog):
     def __init__(self, num):
         wx.Dialog.__init__(self, None, -1, 'finish', size=(200, 150))
         self.font = wx.SystemSettings.GetFont(wx.SYS_SYSTEM_FONT)
-        static1 = wx.StaticText(self, -1, label='æ–°é—»çˆ¬å–å®Œæˆ', pos=(35, 15))
-        str_total = 'æ€»è®¡æŠ½å–æ–°é—»' + str(num) + 'æ¡'
+        static1 = wx.StaticText(self, -1, label='ĞÂÎÅÅÀÈ¡Íê³É', pos=(35, 15))
+        str_total = '×Ü¼Æ³éÈ¡ĞÂÎÅ' + str(num) + 'Ìõ'
         static2 = wx.StaticText(self, -1, label=str_total, pos=(35, 40))
-        okButton = wx.Button(self, wx.ID_CANCEL, label='ç¡®å®š', pos=(40, 70))
+        okButton = wx.Button(self, wx.ID_CANCEL, label='È·¶¨', pos=(40, 70))
         okButton.SetDefault()
         static1.SetFont(self.font)
         static2.SetFont(self.font)
@@ -37,35 +39,35 @@ class CheckDialog(wx.Dialog):
         self.font = wx.SystemSettings.GetFont(wx.SYS_SYSTEM_FONT)
         sizer = wx.GridBagSizer(15, 15)
 
-        static1 = wx.StaticText(self.panel, label='ç¬¬ä¸€æ¡', style=wx.ST_NO_AUTORESIZE)
+        static1 = wx.StaticText(self.panel, label='µÚÒ»Ìõ', style=wx.ST_NO_AUTORESIZE)
         static1.SetFont(self.font)
         sizer.Add(static1, pos=(0, 1), span=(1, 1), flag=wx.TOP, border=15)
-        static2 = wx.StaticText(self.panel, label='ç¬¬äºŒæ¡', style=wx.ST_NO_AUTORESIZE)
+        static2 = wx.StaticText(self.panel, label='µÚ¶şÌõ', style=wx.ST_NO_AUTORESIZE)
         static2.SetFont(self.font)
         sizer.Add(static2, pos=(0, 6), span=(1, 1), flag=wx.TOP, border=15)
 
-        Text_time1 = wx.StaticText(self.panel, label='æ—¶é—´', style=wx.ST_NO_AUTORESIZE)
+        Text_time1 = wx.StaticText(self.panel, label='Ê±¼ä', style=wx.ST_NO_AUTORESIZE)
         Text_time1.SetFont(self.font)
         sizer.Add(Text_time1, pos=(1, 1), span=(1, 1), flag=wx.TOP, border=0)
-        Text_Address1 = wx.StaticText(self.panel, label='åœ°ç‚¹', style=wx.ST_NO_AUTORESIZE)
+        Text_Address1 = wx.StaticText(self.panel, label='µØµã', style=wx.ST_NO_AUTORESIZE)
         Text_Address1.SetFont(self.font)
         sizer.Add(Text_Address1, pos=(2, 1), span=(1, 1), flag=wx.TOP, border=0)
-        Text_gname1 = wx.StaticText(self.panel, label='ç»„ç»‡', style=wx.ST_NO_AUTORESIZE)
+        Text_gname1 = wx.StaticText(self.panel, label='×éÖ¯', style=wx.ST_NO_AUTORESIZE)
         Text_gname1.SetFont(self.font)
         sizer.Add(Text_gname1, pos=(3, 1), span=(1, 1), flag=wx.TOP, border=0)
-        Text_type1 = wx.StaticText(self.panel, label='äº‹ä»¶ç±»å‹', style=wx.ST_NO_AUTORESIZE)
+        Text_type1 = wx.StaticText(self.panel, label='ÊÂ¼şÀàĞÍ', style=wx.ST_NO_AUTORESIZE)
         Text_type1.SetFont(self.font)
         sizer.Add(Text_type1, pos=(4, 1), span=(1, 1), flag=wx.TOP, border=0)
-        Text_total1 = wx.StaticText(self.panel, label='ä¼¤äº¡äººæ•°', style=wx.ST_NO_AUTORESIZE)
+        Text_total1 = wx.StaticText(self.panel, label='ÉËÍöÈËÊı', style=wx.ST_NO_AUTORESIZE)
         Text_total1.SetFont(self.font)
         sizer.Add(Text_total1, pos=(5, 1), span=(1, 1), flag=wx.TOP, border=0)
-        Text_nwound1 = wx.StaticText(self.panel, label='å—ä¼¤äººæ•°', style=wx.ST_NO_AUTORESIZE)
+        Text_nwound1 = wx.StaticText(self.panel, label='ÊÜÉËÈËÊı', style=wx.ST_NO_AUTORESIZE)
         Text_nwound1.SetFont(self.font)
         sizer.Add(Text_nwound1, pos=(6, 1), span=(1, 1), flag=wx.TOP, border=0)
-        Text_nkill1 = wx.StaticText(self.panel, label='æ­»äº¡äººæ•°', style=wx.ST_NO_AUTORESIZE)
+        Text_nkill1 = wx.StaticText(self.panel, label='ËÀÍöÈËÊı', style=wx.ST_NO_AUTORESIZE)
         Text_nkill1.SetFont(self.font)
         sizer.Add(Text_nkill1, pos=(7, 1), span=(1, 1), flag=wx.TOP, border=0)
-        Text_content1 = wx.StaticText(self.panel, label='å†…å®¹', style=wx.ST_NO_AUTORESIZE)
+        Text_content1 = wx.StaticText(self.panel, label='ÄÚÈİ', style=wx.ST_NO_AUTORESIZE)
         Text_content1.SetFont(self.font)
         sizer.Add(Text_content1, pos=(8, 1), span=(1, 1), flag=wx.TOP, border=0)
 
@@ -94,28 +96,28 @@ class CheckDialog(wx.Dialog):
         self.content1.SetFont(self.font)
         sizer.Add(self.content1, pos=(8, 2), span=(3, 3), flag=wx.LEFT, border=0)
 
-        Text_time2 = wx.StaticText(self.panel, label='æ—¶é—´', style=wx.ST_NO_AUTORESIZE)
+        Text_time2 = wx.StaticText(self.panel, label='Ê±¼ä', style=wx.ST_NO_AUTORESIZE)
         Text_time2.SetFont(self.font)
         sizer.Add(Text_time2, pos=(1, 6), span=(1, 1), flag=wx.TOP, border=0)
-        Text_Address2 = wx.StaticText(self.panel, label='åœ°ç‚¹', style=wx.ST_NO_AUTORESIZE)
+        Text_Address2 = wx.StaticText(self.panel, label='µØµã', style=wx.ST_NO_AUTORESIZE)
         Text_Address2.SetFont(self.font)
         sizer.Add(Text_Address2, pos=(2, 6), span=(1, 1), flag=wx.TOP, border=0)
-        Text_gname2 = wx.StaticText(self.panel, label='ç»„ç»‡', style=wx.ST_NO_AUTORESIZE)
+        Text_gname2 = wx.StaticText(self.panel, label='×éÖ¯', style=wx.ST_NO_AUTORESIZE)
         Text_gname2.SetFont(self.font)
         sizer.Add(Text_gname2, pos=(3, 6), span=(1, 1), flag=wx.TOP, border=0)
-        Text_type2 = wx.StaticText(self.panel, label='äº‹ä»¶ç±»å‹', style=wx.ST_NO_AUTORESIZE)
+        Text_type2 = wx.StaticText(self.panel, label='ÊÂ¼şÀàĞÍ', style=wx.ST_NO_AUTORESIZE)
         Text_type2.SetFont(self.font)
         sizer.Add(Text_type2, pos=(4, 6), span=(1, 1), flag=wx.TOP, border=0)
-        Text_total2 = wx.StaticText(self.panel, label='ä¼¤äº¡äººæ•°', style=wx.ST_NO_AUTORESIZE)
+        Text_total2 = wx.StaticText(self.panel, label='ÉËÍöÈËÊı', style=wx.ST_NO_AUTORESIZE)
         Text_total2.SetFont(self.font)
         sizer.Add(Text_total2, pos=(5, 6), span=(1, 1), flag=wx.TOP, border=0)
-        Text_nwound2 = wx.StaticText(self.panel, label='å—ä¼¤äººæ•°', style=wx.ST_NO_AUTORESIZE)
+        Text_nwound2 = wx.StaticText(self.panel, label='ÊÜÉËÈËÊı', style=wx.ST_NO_AUTORESIZE)
         Text_nwound2.SetFont(self.font)
         sizer.Add(Text_nwound2, pos=(6, 6), span=(1, 1), flag=wx.TOP, border=0)
-        Text_nkill2 = wx.StaticText(self.panel, label='æ­»äº¡äººæ•°', style=wx.ST_NO_AUTORESIZE)
+        Text_nkill2 = wx.StaticText(self.panel, label='ËÀÍöÈËÊı', style=wx.ST_NO_AUTORESIZE)
         Text_nkill2.SetFont(self.font)
         sizer.Add(Text_nkill2, pos=(7, 6), span=(1, 1), flag=wx.TOP, border=0)
-        Text_content1 = wx.StaticText(self.panel, label='å†…å®¹', style=wx.ST_NO_AUTORESIZE)
+        Text_content1 = wx.StaticText(self.panel, label='ÄÚÈİ', style=wx.ST_NO_AUTORESIZE)
         Text_content1.SetFont(self.font)
         sizer.Add(Text_content1, pos=(8, 6), span=(1, 1), flag=wx.TOP, border=0)
 
@@ -147,14 +149,14 @@ class CheckDialog(wx.Dialog):
         line2 = wx.StaticLine(self.panel)
         sizer.Add(line2, pos=(11, 0), span=(1, 15), flag=wx.EXPAND | wx.TOP, border=10)
 
-        Button1 = wx.Button(self.panel, label='å…¨éƒ¨ä¿å­˜', size=(80, 25), style=wx.ST_NO_AUTORESIZE)
+        Button1 = wx.Button(self.panel, label='È«²¿±£´æ', size=(80, 25), style=wx.ST_NO_AUTORESIZE)
         Button1.SetDefault()
         Button1.SetFont(self.font)
         sizer.Add(Button1, pos=(12, 3), span=(1, 2), flag=wx.TOP, border=0)
-        Button2 = wx.Button(self.panel, label='ä¿å­˜ç¬¬ä¸€æ¡', size=(80, 25), style=wx.ST_NO_AUTORESIZE)
+        Button2 = wx.Button(self.panel, label='±£´æµÚÒ»Ìõ', size=(80, 25), style=wx.ST_NO_AUTORESIZE)
         Button2.SetFont(self.font)
         sizer.Add(Button2, pos=(12, 5), span=(1, 2), flag=wx.TOP, border=0)
-        Button3 = wx.Button(self.panel, label='ä¿å­˜ç¬¬äºŒæ¡', size=(80, 25), style=wx.ST_NO_AUTORESIZE)
+        Button3 = wx.Button(self.panel, label='±£´æµÚ¶şÌõ', size=(80, 25), style=wx.ST_NO_AUTORESIZE)
         Button3.SetFont(self.font)
         sizer.Add(Button3, pos=(12, 7), span=(1, 2), flag=wx.TOP, border=0)
         Button1.Bind(wx.EVT_BUTTON, self.OnClickSaveall)
@@ -224,20 +226,20 @@ class CheckNews(wx.Frame):
         self.font = wx.SystemSettings.GetFont(wx.SYS_SYSTEM_FONT)
         sizer = wx.GridBagSizer(9, 15)
 
-        str_time = self.today[0] + 'å¹´' + self.today[1] + 'æœˆ' + self.today[2] + 'æ—¥'
+        str_time = self.today[0] + 'Äê' + self.today[1] + 'ÔÂ' + self.today[2] + 'ÈÕ'
         self.Texttime = wx.StaticText(self.panel, label=str_time, style=wx.ST_NO_AUTORESIZE)
         self.Texttime.SetFont(self.font)
         sizer.Add(self.Texttime, pos=(0, 0), flag=wx.TOP | wx.LEFT, border=10)
-        self.Textbefore1 = wx.StaticText(self.panel, label='çˆ¬å–å‰', style=wx.ST_NO_AUTORESIZE)
+        self.Textbefore1 = wx.StaticText(self.panel, label='ÅÀÈ¡Ç°', style=wx.ST_NO_AUTORESIZE)
         self.Textbefore1.SetFont(self.font)
         sizer.Add(self.Textbefore1, pos=(0, 4), flag=wx.TOP | wx.LEFT, border=10)
         self.Daybefore = wx.TextCtrl(self.panel, value=str(self.before), size=(25, 30), style=wx.ST_NO_AUTORESIZE)
         self.Daybefore.SetFont(self.font)
         sizer.Add(self.Daybefore, pos=(0, 5), flag=wx.TOP|wx.LEFT, border=5)
-        self.Textbefore2 = wx.StaticText(self.panel, label='å¤©', style=wx.ST_NO_AUTORESIZE)
+        self.Textbefore2 = wx.StaticText(self.panel, label='Ìì', style=wx.ST_NO_AUTORESIZE)
         self.Textbefore2.SetFont(self.font)
         sizer.Add(self.Textbefore2, pos=(0, 6), flag=wx.TOP | wx.EXPAND, border=10)
-        self.CrawlBotton = wx.Button(self.panel, label='æ–°é—»æå–', size=(80, 25), style=wx.ST_NO_AUTORESIZE)
+        self.CrawlBotton = wx.Button(self.panel, label='ĞÂÎÅÌáÈ¡', size=(80, 25), style=wx.ST_NO_AUTORESIZE)
         self.CrawlBotton.SetFont(self.font)
         sizer.Add(self.CrawlBotton, pos=(0, 7), flag=wx.TOP, border=5)
 
@@ -248,25 +250,25 @@ class CheckNews(wx.Frame):
         self.TextNews.SetFont(self.font)
         sizer.Add(self.TextNews, pos=(2, 0), span=(7, 4), flag=wx.LEFT, border=10)
 
-        Text_time = wx.StaticText(self.panel, label='æ—¶é—´', style=wx.ST_NO_AUTORESIZE)
+        Text_time = wx.StaticText(self.panel, label='Ê±¼ä', style=wx.ST_NO_AUTORESIZE)
         Text_time.SetFont(self.font)
         sizer.Add(Text_time, pos=(2, 4), span=(1, 1), flag=wx.TOP, border=0)
-        Text_Address = wx.StaticText(self.panel, label='åœ°ç‚¹', style=wx.ST_NO_AUTORESIZE)
+        Text_Address = wx.StaticText(self.panel, label='µØµã', style=wx.ST_NO_AUTORESIZE)
         Text_Address.SetFont(self.font)
         sizer.Add(Text_Address, pos=(3, 4), span=(1, 1), flag=wx.TOP, border=0)
-        Text_gname = wx.StaticText(self.panel, label='ç»„ç»‡', style=wx.ST_NO_AUTORESIZE)
+        Text_gname = wx.StaticText(self.panel, label='×éÖ¯', style=wx.ST_NO_AUTORESIZE)
         Text_gname.SetFont(self.font)
         sizer.Add(Text_gname, pos=(4, 4), span=(1, 1), flag=wx.TOP, border=0)
-        Text_type = wx.StaticText(self.panel, label='äº‹ä»¶ç±»å‹', style=wx.ST_NO_AUTORESIZE)
+        Text_type = wx.StaticText(self.panel, label='ÊÂ¼şÀàĞÍ', style=wx.ST_NO_AUTORESIZE)
         Text_type.SetFont(self.font)
         sizer.Add(Text_type, pos=(5, 4), span=(1, 1), flag=wx.TOP, border=0)
-        Text_total = wx.StaticText(self.panel, label='ä¼¤äº¡äººæ•°', style=wx.ST_NO_AUTORESIZE)
+        Text_total = wx.StaticText(self.panel, label='ÉËÍöÈËÊı', style=wx.ST_NO_AUTORESIZE)
         Text_total.SetFont(self.font)
         sizer.Add(Text_total, pos=(6, 4), span=(1, 1), flag=wx.TOP, border=0)
-        Text_nwound = wx.StaticText(self.panel, label='å—ä¼¤äººæ•°', style=wx.ST_NO_AUTORESIZE)
+        Text_nwound = wx.StaticText(self.panel, label='ÊÜÉËÈËÊı', style=wx.ST_NO_AUTORESIZE)
         Text_nwound.SetFont(self.font)
         sizer.Add(Text_nwound, pos=(7, 4), span=(1, 1), flag=wx.TOP, border=0)
-        Text_nkill = wx.StaticText(self.panel, label='æ­»äº¡äººæ•°', style=wx.ST_NO_AUTORESIZE)
+        Text_nkill = wx.StaticText(self.panel, label='ËÀÍöÈËÊı', style=wx.ST_NO_AUTORESIZE)
         Text_nkill.SetFont(self.font)
         sizer.Add(Text_nkill, pos=(8, 4), span=(1, 1), flag=wx.TOP, border=0)
 
@@ -295,14 +297,14 @@ class CheckNews(wx.Frame):
         line2 = wx.StaticLine(self.panel)
         sizer.Add(line2, pos=(9, 0), span=(1, 15), flag=wx.EXPAND | wx.TOP, border=10)
 
-        self.upbotton = wx.Button(self.panel, label='ä¸Šä¸€æ¡', size=(80, 25), style=wx.ST_NO_AUTORESIZE)
+        self.upbotton = wx.Button(self.panel, label='ÉÏÒ»Ìõ', size=(80, 25), style=wx.ST_NO_AUTORESIZE)
         self.upbotton.SetFont(self.font)
         sizer.Add(self.upbotton, pos=(10, 3), span=(1, 2), flag=wx.TOP, border=0)
-        self.okbotton = wx.Button(self.panel, label='ç¡®å®š', size=(80, 25), style=wx.ST_NO_AUTORESIZE)
+        self.okbotton = wx.Button(self.panel, label='È·¶¨', size=(80, 25), style=wx.ST_NO_AUTORESIZE)
         self.okbotton.SetFont(self.font)
         self.okbotton.SetDefault()
         sizer.Add(self.okbotton, pos=(10, 5), span=(1, 2), flag=wx.TOP, border=0)
-        self.savebotton = wx.Button(self.panel, label='ä¿å­˜', size=(80, 25), style=wx.ST_NO_AUTORESIZE)
+        self.savebotton = wx.Button(self.panel, label='±£´æ', size=(80, 25), style=wx.ST_NO_AUTORESIZE)
         self.savebotton.SetFont(self.font)
         sizer.Add(self.savebotton, pos=(10, 7), span=(1, 2), flag=wx.TOP, border=0)
 
@@ -328,38 +330,38 @@ class CheckNews(wx.Frame):
         # modal.ShowModal()
         # modal.Destroy()
         self.index = 4
-        news1 = {"content":"å¡æ”¶åˆ°å•¦å¼€å§‹çš„æ–­ä»£å²å…­å—è…¹è‚Œæš—çº¢è‰²çš„é˜²å®ˆæ‰“æ³•å“ˆé‡Œæ–¯çš„çœ‹æ³•è¿˜æ˜¯å¾—åˆ†ç¦»çš„åˆæ³•æ¥¼ä¸Šçš„å‘å“ˆä¸œé£æµ©è¡å‘ç”Ÿçš„åˆæ³•é˜¿è¨å¾·é›·é”‹å·æ‹‰å©šçº±åº—å¯¹æ–¹æ‹‰é»‘è°çš„æµªè´¹ç©ºé—´æš—çº¢è‰²çš„æ«æ—ååºœé˜¿è¨å¾·å‘æŒ¥æ‰“æ­»éƒ½ä¼šå‘ç”Ÿçš„ï¼›å¤§æ°´ç”µè´¹ç¦»å¼€çš„è¯´æ³•ä¸œæ–¹ä¼šè®¡å¸ˆç”µè¯è´¹ç”µè¯è´¹æ‹‰å¼€å¤šä¹…å‘è´§çš„ç»™å®¢æˆ·ç»¿å¡çš„å¤åˆå¼“å‘è¿‡å“ˆäººæ´¾äººå’Œäººé…åˆé¢†å¯¼çœ‹è§è¿‡å¾ˆå¤šéå…¬å¼€å‘çš„å¡å·æ˜¯çš„å¼€å‘å¥½çš„éƒ½ä¼šå‘ä¸¤å—é—ªç”µå‘è´§å¤§æ˜¯å¤§éæ‹‰å…‹ä¸å¾—åˆ†æœºä¼šå¤§è¡—ä¸Šçš„æ³•å¾‹æ¡†æ¶çˆ±çš„è¯´æ³•",
+        news1 = {"content":"¿¨ÊÕµ½À²¿ªÊ¼µÄ¶Ï´úÊ·Áù¿é¸¹¼¡°µºìÉ«µÄ·ÀÊØ´ò·¨¹şÀïË¹µÄ¿´·¨»¹ÊÇµÃ·ÖÀëµÄºÏ·¨Â¥ÉÏµÄ·¢¹ş¶«·çºÆµ´·¢ÉúµÄºÏ·¨°¢ÈøµÂÀ×·æºÅÀ­»éÉ´µê¶Ô·½À­ºÚË­µÄÀË·Ñ¿Õ¼ä°µºìÉ«µÄ·ãÁÖ»ª¸®°¢ÈøµÂ·¢»Ó´òËÀ¶¼»á·¢ÉúµÄ£»´óË®µç·ÑÀë¿ªµÄËµ·¨¶«·½»á¼ÆÊ¦µç»°·Ñµç»°·ÑÀ­¿ª¶à¾Ã·¢»õµÄ¸ø¿Í»§ÂÌ¿¨µÄ¸´ºÏ¹­·¢¹ı¹şÈËÅÉÈËºÍÈËÅäºÏÁìµ¼¿´¼û¹ıºÜ¶à·Ç¹«¿ª·¢µÄ¿¨ºÅÊÇµÄ¿ª·¢ºÃµÄ¶¼»á·¢Á½¿éÉÁµç·¢»õ´óÊÇ´ó·ÇÀ­¿ËË¿µÃ·Ö»ú»á´ó½ÖÉÏµÄ·¨ÂÉ¿ò¼Ü°®µÄËµ·¨",
                  "Event_time":"2018.01.02",
                  "Event_address":" ",
                  "Event_gname":"",
-                 "Event_type":"æš´æ",
+                 "Event_type":"±©¿Ö",
                  "Event_total":" ",
                  "Event_nkill":"",
                  "Event_nwound":" "}
         news2 = {
-            "content": "1ã€å¡æ”¶åˆ°å•¦å¼€å§‹sasdfasdf ï¼›å‘å°±æ˜¯æ‰“å‘ç‚¹ä¸Šäº†é£æœºå¿«é€’å¸ˆå‚…å™¢è¯¶ä¸äººæ–‡äººæœªè¿˜æ”¶ä»£ç†è´¹ä¼šè®¡å¸ˆç”µè¯è´¹é˜¿é‡Œçœ‹åˆ°å›å¤å•¦å¯æ˜¯å¯¹æ–¹å¥½è½å®åˆ°ä»˜æ¬¾å°±å¥½è¯´çš„ç¦åˆ©å¡å†³å®šæ˜¯å¦æ‹‰å®½å¸¦ç¼´è´¹å·ç±»ä¼¼çš„çœ‹æ³•å¥½é‡Œçš„ç–¯ç‹‚å°±å•Šå“ˆåˆ°äº†å‘å¡æœºçš„ç¦åˆ©å¡äº¤ç”µè¯è´¹åŸƒé‡Œå…‹çš„èˆ’æœå°±å¥½é‡Œçš„å’–å•¡å¥½çš„å‘å¿«é€’é‡‘å‡¤å‡°çˆ±çœ‹çš„æˆ¿ä»·è¿˜æ˜¯é‡Œçš„å’–å•¡å¥½çš„ç¦åˆ©å¡çš„æŠ¤è‚¤æ‹‰å®½å¸¦ç¼´è´¹hiURå…¨ä¸šåŠ¡å¦‚ä»¥å‰æˆ‘é¥¿äººå“Ÿè¯¶URè¦æ±‚æ¬§ä¼Ÿå¤æ´»ç‚¹æ—¶ç©ºæˆ¿é—´çˆ±å¥½çš„çš„æ–­ä»£å²å…­å—è…¹è‚Œæš—çº¢è‰²çš„é˜²å®ˆæ‰“æ³•å“ˆé‡Œæ–¯çš„çœ‹æ³•è¿˜æ˜¯å¾—åˆ†ç¦»çš„åˆæ³•æ¥¼ä¸Šçš„å‘å“ˆä¸œé£æµ©è¡å‘ç”Ÿçš„åˆæ³•é˜¿è¨å¾·é›·é”‹å·æ‹‰å©šçº±åº—å¯¹æ–¹æ‹‰é»‘è°çš„æµªè´¹ç©ºé—´æš—çº¢è‰²çš„æ«æ—ååºœé˜¿è¨å¾·å‘æŒ¥æ‰“æ­»éƒ½ä¼šå‘ç”Ÿçš„ï¼›å¤§æ°´ç”µè´¹ç¦»å¼€çš„è¯´æ³•ä¸œæ–¹ä¼šè®¡å¸ˆç”µè¯è´¹ç”µè¯è´¹æ‹‰å¼€å¤šä¹…å‘è´§çš„ç»™å®¢æˆ·ç»¿å¡çš„å¤åˆå¼“å‘è¿‡å“ˆäººæ´¾äººå’Œäººé…åˆé¢†å¯¼çœ‹è§è¿‡å¾ˆå¤šéå…¬å¼€å‘çš„å¡å·æ˜¯çš„å¼€å‘å¥½çš„éƒ½ä¼šå‘ä¸¤å—é—ªç”µå‘è´§å¤§æ˜¯å¤§éæ‹‰å…‹ä¸å¾—åˆ†æœºä¼šå¤§è¡—ä¸Šçš„æ³•å¾‹æ¡†æ¶çˆ±çš„è¯´æ³•",
+            "content": "¿¨ÊÕµ½À²¿ªÊ¼·¢¾ÍÊÇ´ò·¢µãÉÏÁË·É»ú¿ìµİÊ¦¸µàŞÚÀÓëÈËÎÄÈËÎ´»¹ÊÕ´úÀí·Ñ»á¼ÆÊ¦µç»°·Ñ°¢Àï¿´µ½»Ø¸´À²¿ÉÊÇ¶Ô·½ºÃÂäÊµµ½¸¶¿î¾ÍºÃËµµÄ¸£Àû¿¨¾ö¶¨ÊÇ·ñÀ­¿í´ø½É·ÑºÅÀàËÆµÄ¿´·¨ºÃÀïµÄ·è¿ñ¾Í°¡¹şµ½ÁË·¢¿¨»úµÄ¸£Àû¿¨½»µç»°·Ñ°£Àï¿ËµÄÊæ·ş¾ÍºÃÀïµÄ¿§·ÈºÃµÄ·¢¿ìµİ½ğ·ï»Ë°®¿´µÄ·¿¼Û»¹ÊÇÀïµÄ¿§·ÈºÃµÄ¸£Àû¿¨µÄ»¤·ôÀ­¿í´ø½É·ÑhiURÈ«ÒµÎñÈçÒÔÇ°ÎÒ¶öÈËÓ´ÚÀURÒªÇóÅ·Î°¸´»îµãÊ±¿Õ·¿¼ä°®ºÃµÄµÄ¶Ï´úÊ·Áù¿é¸¹¼¡°µºìÉ«µÄ·ÀÊØ´ò·¨¹şÀïË¹µÄ¿´·¨»¹ÊÇµÃ·ÖÀëµÄºÏ·¨Â¥ÉÏµÄ·¢¹ş¶«·çºÆµ´·¢ÉúµÄºÏ·¨°¢ÈøµÂÀ×·æºÅÀ­»éÉ´µê¶Ô·½À­ºÚË­µÄÀË·Ñ¿Õ¼ä°µºìÉ«µÄ·ãÁÖ»ª¸®°¢ÈøµÂ·¢»Ó´òËÀ¶¼»á·¢ÉúµÄ£»´óË®µç·ÑÀë¿ªµÄËµ·¨¶«·½»á¼ÆÊ¦µç»°·Ñµç»°·ÑÀ­¿ª¶à¾Ã·¢»õµÄ¸ø¿Í»§ÂÌ¿¨µÄ¸´ºÏ¹­·¢¹ı¹şÈËÅÉÈËºÍÈËÅäºÏÁìµ¼¿´¼û¹ıºÜ¶à·Ç¹«¿ª·¢µÄ¿¨ºÅÊÇµÄ¿ª·¢ºÃµÄ¶¼»á·¢Á½¿éÉÁµç·¢»õ´óÊÇ´ó·ÇÀ­¿ËË¿µÃ·Ö»ú»á´ó½ÖÉÏµÄ·¨ÂÉ¿ò¼Ü°®µÄËµ·¨",
             "Event_time": "2018.01.01",
             "Event_address": " ",
             "Event_gname": "",
-            "Event_type": "æš´æ",
+            "Event_type": "±©¿Ö",
             "Event_total": " ",
             "Event_nkill": "",
             "Event_nwound": " "}
         news3 = {
-            "content": "2ã€å¡æ”¶åˆ°å•¦å¼€å§‹çš„æ–­ä»£å²å…­å—è…¹è‚Œæš—çº¢è‰²çš„é˜²å®ˆæ‰“æ³•å“ˆé‡Œæ–¯çš„çœ‹æ³•è¿˜æ˜¯å¾—åˆ†ç¦»çš„åˆæ³•æ¥¼ä¸Šçš„å‘å“ˆä¸œé£æµ©è¡å‘ç”Ÿçš„åˆæ³•é˜¿è¨å¾·é›·é”‹å·æ‹‰å©šçº±åº—å¯¹æ–¹æ‹‰é»‘è°çš„æµªè´¹ç©ºé—´æš—çº¢è‰²çš„æ«æ—ååºœé˜¿è¨å¾·å‘æŒ¥æ‰“æ­»éƒ½ä¼šå‘ç”Ÿçš„ï¼›å¤§æ°´ç”µè´¹ç¦»å¼€çš„è¯´æ³•ä¸œæ–¹ä¼šè®¡å¸ˆç”µè¯è´¹ç”µè¯è´¹æ‹‰å¼€å¤šä¹…å‘è´§çš„ç»™å®¢æˆ·ç»¿å¡çš„å¤åˆå¼“å‘è¿‡å“ˆäººæ´¾äººå’Œäººé…åˆé¢†å¯¼çœ‹è§è¿‡å¾ˆå¤šéå…¬å¼€å‘çš„å¡å·æ˜¯çš„å¼€å‘å¥½çš„éƒ½ä¼šå‘ä¸¤å—é—ªç”µå‘è´§å¤§æ˜¯å¤§éæ‹‰å…‹ä¸å¾—åˆ†æœºä¼šå¤§è¡—ä¸Šçš„æ³•å¾‹æ¡†æ¶çˆ±çš„è¯´æ³•",
+            "content": "2¡¢¿¨ÊÕµ½À²¿ªÊ¼µÄ¶Ï´úÊ·Áù¿é¸¹¼¡°µºìÉ«µÄ·ÀÊØ´ò·¨¹şÀïË¹µÄ¿´·¨»¹ÊÇµÃ·ÖÀëµÄºÏ·¨Â¥ÉÏµÄ·¢¹ş¶«·çºÆµ´·¢ÉúµÄºÏ·¨°¢ÈøµÂÀ×·æºÅÀ­»éÉ´µê¶Ô·½À­ºÚË­µÄÀË·Ñ¿Õ¼ä°µºìÉ«µÄ·ãÁÖ»ª¸®°¢ÈøµÂ·¢»Ó´òËÀ¶¼»á·¢ÉúµÄ£»´óË®µç·ÑÀë¿ªµÄËµ·¨¶«·½»á¼ÆÊ¦µç»°·Ñµç»°·ÑÀ­¿ª¶à¾Ã·¢»õµÄ¸ø¿Í»§ÂÌ¿¨µÄ¸´ºÏ¹­·¢¹ı¹şÈËÅÉÈËºÍÈËÅäºÏÁìµ¼¿´¼û¹ıºÜ¶à·Ç¹«¿ª·¢µÄ¿¨ºÅÊÇµÄ¿ª·¢ºÃµÄ¶¼»á·¢Á½¿éÉÁµç·¢»õ´óÊÇ´ó·ÇÀ­¿ËË¿µÃ·Ö»ú»á´ó½ÖÉÏµÄ·¨ÂÉ¿ò¼Ü°®µÄËµ·¨",
             "Event_time": "2018.01.01",
             "Event_address": " ",
             "Event_gname": "",
-            "Event_type": "æš´æ",
+            "Event_type": "±©¿Ö",
             "Event_total": " ",
             "Event_nkill": "",
             "Event_nwound": " "}
         news4 = {
-            "content": "3ã€å¡æ”¶åˆ°å•¦å¼€å§‹çš„æ–­ä»£å²å…­å—è…¹è‚Œæš—çº¢è‰²çš„é˜²å®ˆæ‰“æ³•å“ˆé‡Œæ–¯çš„çœ‹æ³•è¿˜æ˜¯å¾—åˆ†ç¦»çš„åˆæ³•æ¥¼ä¸Šçš„å‘å“ˆä¸œé£æµ©è¡å‘ç”Ÿçš„åˆæ³•é˜¿è¨å¾·é›·é”‹å·æ‹‰å©šçº±åº—å¯¹æ–¹æ‹‰é»‘è°çš„æµªè´¹ç©ºé—´æš—çº¢è‰²çš„æ«æ—ååºœé˜¿è¨å¾·å‘æŒ¥æ‰“æ­»éƒ½ä¼šå‘ç”Ÿçš„ï¼›å¤§æ°´ç”µè´¹ç¦»å¼€çš„è¯´æ³•ä¸œæ–¹ä¼šè®¡å¸ˆç”µè¯è´¹ç”µè¯è´¹æ‹‰å¼€å¤šä¹…å‘è´§çš„ç»™å®¢æˆ·ç»¿å¡çš„å¤åˆå¼“å‘è¿‡å“ˆäººæ´¾äººå’Œäººé…åˆé¢†å¯¼çœ‹è§è¿‡å¾ˆå¤šéå…¬å¼€å‘çš„å¡å·æ˜¯çš„å¼€å‘å¥½çš„éƒ½ä¼šå‘ä¸¤å—é—ªç”µå‘è´§å¤§æ˜¯å¤§éæ‹‰å…‹ä¸å¾—åˆ†æœºä¼šå¤§è¡—ä¸Šçš„æ³•å¾‹æ¡†æ¶çˆ±çš„è¯´æ³•",
+            "content": "3¡¢¿¨ÊÕµ½À²¿ªÊ¼µÄ¶Ï´úÊ·Áù¿é¸¹¼¡°µºìÉ«µÄ·ÀÊØ´ò·¨¹şÀïË¹µÄ¿´·¨»¹ÊÇµÃ·ÖÀëµÄºÏ·¨Â¥ÉÏµÄ·¢¹ş¶«·çºÆµ´·¢ÉúµÄºÏ·¨°¢ÈøµÂÀ×·æºÅÀ­»éÉ´µê¶Ô·½À­ºÚË­µÄÀË·Ñ¿Õ¼ä°µºìÉ«µÄ·ãÁÖ»ª¸®°¢ÈøµÂ·¢»Ó´òËÀ¶¼»á·¢ÉúµÄ£»´óË®µç·ÑÀë¿ªµÄËµ·¨¶«·½»á¼ÆÊ¦µç»°·Ñµç»°·ÑÀ­¿ª¶à¾Ã·¢»õµÄ¸ø¿Í»§ÂÌ¿¨µÄ¸´ºÏ¹­·¢¹ı¹şÈËÅÉÈËºÍÈËÅäºÏÁìµ¼¿´¼û¹ıºÜ¶à·Ç¹«¿ª·¢µÄ¿¨ºÅÊÇµÄ¿ª·¢ºÃµÄ¶¼»á·¢Á½¿éÉÁµç·¢»õ´óÊÇ´ó·ÇÀ­¿ËË¿µÃ·Ö»ú»á´ó½ÖÉÏµÄ·¨ÂÉ¿ò¼Ü°®µÄËµ·¨",
             "Event_time": "2018.01.01",
             "Event_address": " ",
             "Event_gname": "",
-            "Event_type": "æš´æ",
+            "Event_type": "±©¿Ö",
             "Event_total": " ",
             "Event_nkill": "",
             "Event_nwound": " "}
@@ -386,7 +388,7 @@ class CheckNews(wx.Frame):
     def OnClickSave(self, e):
         list_news = []
         for new in self.news:
-            if new['Event_type'] == 'æš´æ':
+            if new['Event_type'] == '±©¿Ö':
                 list_news.append(new)
         compare_result = self.compareNews(list_news)
         stream_news = self.change_list(compare_result)
