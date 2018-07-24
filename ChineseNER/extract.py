@@ -263,15 +263,8 @@ def entities_deduplicate(li):
                 entities_result.append(dict)
     return entities_result
 
-def EventInfo_extract(text):
-    EventInfo = {}
-    EventInfo['Event_time'] = 'unknown'
-    EventInfo['Event_address'] = 'unknown'
-    EventInfo['Event_type'] = 'unknown'
-    EventInfo['Event_gname'] = 'unknown'
-    EventInfo['Event_total'] = '0'
-    EventInfo['Event_nwound'] = '0'
-    EventInfo['Event_nkill'] = '0'
+def EventInfo_extract(lists):
+    result_list = []
     config = load_config(FLAGS.config_file)
     logger = get_logger(FLAGS.log_file)
     # limit GPU memory
@@ -281,24 +274,33 @@ def EventInfo_extract(text):
         char_to_id, id_to_char, tag_to_id, id_to_tag = pickle.load(f)
     with tf.Session(config=tf_config) as sess:
         model = create_model(sess, Model, FLAGS.ckpt_path, load_word2vec, config, id_to_char, logger)
-        result = model.evaluate_line(sess, input_from_line(text, char_to_id), id_to_tag)
-        lists = entities_deduplicate(result["entities"])
         for list in lists:
-            if list['type'] == 'TIME':
-                EventInfo['Event_time'] = list['word']
-            elif list['type'] == 'LOCATION':
-                EventInfo['Event_address'] = list['word']
-            elif list['type'] == 'TYPE':
-                EventInfo['Event_type'] = list['word']
-            elif list['type'] == 'ORGANIZATION':
-                EventInfo['Event_gname'] = list['word']
-            elif list['type'] == 'HURT_NUM':
-                EventInfo['Event_nwound'] = list['word']
-            elif list['type'] == 'DEAD_NUM':
-                EventInfo['Event_nkill'] = list['word']
-
-        EventInfo['Event_total'] = str(int(EventInfo['Event_nkill']) + int(EventInfo['Event_nwound']))
-    return EventInfo
+            list['Event_time'] = 'unknown'
+            list['Event_address'] = 'unknown'
+            list['Event_type'] = 'unknown'
+            list['Event_gname'] = 'unknown'
+            list['Event_total'] = '0'
+            list['Event_nwound'] = '0'
+            list['Event_nkill'] = '0'
+            result_str = model.evaluate_line(sess, input_from_line(list['content'], char_to_id), id_to_tag)
+            results = entities_deduplicate(result_str["entities"])
+            for result in results:
+                if result['type'] == 'TIME':
+                    list['Event_time'] = result['word']
+                elif result['type'] == 'LOCATION':
+                    list['Event_address'] = result['word']
+                elif result['type'] == 'TYPE':
+                    list['Event_type'] = result['word']
+                elif result['type'] == 'ORGANIZATION':
+                    list['Event_gname'] = result['word']
+                elif result['type'] == 'HURT_NUM':
+                    list['Event_nwound'] = result['word']
+                elif result['type'] == 'DEAD_NUM':
+                    list['Event_nkill'] = result['word']
+            list['Event_total'] = str(int(list['Event_nkill']) + int(list['Event_nwound']))
+            result_list.append(list)
+    sess.close()
+    return result_list
 
 # def main(_):
 #
@@ -312,10 +314,7 @@ def EventInfo_extract(text):
 #         evaluate_line()
 
 
-# if __name__ == "__main__":
-#     text = '俄罗斯卫星通讯社莫斯科7月27日电 俄罗斯第一副总检察长亚历山大·布克斯曼7月27日表示,强力部门2017年上半年挫败了俄境内12起恐怖袭击。他在院务会议上表示:“记录到13起恐怖袭击,其中12起在筹备和谋划阶段被挫败。”4月3日的圣彼得堡恐怖袭击未能制止,当时一名自杀式袭击者在圣彼得堡地铁“技术大学2号”站和“先纳亚广场”站之间引爆炸弹。此外,由于在“起义广场”站及时发现一枚自制炸弹,从而成功避免了另一起爆炸事件。爆炸造成16人死亡,包括恐怖分子贾利洛夫本人。在针对该起恐袭的调查过程中已逮捕10人。'
-#     result = EventInfo_extract(text)
-#     print(result)
+
 
 
 

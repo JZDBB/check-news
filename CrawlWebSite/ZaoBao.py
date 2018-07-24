@@ -206,32 +206,32 @@ class Crawl_NEWS():
                     if summary!=None:
                         NewInfo["summary"]=summary
                         EventInfo=None
-                    '''
-                    进一步获取时间信息
-                    '''
-                    EventInfo=extract.EventInfo_extract(body["content"])
-
-                    if EventInfo!=None:
-                        NewInfo["Event_time"]=EventInfo["Event_time"]
-                        # print(EventInfo["Event_time"].decode("utf-8"))
-                        NewInfo["Event_address"]=EventInfo['Event_address']
-                        NewInfo["Event_type"]=EventInfo['Event_type']
-                        NewInfo["Event_total"]=EventInfo['Event_total']
-                        NewInfo["Event_gname"]=EventInfo["Event_gname"]
-                        NewInfo["Event_nwound"]=EventInfo['Event_nwound']
-                        NewInfo["Event_nkill"]=EventInfo['Event_nkill']
-
-                        #将返回消息通过列表形式返回上一层统一进行入库处理。
-                    else:
-                        NewInfo["Event_time"]='unknown'
-                        NewInfo["Event_address"]='unknown'
-                        NewInfo["Event_type"]='unknown'
-                        NewInfo["Event_total"]='unknown'
-                        NewInfo["Event_gname"]='unknown'
-                        NewInfo["Event_nwound"]='unknown'
-                        NewInfo["Event_nkill"]='unknown'
-
-                    # print(NewInfo)
+                    # '''
+                    #                     # 进一步获取时间信息
+                    #                     # '''
+                    #                     # EventInfo=extract.EventInfo_extract(body["content"])
+                    #                     #
+                    #                     # if EventInfo!=None:
+                    #                     #     NewInfo["Event_time"]=EventInfo["Event_time"]
+                    #                     #     # print(EventInfo["Event_time"].decode("utf-8"))
+                    #                     #     NewInfo["Event_address"]=EventInfo['Event_address']
+                    #                     #     NewInfo["Event_type"]=EventInfo['Event_type']
+                    #                     #     NewInfo["Event_total"]=EventInfo['Event_total']
+                    #                     #     NewInfo["Event_gname"]=EventInfo["Event_gname"]
+                    #                     #     NewInfo["Event_nwound"]=EventInfo['Event_nwound']
+                    #                     #     NewInfo["Event_nkill"]=EventInfo['Event_nkill']
+                    #                     #
+                    #                     #     #将返回消息通过列表形式返回上一层统一进行入库处理。
+                    #                     # else:
+                    #                     #     NewInfo["Event_time"]='unknown'
+                    #                     #     NewInfo["Event_address"]='unknown'
+                    #                     #     NewInfo["Event_type"]='unknown'
+                    #                     #     NewInfo["Event_total"]='unknown'
+                    #                     #     NewInfo["Event_gname"]='unknown'
+                    #                     #     NewInfo["Event_nwound"]='unknown'
+                    #                     #     NewInfo["Event_nkill"]='unknown'
+                    #                     #
+                    #                     # # print(NewInfo)
                     if len(NewInfo)>0:
                         index += 1
                         CrawlData.append(NewInfo)

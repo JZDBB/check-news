@@ -43,8 +43,9 @@ class BagOfWords(object):
             print("loaded dictionary from %s" % dir)
             self.dict = pickle.load(open(dir, 'rb'))
             print("done")
-        except IOError:
+        except Exception as e:
             print("error while loading from %s" % dir)
+            print(e)
             
     def save_dictionary(self, dir):
         import pickle

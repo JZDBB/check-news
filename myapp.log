@@ -1,2 +1,2 @@
-Mon, 23 Jul 2018 17:26:22 utils.py[line:176] INFO Reading model parameters from ./ChineseNER/ckpt\ner.ckpt
-Mon, 23 Jul 2018 17:26:22 tf_logging.py[line:116] INFO Restoring parameters from ./ChineseNER/ckpt\ner.ckpt
+Tue, 24 Jul 2018 16:59:04 utils.py[line:176] INFO Reading model parameters from ./ChineseNER/ckpt\ner.ckpt
+Tue, 24 Jul 2018 16:59:04 tf_logging.py[line:116] INFO Restoring parameters from ./ChineseNER/ckpt\ner.ckpt

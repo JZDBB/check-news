@@ -208,26 +208,26 @@ class Crawl_NEWS():
                     summary=auto_abstract.abstract(body["content"])
                     if summary!=None:
                         NewInfo["summary"]=summary
-                    if self.extract:
-                        EventInfo=EventInfo_extract.EventInfo_extraction(infodex["content"])
-                    else:
-                        EventInfo=None
-                    if EventInfo!=None:
-                        NewInfo["Event_time"]=EventInfo["Event_time"]
-                        NewInfo["Event_address"]=EventInfo['Event_address']
-                        NewInfo["Event_type"]=EventInfo['Event_type']
-                        NewInfo["Event_total"]=EventInfo['Event_total']
-                        NewInfo["Event_gname"]=EventInfo["Event_gname"]
-                        NewInfo["Event_nwound"]=EventInfo['Event_nwound']
-                        NewInfo["Event_nkill"]=EventInfo['Event_nkill']
-                    else:
-                        NewInfo["Event_time"]=''
-                        NewInfo["Event_address"]=''
-                        NewInfo["Event_type"]=''
-                        NewInfo["Event_total"]=''
-                        NewInfo["Event_gname"]=''
-                        NewInfo["Event_nwound"]=''
-                        NewInfo["Event_nkill"]=''
+                    # if self.extract:
+                    #     EventInfo=EventInfo_extract.EventInfo_extraction(infodex["content"])
+                    # else:
+                    #     EventInfo=None
+                    # if EventInfo!=None:
+                    #     NewInfo["Event_time"]=EventInfo["Event_time"]
+                    #     NewInfo["Event_address"]=EventInfo['Event_address']
+                    #     NewInfo["Event_type"]=EventInfo['Event_type']
+                    #     NewInfo["Event_total"]=EventInfo['Event_total']
+                    #     NewInfo["Event_gname"]=EventInfo["Event_gname"]
+                    #     NewInfo["Event_nwound"]=EventInfo['Event_nwound']
+                    #     NewInfo["Event_nkill"]=EventInfo['Event_nkill']
+                    # else:
+                    #     NewInfo["Event_time"]=''
+                    #     NewInfo["Event_address"]=''
+                    #     NewInfo["Event_type"]=''
+                    #     NewInfo["Event_total"]=''
+                    #     NewInfo["Event_gname"]=''
+                    #     NewInfo["Event_nwound"]=''
+                    #     NewInfo["Event_nkill"]=''
                          
                     if len(NewInfo)>0:
                         print(NewInfo)

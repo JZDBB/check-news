@@ -6,17 +6,18 @@ from sklearn.externals import joblib
 from CrawlWebSite.TextClassify import BagOfWords
 from CrawlWebSite.TextClassify import TextClassify
 
-data_dir = 'data'
+data_dir = './CrawlWebSite/data/'
 
 BOW = BagOfWords.BagOfWords('')# BOW = BagOfWords('')
-BOW.load_dictionary(os.path.join(data_dir, 'dicitionary.pkl'))
+dir = os.path.join(data_dir, 'dicitionary.pkl')
+BOW.load_dictionary(dir)
 clf = joblib.load("model.m")
 
 def text_classify(text):
     ## TextClassify
     TextClassifier = TextClassify.TextClassify()
     try:
-        print(text)
+        # print(text)
         pred = TextClassifier.text_classify(text, BOW, clf)
         print(pred)
     except:

@@ -1,4 +1,7 @@
+# -*- coding: utf-8 -*-
 import wx
+
+from ChineseNER import extract
 
 class CheckSameDialog(wx.Frame):
     def __init__(self, mesg1, mesg2):
@@ -151,8 +154,6 @@ class CheckSameDialog(wx.Frame):
     def returemesg(self):
         return self.list_result
 
-
-
 if __name__ == '__main__':
     # app = wx.App()
     # frame = CheckSameDialog([1], [2])
@@ -163,10 +164,15 @@ if __name__ == '__main__':
     # b = a.split('.')[0] + a.split('.')[1] + a.split('.')[2] + '0000'
     # print(b)
 
-    list = [1, 2, 3, 4, 5, 6, 8, 9, 10]
-    delete_id = [2, 4, 7]
-    num = 0
-    for id in delete_id:
-        del list[id - num]
-        num += 1
-    print(list)
+    # list = [1, 2, 3, 4, 5, 6, 8, 9, 10]
+    # delete_id = [2, 4, 7]
+    # num = 0
+    # for id in delete_id:
+    #     del list[id - num]
+    #     num += 1
+    # print(list)
+
+
+    text = '俄罗斯卫星通讯社莫斯科7月27日电 俄罗斯第一副总检察长亚历山大·布克斯曼7月27日表示,强力部门2017年上半年挫败了俄境内12起恐怖袭击。他在院务会议上表示:“记录到13起恐怖袭击,其中12起在筹备和谋划阶段被挫败。”4月3日的圣彼得堡恐怖袭击未能制止,当时一名自杀式袭击者在圣彼得堡地铁“技术大学2号”站和“先纳亚广场”站之间引爆炸弹。此外,由于在“起义广场”站及时发现一枚自制炸弹,从而成功避免了另一起爆炸事件。爆炸造成16人死亡,包括恐怖分子贾利洛夫本人。在针对该起恐袭的调查过程中已逮捕10人。'
+    result = extract.EventInfo_extract(text)
+    print(result)
