@@ -113,7 +113,7 @@ class Crawl_NEWS():
     def get_html_soup_txt(self,url,headers):#获取解编码后的HTML
         html = None
         html=self.getUrl_multiTry(url,headers)
-        soup=BeautifulSoup(html, 'html.parser', from_encoding='utf-8') 
+        soup=BeautifulSoup(html, 'html.parser')
         return soup
     
     def get_html_soup(self,url,headers):#获取解编码后的HTML
@@ -126,7 +126,7 @@ class Crawl_NEWS():
         html = None
         html =self.getUrl_multiTry(url,headers)
         self.index+=1
-        soup=BeautifulSoup(html, 'html.parser', from_encoding='utf-8') 
+        soup=BeautifulSoup(html, 'html.parser')
         return soup
     
     def page_url(self,url, page_num):#生成带页面的URL
@@ -228,26 +228,26 @@ class Crawl_NEWS():
 
                         # 进一步获取时间信息
 
-                        if self.extract:
-                            EventInfo=EventInfo_extract.EventInfo_extraction(body["content"])
-                        else:
-                            EventInfo=None
-                        if EventInfo!=None:
-                            NewInfo["Event_time"]=EventInfo["Event_time"]
-                            NewInfo["Event_address"]=EventInfo['Event_address']
-                            NewInfo["Event_type"]=EventInfo['Event_type']
-                            NewInfo["Event_total"]=EventInfo['Event_total']
-                            NewInfo["Event_gname"]=EventInfo["Event_gname"]
-                            NewInfo["Event_nwound"]=EventInfo['Event_nwound']
-                            NewInfo["Event_nkill"]=EventInfo['Event_nkill']
-                        else:
-                            NewInfo["Event_time"]=''
-                            NewInfo["Event_address"]=''
-                            NewInfo["Event_type"]=''
-                            NewInfo["Event_total"]=''
-                            NewInfo["Event_gname"]=''
-                            NewInfo["Event_nwound"]=''
-                            NewInfo["Event_nkill"]=''
+                        # if self.extract:
+                        #     EventInfo=EventInfo_extract.EventInfo_extraction(body["content"])
+                        # else:
+                        #     EventInfo=None
+                        # if EventInfo!=None:
+                        #     NewInfo["Event_time"]=EventInfo["Event_time"]
+                        #     NewInfo["Event_address"]=EventInfo['Event_address']
+                        #     NewInfo["Event_type"]=EventInfo['Event_type']
+                        #     NewInfo["Event_total"]=EventInfo['Event_total']
+                        #     NewInfo["Event_gname"]=EventInfo["Event_gname"]
+                        #     NewInfo["Event_nwound"]=EventInfo['Event_nwound']
+                        #     NewInfo["Event_nkill"]=EventInfo['Event_nkill']
+                        # else:
+                        #     NewInfo["Event_time"]=''
+                        #     NewInfo["Event_address"]=''
+                        #     NewInfo["Event_type"]=''
+                        #     NewInfo["Event_total"]=''
+                        #     NewInfo["Event_gname"]=''
+                        #     NewInfo["Event_nwound"]=''
+                        #     NewInfo["Event_nkill"]=''
                             #CrawlData.append(NewInfo)
                         # saveData.saveData(NewInfo["url"],NewInfo)
                         # DataSend.sendata("localhost",50001,NewInfo)
@@ -287,11 +287,8 @@ class Crawl_NEWS():
 
 
 # #获取新闻的标题和链接
-# if __name__=="__main__":
-#     #print "hello world"
-#     xinhuaCrawl = Crawl_NEWS(timeFrame=100)
-#     craw, index = xinhuaCrawl.start_crawl()
-#     print(craw, index)
-    
-    
-    
+if __name__=="__main__":
+    #print "hello world"
+    xinhuaCrawl = Crawl_NEWS(timeFrame=100)
+    craw, index = xinhuaCrawl.start_crawl()
+    print(craw, index)

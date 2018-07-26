@@ -1,2 +1,78 @@
-Tue, 24 Jul 2018 16:59:04 utils.py[line:176] INFO Reading model parameters from ./ChineseNER/ckpt\ner.ckpt
-Tue, 24 Jul 2018 16:59:04 tf_logging.py[line:116] INFO Restoring parameters from ./ChineseNER/ckpt\ner.ckpt
+Thu, 26 Jul 2018 16:03:49 __init__.py[line:111] DEBUG Building prefix dict from the default dictionary ...
+Thu, 26 Jul 2018 16:03:49 __init__.py[line:131] DEBUG Loading model from cache C:\Users\yn\AppData\Local\Temp\jieba.cache
+Thu, 26 Jul 2018 16:03:50 __init__.py[line:163] DEBUG Loading model cost 0.974 seconds.
+Thu, 26 Jul 2018 16:03:50 __init__.py[line:164] DEBUG Prefix dict has been built succesfully.
+Thu, 26 Jul 2018 16:03:56 sbcharsetprober.py[line:119] DEBUG ISO-8859-5 confidence = 0.000435752421951451, below negative shortcut threshhold 0.05
+Thu, 26 Jul 2018 16:03:56 sbcharsetprober.py[line:119] DEBUG MacCyrillic confidence = 0.019075623056185587, below negative shortcut threshhold 0.05
+Thu, 26 Jul 2018 16:03:56 sbcharsetprober.py[line:119] DEBUG ISO-8859-5 confidence = 0.00021039687833638264, below negative shortcut threshhold 0.05
+Thu, 26 Jul 2018 16:03:56 sbcharsetprober.py[line:119] DEBUG windows-1255 confidence = 0.0, below negative shortcut threshhold 0.05
+Thu, 26 Jul 2018 16:03:56 sbcharsetprober.py[line:119] DEBUG windows-1255 confidence = 0.0, below negative shortcut threshhold 0.05
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:100] DEBUG utf-8  confidence = 0.99
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:100] DEBUG SHIFT_JIS Japanese confidence = 0.01
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:100] DEBUG EUC-JP Japanese confidence = 0.01
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:100] DEBUG GB2312 Chinese confidence = 0.01
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:100] DEBUG EUC-KR Korean confidence = 0.01
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:100] DEBUG CP949 Korean confidence = 0.01
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:100] DEBUG Big5 Chinese confidence = 0.01
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:100] DEBUG EUC-TW Taiwan confidence = 0.01
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:100] DEBUG windows-1251 Russian confidence = 0.01
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:100] DEBUG KOI8-R Russian confidence = 0.01
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:97] DEBUG ISO-8859-5 not active
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:97] DEBUG MacCyrillic not active
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:100] DEBUG IBM866 Russian confidence = 0.07571622990984553
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:100] DEBUG IBM855 Russian confidence = 0.051709538643568774
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:100] DEBUG ISO-8859-7 Greek confidence = 0.0
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:100] DEBUG windows-1253 Greek confidence = 0.0
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:97] DEBUG ISO-8859-5 not active
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:100] DEBUG windows-1251 Bulgarian confidence = 0.0
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:100] DEBUG TIS-620 Thai confidence = 0.07009384798503551
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:100] DEBUG ISO-8859-9 Turkish confidence = 0.40050772031314347
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:100] DEBUG windows-1255 Hebrew confidence = 0.0
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:97] DEBUG windows-1255 not active
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:97] DEBUG windows-1255 not active
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:100] DEBUG utf-8  confidence = 0.99
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:100] DEBUG SHIFT_JIS Japanese confidence = 0.01
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:100] DEBUG EUC-JP Japanese confidence = 0.01
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:100] DEBUG GB2312 Chinese confidence = 0.01
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:100] DEBUG EUC-KR Korean confidence = 0.01
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:100] DEBUG CP949 Korean confidence = 0.01
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:100] DEBUG Big5 Chinese confidence = 0.01
+Thu, 26 Jul 2018 16:03:56 charsetgroupprober.py[line:100] DEBUG EUC-TW Taiwan confidence = 0.01
+Thu, 26 Jul 2018 16:03:57 sbcharsetprober.py[line:119] DEBUG ISO-8859-5 confidence = 0.000435752421951451, below negative shortcut threshhold 0.05
+Thu, 26 Jul 2018 16:03:57 sbcharsetprober.py[line:119] DEBUG MacCyrillic confidence = 0.019075623056185587, below negative shortcut threshhold 0.05
+Thu, 26 Jul 2018 16:03:57 sbcharsetprober.py[line:119] DEBUG ISO-8859-5 confidence = 0.00021039687833638264, below negative shortcut threshhold 0.05
+Thu, 26 Jul 2018 16:03:58 sbcharsetprober.py[line:119] DEBUG windows-1255 confidence = 0.0, below negative shortcut threshhold 0.05
+Thu, 26 Jul 2018 16:03:58 sbcharsetprober.py[line:119] DEBUG windows-1255 confidence = 0.0, below negative shortcut threshhold 0.05
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:100] DEBUG utf-8  confidence = 0.99
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:100] DEBUG SHIFT_JIS Japanese confidence = 0.01
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:100] DEBUG EUC-JP Japanese confidence = 0.01
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:100] DEBUG GB2312 Chinese confidence = 0.01
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:100] DEBUG EUC-KR Korean confidence = 0.01
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:100] DEBUG CP949 Korean confidence = 0.01
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:100] DEBUG Big5 Chinese confidence = 0.01
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:100] DEBUG EUC-TW Taiwan confidence = 0.01
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:100] DEBUG windows-1251 Russian confidence = 0.01
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:100] DEBUG KOI8-R Russian confidence = 0.01
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:97] DEBUG ISO-8859-5 not active
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:97] DEBUG MacCyrillic not active
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:100] DEBUG IBM866 Russian confidence = 0.07571622990984553
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:100] DEBUG IBM855 Russian confidence = 0.051709538643568774
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:100] DEBUG ISO-8859-7 Greek confidence = 0.0
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:100] DEBUG windows-1253 Greek confidence = 0.0
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:97] DEBUG ISO-8859-5 not active
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:100] DEBUG windows-1251 Bulgarian confidence = 0.0
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:100] DEBUG TIS-620 Thai confidence = 0.07009384798503551
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:100] DEBUG ISO-8859-9 Turkish confidence = 0.40050772031314347
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:100] DEBUG windows-1255 Hebrew confidence = 0.0
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:97] DEBUG windows-1255 not active
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:97] DEBUG windows-1255 not active
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:100] DEBUG utf-8  confidence = 0.99
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:100] DEBUG SHIFT_JIS Japanese confidence = 0.01
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:100] DEBUG EUC-JP Japanese confidence = 0.01
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:100] DEBUG GB2312 Chinese confidence = 0.01
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:100] DEBUG EUC-KR Korean confidence = 0.01
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:100] DEBUG CP949 Korean confidence = 0.01
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:100] DEBUG Big5 Chinese confidence = 0.01
+Thu, 26 Jul 2018 16:03:58 charsetgroupprober.py[line:100] DEBUG EUC-TW Taiwan confidence = 0.01
+Thu, 26 Jul 2018 16:04:43 utils.py[line:176] INFO Reading model parameters from ./ChineseNER/ckpt\ner.ckpt
+Thu, 26 Jul 2018 16:04:43 tf_logging.py[line:116] INFO Restoring parameters from ./ChineseNER/ckpt\ner.ckpt

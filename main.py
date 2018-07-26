@@ -2,12 +2,11 @@
 
 """
 1、测试的时候出现时间问题，没有具体发生时间，但是记录的时候需要记录时间以便确定id
-2、比较事件id
 """
 import wx
 import time
 
-from CrawlWebSite import ZaoBao, guangchazhe, DataManager
+from CrawlWebSite import sputniknews, DataManager
 from ChineseNER import extract
 
 class CrawlTotalDialog(wx.Dialog):
@@ -227,7 +226,7 @@ class CheckNews(wx.Frame):
         self.Textbefore1 = wx.StaticText(self.panel, label='爬取前', style=wx.ST_NO_AUTORESIZE)
         self.Textbefore1.SetFont(self.font)
         sizer.Add(self.Textbefore1, pos=(0, 4), flag=wx.TOP | wx.LEFT, border=10)
-        self.Daybefore = wx.TextCtrl(self.panel, value=str(self.before), size=(25, 25), style=wx.ST_NO_AUTORESIZE)
+        self.Daybefore = wx.TextCtrl(self.panel, value=str(self.before), size=(40, 25), style=wx.ST_NO_AUTORESIZE)
         self.Daybefore.SetFont(self.font)
         sizer.Add(self.Daybefore, pos=(0, 5), flag=wx.TOP|wx.LEFT, border=5)
         self.Textbefore2 = wx.StaticText(self.panel, label='天', style=wx.ST_NO_AUTORESIZE)
@@ -291,7 +290,7 @@ class CheckNews(wx.Frame):
         line2 = wx.StaticLine(self.panel)
         sizer.Add(line2, pos=(9, 0), span=(1, 15), flag=wx.EXPAND | wx.TOP, border=10)
 
-        self.TextTip = wx.StaticText(self.panel, label=' 0 / 0 ',style=wx.ST_NO_AUTORESIZE)
+        self.TextTip = wx.StaticText(self.panel, label=' 0 / 0 ',size=(100, 25), style=wx.ST_NO_AUTORESIZE)
         self.TextTip.SetFont(self.font)
         sizer.Add(self.TextTip, pos=(10, 0), span=(1, 1), flag=wx.LEFT, border=30)
 
@@ -316,19 +315,19 @@ class CheckNews(wx.Frame):
 
     def OnClickCraw(self, e):
         self.before = self.Daybefore.GetValue()
-        self.zaobao = ZaoBao.Crawl_NEWS(timeFrame=int(self.before))
-        self.guancha = guangchazhe.Crawl_NEWS(timeFrame=int(self.before))
-        news1, index1 = self.zaobao.start_crawl()
-        news2, index2 = self.guancha.start_crawl()
+        # self.zaobao = ZaoBao.Crawl_NEWS(timeFrame=int(self.before))
+        self.sputnik = sputniknews.Crawl_NEWS(timeFrame=int(self.before))
+        # news1, index1 = self.zaobao.start_crawl()
+        news2, index2 = self.sputnik.start_crawl()
 
-        news = news1 + news2
+        # news = news1 + news2
         self.index = 0
         self.news = []
-        for strNews in news:
+        for strNews in news2:
             if strNews['result'] == '暴恐':
                 self.news.append(strNews)
                 self.index += 1
-        extract.EventInfo_extract(self.news)
+        self.news = extract.EventInfo_extract(self.news)
         print(self.index)
         modal = CrawlTotalDialog(self.index)
         modal.ShowModal()
@@ -373,7 +372,6 @@ class CheckNews(wx.Frame):
         self.id = 0
         self.fillValue(self.id)
 
-
     def OnClickUp(self, e):
         self.saveValue(self.id)
         self.id -= 1
@@ -404,7 +402,7 @@ class CheckNews(wx.Frame):
         self.total.SetValue(curr_news['Event_total'])
         self.nkill.SetValue(curr_news['Event_nkill'])
         self.nwound.SetValue(curr_news['Event_nwound'])
-        str_tip = " " + str(self.id + 1) + " / " + str(self.index) + " "
+        str_tip = " " + str(self.id + 1) + " / " + str(self.index)# + " " + "pubTime:" + curr_news['pubtime']
         self.TextTip.SetLabel(str_tip)
 
     def saveValue(self, id):
@@ -417,7 +415,7 @@ class CheckNews(wx.Frame):
         curr_news['Event_total'] = self.total.GetValue()
         curr_news['Event_nkill'] = self.nkill.GetValue()
         curr_news['Event_nwound'] = self.nwound.GetValue()
-        str_tip = " " + str(self.id + 1) + " / " + str(self.index) + " "
+        str_tip = " " + str(self.id + 1) + " / " + str(self.index)# + " " + "pubTime:" + curr_news['pubtime']
         self.TextTip.SetLabel(str_tip)
 
     def compareNews(self, list):
@@ -457,7 +455,8 @@ class CheckNews(wx.Frame):
     def change_list(self, lists):
         streams = []
         streams.append(self.strTitle)
-        for list in lists:
+        new_lists = sorted(lists, key=lambda e: e.__getitem__('Event_id'))
+        for list in new_lists:
             stream = []
             for title in self.strTitle:
                 if title == 'eventid':
@@ -490,3 +489,4 @@ if __name__ == '__main__':
     frame = CheckNews()
     frame.Show()
     app.MainLoop()
+

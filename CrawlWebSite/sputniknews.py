@@ -52,7 +52,7 @@ class Crawl_NEWS():
         """
         pages = 0
         html = self.getUrl_multiTry(url, headers)
-        soup = BeautifulSoup(html, 'html.parser', from_encoding='utf-8')
+        soup = BeautifulSoup(html, 'html.parser')
         css_class = soup.find(attrs={'class': 'search__filters-total'})
         link = css_class.find("span")
         counts = re.findall(r'\d+', str(link))
@@ -69,7 +69,7 @@ class Crawl_NEWS():
         html = self.getUrl_multiTry(url, headers)
         #print html
         # 使用BeautifulSoup解析返回的网页信息
-        soup = BeautifulSoup(html, 'html.parser', from_encoding='utf-8')
+        soup = BeautifulSoup(html, 'html.parser')
         css_class = soup.find_all(attrs={'class': 'b-plainlist__item'})
         for event in css_class:
             index_result = {}
@@ -118,7 +118,7 @@ class Crawl_NEWS():
         html = self.getUrl_multiTry(url, headers)
         if html is None:
             return None
-        soup = BeautifulSoup(html, 'html.parser', from_encoding='utf-8')
+        soup = BeautifulSoup(html, 'html.parser')
         if soup is None:
             return None
         # 提取新闻正文
@@ -184,14 +184,16 @@ class Crawl_NEWS():
         # 遍历所有的新闻页
         for i in range(0, pages+1):
             # 得到当前页的url
-            page_count = page_count + i*20
+            page_count = page_count + i*50
             urls = self.starturl.replace("offset=0", "offset=%d" % page_count)
             # 返回数组对象，每个元素表示一条新闻的简略信息
             infodexs = self.index_info(urls, self.my_headers)
             if len(infodexs) > 0:
                 for infodex in infodexs:
                     NewInfo={}
-                    if self.deadlineTime!=0 and infodex["reporttime"][0:10].strip()<self.deadlineTime: #终止爬取
+                    digit = re.findall("\d+", infodex["reporttime"][6:16])
+                    time = digit[0] + "-" + digit[1] + "-" + digit[2]
+                    if self.deadlineTime!=0 and time<self.deadlineTime: #终止爬取
                         stopFlag=True
                         break
                     body = self.get_news_body(infodex["url"], self.my_headers)
@@ -248,17 +250,20 @@ class Crawl_NEWS():
                 req.add_header("User-Agent", randddom_header)
                 req.add_header("GET", url)
                 try:
-                    html = urllib.request.urlopen(req).read().decode(encoding="utf8", errors='ignore')
-                except:
+                    html = urllib.request.urlopen(req).read()
+                    return html
+                except Exception as e:
+                    print(e)
                     print(url)
-                    break
-                return html
+                    continue
             except:
                 if tries < (maxTryNum - 1):
                     continue
                 else:
                     logging.error("Has tried %d times to access url %s, all failed!", maxTryNum, url)
                     break
+
+
 # 获取新闻的标题和链接
 if __name__=="__main__":
     zaobaoCrawl = Crawl_NEWS(timeFrame=3)
@@ -266,4 +271,4 @@ if __name__=="__main__":
     print(data, index)
     # db_connect.close()
     
-    
+
