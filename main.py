@@ -5,9 +5,29 @@
 """
 import wx
 import time
+import csv
 
 from CrawlWebSite import sputniknews, DataManager
 from ChineseNER import extract
+
+def read_csv(title, path):
+    reader = []
+    csv_reader = csv.reader(open(path, encoding='utf-8'))
+    for row in csv_reader:
+        reader.append(row)
+    del reader[0]
+    result = []
+    for mesg in reader:
+        news = {}
+        news['Event_time'] = mesg[title.index('time')]
+        news['Event_address'] = mesg[title.index('city')]
+        news['Event_gname'] = mesg[title.index('gname')]
+        news['Event_type'] = mesg[title.index('attacktype1')]
+        news['Event_nkill'] = mesg[title.index('nkill')]
+        news['Event_nwound'] = mesg[title.index('nwound')]
+        news['Event_total'] = str(int(news['Event_nkill']) + int(news['Event_nwound']))
+        result.append(news)
+    return result
 
 class CrawlTotalDialog(wx.Dialog):
     def __init__(self, num):
@@ -194,7 +214,7 @@ class CheckDialog(wx.Dialog):
 
 class CheckNews(wx.Frame):
     def __init__(self):
-        wx.Frame.__init__(self, None, size=(650, 360))
+        wx.Frame.__init__(self, None, size=(660, 380))
         self.panel = wx.Panel(self, -1)
         self.today = [time.strftime("%Y"), time.strftime("%m"), time.strftime("%d")]
         self.before = 1
@@ -212,6 +232,10 @@ class CheckNews(wx.Frame):
                          'ishostkid', 'nhostkid', 'nhours', 'divert', 'ransom', 'ransomamt', 'ransompaid',
                          'ransomnote', 'hostkidoutcome_txt', 'nreleased', 'addnotes', 'scite1', 'scite2',
                          'scite3', 'related']
+
+        filename = 'data.csv'
+        self.orig_data = read_csv(self.strTitle, filename)
+
         self.initUI()
         self.boundBotton()
 
@@ -241,69 +265,76 @@ class CheckNews(wx.Frame):
 
         self.TextNews = wx.TextCtrl(self.panel, value='', style=wx.TE_MULTILINE | wx.TE_READONLY, size=(300, 200))
         self.TextNews.SetFont(self.font)
-        sizer.Add(self.TextNews, pos=(2, 0), span=(7, 4), flag=wx.LEFT, border=10)
+        sizer.Add(self.TextNews, pos=(2, 0), span=(8, 4), flag=wx.LEFT, border=10)
+
+        Text_pubTime = wx.StaticText(self.panel, label='发布时间：', style=wx.ST_NO_AUTORESIZE)
+        Text_pubTime.SetFont(self.font)
+        sizer.Add(Text_pubTime, pos=(2, 4), span=(1, 1), flag=wx.TOP, border=0)
+        self.pubTime = wx.TextCtrl(self.panel, value='', size=(200, 20), style=wx.ST_NO_AUTORESIZE)
+        self.pubTime.SetFont(self.font)
+        sizer.Add(self.pubTime, pos=(2, 5), span=(1, 3), flag=wx.LEFT, border=0)
 
         Text_time = wx.StaticText(self.panel, label='时间', style=wx.ST_NO_AUTORESIZE)
         Text_time.SetFont(self.font)
-        sizer.Add(Text_time, pos=(2, 4), span=(1, 1), flag=wx.TOP, border=0)
+        sizer.Add(Text_time, pos=(3, 4), span=(1, 1), flag=wx.TOP, border=0)
         Text_Address = wx.StaticText(self.panel, label='地点', style=wx.ST_NO_AUTORESIZE)
         Text_Address.SetFont(self.font)
-        sizer.Add(Text_Address, pos=(3, 4), span=(1, 1), flag=wx.TOP, border=0)
+        sizer.Add(Text_Address, pos=(4, 4), span=(1, 1), flag=wx.TOP, border=0)
         Text_gname = wx.StaticText(self.panel, label='组织', style=wx.ST_NO_AUTORESIZE)
         Text_gname.SetFont(self.font)
-        sizer.Add(Text_gname, pos=(4, 4), span=(1, 1), flag=wx.TOP, border=0)
+        sizer.Add(Text_gname, pos=(5, 4), span=(1, 1), flag=wx.TOP, border=0)
         Text_type = wx.StaticText(self.panel, label='事件类型', style=wx.ST_NO_AUTORESIZE)
         Text_type.SetFont(self.font)
-        sizer.Add(Text_type, pos=(5, 4), span=(1, 1), flag=wx.TOP, border=0)
+        sizer.Add(Text_type, pos=(6, 4), span=(1, 1), flag=wx.TOP, border=0)
         Text_total = wx.StaticText(self.panel, label='伤亡人数', style=wx.ST_NO_AUTORESIZE)
         Text_total.SetFont(self.font)
-        sizer.Add(Text_total, pos=(6, 4), span=(1, 1), flag=wx.TOP, border=0)
+        sizer.Add(Text_total, pos=(7, 4), span=(1, 1), flag=wx.TOP, border=0)
         Text_nwound = wx.StaticText(self.panel, label='受伤人数', style=wx.ST_NO_AUTORESIZE)
         Text_nwound.SetFont(self.font)
-        sizer.Add(Text_nwound, pos=(7, 4), span=(1, 1), flag=wx.TOP, border=0)
+        sizer.Add(Text_nwound, pos=(8, 4), span=(1, 1), flag=wx.TOP, border=0)
         Text_nkill = wx.StaticText(self.panel, label='死亡人数', style=wx.ST_NO_AUTORESIZE)
         Text_nkill.SetFont(self.font)
-        sizer.Add(Text_nkill, pos=(8, 4), span=(1, 1), flag=wx.TOP, border=0)
+        sizer.Add(Text_nkill, pos=(9, 4), span=(1, 1), flag=wx.TOP, border=0)
 
         self.Time = wx.TextCtrl(self.panel, value='', size=(200, 20), style=wx.ST_NO_AUTORESIZE)
         self.Time.SetFont(self.font)
-        sizer.Add(self.Time, pos=(2, 5), span=(1, 3), flag=wx.LEFT, border=0)
+        sizer.Add(self.Time, pos=(3, 5), span=(1, 3), flag=wx.LEFT, border=0)
         self.Address = wx.TextCtrl(self.panel, value='', size=(200, 20), style=wx.ST_NO_AUTORESIZE)
         self.Address.SetFont(self.font)
-        sizer.Add(self.Address, pos=(3, 5), span=(1, 3), flag=wx.LEFT, border=0)
+        sizer.Add(self.Address, pos=(4, 5), span=(1, 3), flag=wx.LEFT, border=0)
         self.gname = wx.TextCtrl(self.panel, value='', size=(200, 20), style=wx.ST_NO_AUTORESIZE)
         self.gname.SetFont(self.font)
-        sizer.Add(self.gname, pos=(4, 5), span=(1, 3), flag=wx.LEFT, border=0)
+        sizer.Add(self.gname, pos=(5, 5), span=(1, 3), flag=wx.LEFT, border=0)
         self.type = wx.TextCtrl(self.panel, value='', size=(200, 20), style=wx.ST_NO_AUTORESIZE)
         self.type.SetFont(self.font)
-        sizer.Add(self.type, pos=(5, 5), span=(1, 3), flag=wx.LEFT, border=0)
+        sizer.Add(self.type, pos=(6, 5), span=(1, 3), flag=wx.LEFT, border=0)
         self.total = wx.TextCtrl(self.panel, value='', size=(200, 20), style=wx.ST_NO_AUTORESIZE)
         self.total.SetFont(self.font)
-        sizer.Add(self.total, pos=(6, 5), span=(1, 3), flag=wx.LEFT, border=0)
+        sizer.Add(self.total, pos=(7, 5), span=(1, 3), flag=wx.LEFT, border=0)
         self.nwound = wx.TextCtrl(self.panel, value='', size=(200, 20), style=wx.ST_NO_AUTORESIZE)
         self.nwound.SetFont(self.font)
-        sizer.Add(self.nwound, pos=(7, 5), span=(1, 3), flag=wx.LEFT, border=0)
+        sizer.Add(self.nwound, pos=(8, 5), span=(1, 3), flag=wx.LEFT, border=0)
         self.nkill = wx.TextCtrl(self.panel, value='', size=(200, 20), style=wx.ST_NO_AUTORESIZE)
         self.nkill.SetFont(self.font)
-        sizer.Add(self.nkill, pos=(8, 5), span=(1, 3), flag=wx.LEFT, border=0)
+        sizer.Add(self.nkill, pos=(9, 5), span=(1, 3), flag=wx.LEFT, border=0)
 
         line2 = wx.StaticLine(self.panel)
-        sizer.Add(line2, pos=(9, 0), span=(1, 15), flag=wx.EXPAND | wx.TOP, border=10)
+        sizer.Add(line2, pos=(10, 0), span=(1, 15), flag=wx.EXPAND | wx.TOP, border=10)
 
         self.TextTip = wx.StaticText(self.panel, label=' 0 / 0 ',size=(100, 25), style=wx.ST_NO_AUTORESIZE)
         self.TextTip.SetFont(self.font)
-        sizer.Add(self.TextTip, pos=(10, 0), span=(1, 1), flag=wx.LEFT, border=30)
+        sizer.Add(self.TextTip, pos=(11, 0), span=(1, 1), flag=wx.LEFT, border=30)
 
         self.upbotton = wx.Button(self.panel, label='上一条', size=(80, 25), style=wx.ST_NO_AUTORESIZE)
         self.upbotton.SetFont(self.font)
-        sizer.Add(self.upbotton, pos=(10, 3), span=(1, 2), flag=wx.TOP, border=0)
+        sizer.Add(self.upbotton, pos=(11, 3), span=(1, 2), flag=wx.TOP, border=0)
         self.okbotton = wx.Button(self.panel, label='确定', size=(80, 25), style=wx.ST_NO_AUTORESIZE)
         self.okbotton.SetFont(self.font)
         self.okbotton.SetDefault()
-        sizer.Add(self.okbotton, pos=(10, 5), span=(1, 2), flag=wx.TOP, border=0)
+        sizer.Add(self.okbotton, pos=(11, 5), span=(1, 2), flag=wx.TOP, border=0)
         self.savebotton = wx.Button(self.panel, label='保存', size=(80, 25), style=wx.ST_NO_AUTORESIZE)
         self.savebotton.SetFont(self.font)
-        sizer.Add(self.savebotton, pos=(10, 7), span=(1, 2), flag=wx.TOP, border=0)
+        sizer.Add(self.savebotton, pos=(11, 7), span=(1, 2), flag=wx.TOP, border=0)
 
         self.panel.SetSizer(sizer)
 
@@ -373,23 +404,36 @@ class CheckNews(wx.Frame):
         self.fillValue(self.id)
 
     def OnClickUp(self, e):
-        self.saveValue(self.id)
+        if self.Time.GetValue() == '':
+            state = 0
+        else:
+            state = 1
+        self.saveValue(self.id, state)
         self.id -= 1
         if self.id < 0:
             self.id = self.index - 1
         self.fillValue(self.id)
 
     def OnClickOk(self, e):
-        self.saveValue(self.id)
+        if self.Time.GetValue() == '':
+            state = 0
+        else:
+            state = 1
+        self.saveValue(self.id, state)
         self.id += 1
         if self.id >= self.index:
             self.id = 0
         self.fillValue(self.id)
 
     def OnClickSave(self, e):
+        if self.Time.GetValue() == '':
+            state = 0
+        else:
+            state = 1
+        self.saveValue(self.id, state)
         compare_result = self.compareNews(self.news)
         stream_news = self.change_list(compare_result)
-        str_path = self.today[0] + '-' + self.today[1] + '-' + self.today[2] + '-' + '.csv'
+        str_path = 'data.csv'
         DataManager.write_csv(str_path, stream_news)
 
     def fillValue(self, id):
@@ -402,10 +446,11 @@ class CheckNews(wx.Frame):
         self.total.SetValue(curr_news['Event_total'])
         self.nkill.SetValue(curr_news['Event_nkill'])
         self.nwound.SetValue(curr_news['Event_nwound'])
+        self.pubTime.SetValue(curr_news['pubtime'])
         str_tip = " " + str(self.id + 1) + " / " + str(self.index)# + " " + "pubTime:" + curr_news['pubtime']
         self.TextTip.SetLabel(str_tip)
 
-    def saveValue(self, id):
+    def saveValue(self, id, state):
         curr_news = self.news[id]
         curr_news['content'] = self.TextNews.GetValue()
         curr_news['Event_time'] = self.Time.GetValue()
@@ -415,10 +460,16 @@ class CheckNews(wx.Frame):
         curr_news['Event_total'] = self.total.GetValue()
         curr_news['Event_nkill'] = self.nkill.GetValue()
         curr_news['Event_nwound'] = self.nwound.GetValue()
+        curr_news['state'] = state
         str_tip = " " + str(self.id + 1) + " / " + str(self.index)# + " " + "pubTime:" + curr_news['pubtime']
         self.TextTip.SetLabel(str_tip)
 
-    def compareNews(self, list):
+    def compareNews(self, lists):
+        list = []
+        for news in lists:
+            if news['state'] == 1:
+                list.append(news)
+        list.extend(self.orig_data)
         result = []
         while list:
             mesg1 = list[0]

@@ -1,0 +1,8 @@
+eventid,eventname,iyear,imonth,iday,time,approxdate,country_txt,provstate,city,latitude,longitude,location,summary,alternative_txt,multiple,suicide,attacktype1,attacktype1_txt,attacktype2,attacktype2_txt,attacktype3,attacktype3_txt,targtype1_txt,targsubtype1_txt,corp1,target1,natlty1_txt,targtype2_txt,targsubtype2_txt,corp2,target2,natlty2_txt,targtype3_txt,targsubtype3_txt,corp3,target3,natlty3_txt,gname,motive,nperps,nperpcap,weaptype1_txt,weapsubtype1_txt,weaptype2_txt,weapsubtype2_txt,weaptype3_txt,weapsubtype3_txt,weaptype4_txt,weapsubtype4_txt,weapdetail,nkill,nkillter,nwound,nwoundte,property,propvalue,propcomment,ishostkid,nhostkid,nhours,divert,ransom,ransomamt,ransompaid,ransomnote,hostkidoutcome_txt,nreleased,addnotes,scite1,scite2,scite3,related
+20189150001,,2018,9,15,2018.9.15,,,,unknown,,,,,,,,,unknown,,,,,,,,,,,,,,,,,,,,库尔德工人党,,,,,,,,,,,,,0,,0,,,,,,,,,,,,,,,,,,,
+20189220001,,2018,9,22,2018.9.22,,,,unknown,,,,,,,,,unknown,,,,,,,,,,,,,,,,,,,,unknown,,,,,,,,,,,,,22,,60,,,,,,,,,,,,,,,,,,,
+20189220002,,2018,9,22,2018.9.22,,,,贾瓦德,,,,,,,,,unknown,,,,,,,,,,,,,,,,,,,,unknown,,,,,,,,,,,,,28,,60,,,,,,,,,,,,,,,,,,,
+20189220003,,2018,9,22,2018.9.22,,,,unknown,,,,,,,,,开火,,,,,,,,,,,,,,,,,,,,unknown,,,,,,,,,,,,,29,,60,,,,,,,,,,,,,,,,,,,
+20189240001,,2018,9,24,2018.9.24,,,,库尔德,,,,,,,,,unknown,,,,,,,,,,,,,,,,,,,,unknown,,,,,,,,,,,,,0,,0,,,,,,,,,,,,,,,,,,,
+20189240002,,2018,9,24,2018.9.24,,,,塔利班,,,,,,,,,袭击,,,,,,,,,,,,,,,,,,,,unknown,,,,,,,,,,,,,9,,0,,,,,,,,,,,,,,,,,,,
+20189260001,,2018,9,26,2018.9.26,,,,坎大哈,,,,,,,,,枪击,,,,,,,,,,,,,,,,,,,,塔利班,,,,,,,,,,,,,0,,0,,,,,,,,,,,,,,,,,,,
