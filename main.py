@@ -218,6 +218,7 @@ class CheckNews(wx.Frame):
         self.panel = wx.Panel(self, -1)
         self.today = [time.strftime("%Y"), time.strftime("%m"), time.strftime("%d")]
         self.before = 1
+        # self.extract = extract.crf_entities_extraction()
         self.strTitle = ['eventid', 'eventname', 'iyear', 'imonth', 'iday', 'time', 'approxdate',
                          'country_txt', 'provstate', 'city', 'latitude', 'longitude', 'location',
                          'summary', 'alternative_txt', 'multiple', 'suicide', 'attacktype1',

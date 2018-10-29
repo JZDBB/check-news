@@ -263,7 +263,13 @@ def entities_deduplicate(li):
                 entities_result.append(dict)
     return entities_result
 
+
+
+zzmodel = None
+zzsession = None
 def EventInfo_extract(lists):
+    global zzmodel
+    global zzsession
     result_list = []
     config = load_config(FLAGS.config_file)
     logger = get_logger(FLAGS.log_file)
@@ -272,8 +278,11 @@ def EventInfo_extract(lists):
     tf_config.gpu_options.allow_growth = False
     with open(FLAGS.map_file, "rb") as f:
         char_to_id, id_to_char, tag_to_id, id_to_tag = pickle.load(f)
-    with tf.Session(config=tf_config) as sess:
-        model = create_model(sess, Model, FLAGS.ckpt_path, load_word2vec, config, id_to_char, logger)
+
+    if zzmodel is None:
+        zzsession = tf.Session(config=tf_config)
+        zzmodel = create_model(zzsession, Model, FLAGS.ckpt_path, load_word2vec, config, id_to_char, logger)
+    with zzsession.as_default():
         for list in lists:
             list['Event_time'] = 'unknown'
             list['Event_address'] = 'unknown'
@@ -282,7 +291,7 @@ def EventInfo_extract(lists):
             list['Event_total'] = '0'
             list['Event_nwound'] = '0'
             list['Event_nkill'] = '0'
-            result_str = model.evaluate_line(sess, input_from_line(list['content'], char_to_id), id_to_tag)
+            result_str = zzmodel.evaluate_line(zzsession, input_from_line(list['content'], char_to_id), id_to_tag)
             results = entities_deduplicate(result_str["entities"])
             for result in results:
                 if result['type'] == 'TIME':
@@ -297,9 +306,9 @@ def EventInfo_extract(lists):
                     list['Event_nwound'] = result['word']
                 elif result['type'] == 'DEAD_NUM':
                     list['Event_nkill'] = result['word']
-            list['Event_total'] = str(int(list['Event_nkill']) + int(list['Event_nwound']))
+            # list['Event_total'] = str(int(list['Event_nkill']) + int(list['Event_nwound']))
             result_list.append(list)
-    sess.close()
+
     return result_list
 
 # def main(_):

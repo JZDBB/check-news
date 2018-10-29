@@ -76,3 +76,15 @@
 2018-09-30 12:34:45,990 - ./ChineseNER/train.log - INFO - Reading model parameters from ./ChineseNER/ckpt\ner.ckpt
 2018-09-30 12:42:05,398 - ./ChineseNER/train.log - INFO - Reading model parameters from ./ChineseNER/ckpt\ner.ckpt
 2018-09-30 13:08:10,490 - ./ChineseNER/train.log - INFO - Reading model parameters from ./ChineseNER/ckpt\ner.ckpt
+2018-10-25 10:33:23,924 - ./ChineseNER/train.log - INFO - Reading model parameters from ./ChineseNER/ckpt\ner.ckpt
+2018-10-25 11:04:53,764 - ./ChineseNER/train.log - INFO - Reading model parameters from ./ChineseNER/ckpt\ner.ckpt
+2018-10-25 11:07:59,907 - ./ChineseNER/train.log - INFO - Reading model parameters from ./ChineseNER/ckpt\ner.ckpt
+2018-10-25 11:29:53,165 - ./ChineseNER/train.log - INFO - Reading model parameters from ./ChineseNER/ckpt\ner.ckpt
+2018-10-25 11:30:15,189 - ./ChineseNER/train.log - INFO - Reading model parameters from ./ChineseNER/ckpt\ner.ckpt
+2018-10-25 11:30:15,189 - ./ChineseNER/train.log - INFO - Reading model parameters from ./ChineseNER/ckpt\ner.ckpt
+2018-10-25 11:34:52,410 - ./ChineseNER/train.log - INFO - Reading model parameters from ./ChineseNER/ckpt\ner.ckpt
+2018-10-25 11:38:43,103 - ./ChineseNER/train.log - INFO - Reading model parameters from ./ChineseNER/ckpt\ner.ckpt
+2018-10-25 11:38:43,103 - ./ChineseNER/train.log - INFO - Reading model parameters from ./ChineseNER/ckpt\ner.ckpt
+2018-10-25 11:50:31,738 - ./ChineseNER/train.log - INFO - Reading model parameters from ./ChineseNER/ckpt\ner.ckpt
+2018-10-25 11:54:35,363 - ./ChineseNER/train.log - INFO - Reading model parameters from ./ChineseNER/ckpt\ner.ckpt
+2018-10-25 11:56:09,483 - ./ChineseNER/train.log - INFO - Reading model parameters from ./ChineseNER/ckpt\ner.ckpt
